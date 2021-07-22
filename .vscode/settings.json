@@ -9,16 +9,15 @@
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "editor.tokenColorCustomizations": {
-    "semanticHighlighting": true
+    "enabled": true
   },
   "editor.wordWrap": "on",
-  "eslint.enable": true,
   "eslint.packageManager": "yarn",
   "eslint.validate": [
     "javascript",
     "javascriptreact",
-    { "language": "typescript", "autoFix": true },
-    { "language": "typescriptreact", "autoFix": true }
+    "typescript",
+    "typescriptreact"
   ],
   "files.insertFinalNewline": true,
   "files.trimTrailingWhitespace": true,

@@ -1,9 +1,7 @@
 import { createClient } from 'microcms-js-sdk';
 
 // Initialize Client SDK.
-const client = createClient({
+export const client = createClient({
   serviceDomain: '',
   apiKey: '',
 });
-
-export default client;
