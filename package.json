@@ -25,6 +25,7 @@
     ]
   },
   "dependencies": {
+    "@vanilla-extract/css": "^1.1.2",
     "microcms-js-sdk": "^1.2.0",
     "next": "11.0.1",
     "react": "17.0.2",
@@ -41,6 +42,9 @@
     "@types/stylelint": "^13.13.1",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
+    "@vanilla-extract/babel-plugin": "^1.0.1",
+    "@vanilla-extract/webpack-plugin": "^1.0.3",
+    "css-loader": "^6.2.0",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.0.1",
@@ -52,11 +56,13 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.0",
     "lint-staged": "^11.1.0",
+    "mini-css-extract-plugin": "^2.1.0",
     "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-recess-order": "^2.4.0",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "typescript": "4.3.5"
+    "typescript": "4.3.5",
+    "webpack": "^5.46.0"
   }
 }
