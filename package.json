@@ -13,7 +13,7 @@
     "lint:style": "stylelint 'src/**/*.css'",
     "lint:style:fix": "stylelint --fix 'src/**/*.css'",
     "lint:conflict": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
-    "format": "prettier --write",
+    "format": "prettier --write 'src/**/*.{js,jsx,ts,tsx}'",
     "typecheck": "tsc --noEmit",
     "prepare": "husky install",
     "lint-staged": "lint-staged"
