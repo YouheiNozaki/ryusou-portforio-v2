@@ -1,22 +1,21 @@
 export type Article = {
-  contents: [
+  id: string;
+  url: string;
+  title: string;
+  publishedAt: string;
+  category: [
     {
-      id: string;
-      url: string;
-      title: string;
-      publishedAt: string;
-      category: [
-        {
-          id: 'zenn' | 'note' | 'qiita' | 'speakerdeck';
-          caregoryImage: {
-            url: string;
-          };
-        },
-      ];
+      id: 'zenn' | 'note' | 'qiita' | 'speakerdeck';
+      caregoryImage: {
+        url: string;
+      };
     },
   ];
 };
 
 export type Articles = {
-  contents: Article;
+  contents: Article[];
+  totalCount: number;
+  limit: number;
+  offset: number;
 };

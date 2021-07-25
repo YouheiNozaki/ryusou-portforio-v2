@@ -63,6 +63,7 @@ module.exports = {
         varsIgnorePattern: '_',
       },
     ],
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
