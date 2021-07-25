@@ -6,7 +6,8 @@ import type { Articles } from '../types/article';
 export const useGetArticles = () => {
   const [articleCount, setArticleCount] = useState<number>(0);
   const fetchArticles = async (pageParam: number) => {
-    setArticleCount(pageParam);
+    setArticleCount(articleCount + pageParam);
+
     const articles = await client.get<Articles>({
       endpoint: 'articles',
       queries: {
@@ -23,9 +24,11 @@ export const useGetArticles = () => {
     {
       staleTime: Infinity,
       getNextPageParam: (lastPage) => {
-        const { contents } = lastPage;
+        const { contents, totalCount } = lastPage;
 
-        return contents.length;
+        return contents.length + articleCount < totalCount
+          ? contents.length
+          : undefined;
       },
     },
   );
