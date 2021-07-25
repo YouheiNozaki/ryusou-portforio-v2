@@ -5,6 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
+    'plugin:react-hooks/recommended',
     'airbnb',
     'airbnb/hooks',
     'plugin:import/errors',
@@ -92,6 +93,13 @@ module.exports = {
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': [
+      'warn',
+      {
+        additionalHooks: '(useMyCustomHook|useMyOtherCustomHook)',
+      },
+    ],
   },
   overrides: [
     {

@@ -6,12 +6,12 @@ import type { Articles } from '../types/article';
 export const useGetArticles = () => {
   const [articleCount, setArticleCount] = useState<number>(0);
   const fetchArticles = async (pageParam: number) => {
-    setArticleCount(articleCount + pageParam);
+    setArticleCount((prevArticleCount) => prevArticleCount + pageParam);
 
     const articles = await client.get<Articles>({
       endpoint: 'articles',
       queries: {
-        offset: pageParam + articleCount,
+        offset: articleCount + pageParam,
       },
     });
 
