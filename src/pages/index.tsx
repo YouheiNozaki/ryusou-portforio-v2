@@ -3,6 +3,7 @@ import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
 import { useGetArticles } from '../hooks/useGetArticles';
+import { fetchArticles } from '../lib/fetchArticles';
 
 export default function Home(): JSX.Element {
   const { data, isLoading, hasNextPage, fetchNextPage } = useGetArticles();
@@ -45,11 +46,12 @@ export default function Home(): JSX.Element {
 export async function getStaticProps() {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery('articles', useGetArticles);
+  await queryClient.prefetchInfiniteQuery('articles', fetchArticles);
 
   return {
     props: {
-      dehydratedState: dehydrate(queryClient),
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
     },
   };
 }
