@@ -5,6 +5,8 @@ import { useInView } from 'react-intersection-observer';
 import { useGetArticles } from '../hooks/useGetArticles';
 import { fetchArticles } from '../lib/fetchArticles';
 
+import { link } from '../styles/home.css';
+
 export default function Home(): JSX.Element {
   const { data, isLoading, hasNextPage, fetchNextPage } = useGetArticles();
 
@@ -31,9 +33,16 @@ export default function Home(): JSX.Element {
       <div>
         {articles.map((content) => (
           <Fragment key={content.id}>
-            <a href={content.url}>
+            <a href={content.url} className={link}>
+              {content.category.map((category) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={`${category.caregoryImage.url}?h=24&w=24`}
+                  alt={category.id}
+                />
+              ))}
               <h3>{content.title}</h3>
-              <p>{content.publishedAt}</p>
+              <p>{content.publishArticleAt}</p>
             </a>
           </Fragment>
         ))}

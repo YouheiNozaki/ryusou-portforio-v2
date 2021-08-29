@@ -12,6 +12,7 @@ export const useGetArticles = () => {
       endpoint: 'articles',
       queries: {
         offset: articleCount + pageParam,
+        orders: '-publishArticleAt',
       },
     });
 
