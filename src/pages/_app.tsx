@@ -6,15 +6,12 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Hydrate } from 'react-query/hydration';
 import { ReactQueryDevtools } from 'react-query/devtools';
 
-import { Header } from '../components/common/Header';
-
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
-        <Header />
         <Component {...pageProps} />
         <ReactQueryDevtools />
       </Hydrate>

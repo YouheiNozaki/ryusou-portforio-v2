@@ -2,16 +2,18 @@ import { Fragment, useEffect, useMemo } from 'react';
 import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
+import dayjs from 'dayjs';
 import { useGetArticles } from '../hooks/useGetArticles';
 import { fetchArticles } from '../lib/fetchArticles';
 
-import { link } from '../styles/home.css';
+import { Layout } from '../components/common/Layout';
+import { HomePageStyle } from '../styles/home.css';
 
 export default function Home(): JSX.Element {
   const { data, isLoading, hasNextPage, fetchNextPage } = useGetArticles();
 
   const [ref, inView] = useInView({
-    rootMargin: '-80px',
+    rootMargin: '-40px',
   });
 
   useEffect(() => {
@@ -29,26 +31,36 @@ export default function Home(): JSX.Element {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div style={{ marginBottom: '100px' }}>
-      <div>
+    <Layout>
+      <section>
         {articles.map((content) => (
           <Fragment key={content.id}>
-            <a href={content.url} className={link}>
-              {content.category.map((category) => (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={`${category.caregoryImage.url}?h=24&w=24`}
-                  alt={category.id}
-                />
-              ))}
-              <h3>{content.title}</h3>
-              <p>{content.publishArticleAt}</p>
-            </a>
+            <article className={HomePageStyle.card}>
+              <a href={content.url} className={HomePageStyle.cardLink}>
+                {content.category.map((category) => (
+                  <Fragment key={category.id}>
+                    <div className={HomePageStyle.cardImage}>
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={`${category.caregoryImage.url}?h=40&w=40`}
+                        alt={category.id}
+                      />
+                    </div>
+                  </Fragment>
+                ))}
+                <div className={HomePageStyle.cardDescription}>
+                  <h3 className={HomePageStyle.cardTitle}>{content.title}</h3>
+                  <p className={HomePageStyle.cardAt}>
+                    {dayjs(content.publishArticleAt).format('YYYY/MM/DD')}
+                  </p>
+                </div>
+              </a>
+            </article>
           </Fragment>
         ))}
-      </div>
+      </section>
       {hasNextPage && <div ref={ref}>もっとみる</div>}
-    </div>
+    </Layout>
   );
 }
 
