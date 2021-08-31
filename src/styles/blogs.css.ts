@@ -6,7 +6,7 @@ export const BlogsPageStyle = {
     padding: '40px',
     display: 'flex',
     alignItems: 'center',
-    borderBottom: `solid 1px ${vars.color.gray[400]}`,
+    borderBottom: `solid 1px ${vars.color.pink[200]}`,
   }),
   cardImage: style({
     lineHeight: '1.7px',
@@ -28,13 +28,19 @@ export const BlogsPageStyle = {
   }),
   cardTag: style({
     marginRight: '8px',
-    padding: '4px',
+    padding: '4px 6px',
     color: vars.color.white,
-    backgroundColor: vars.color.gray[600],
-    borderRadius: '2px',
+    backgroundColor: vars.color.pink[300],
+    borderRadius: '4px',
   }),
   cardDay: style({
     marginRight: '12px',
     padding: '4px',
+  }),
+  cardDayIcon: style({
+    color: vars.color.pink[300],
+  }),
+  more: style({
+    visibility: 'hidden',
   }),
 };

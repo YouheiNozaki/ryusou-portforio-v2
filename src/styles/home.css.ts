@@ -27,4 +27,7 @@ export const HomePageStyle = {
   cardAt: style({
     fontSize: '12px',
   }),
+  more: style({
+    visibility: 'hidden',
+  }),
 };

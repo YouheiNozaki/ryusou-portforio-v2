@@ -59,7 +59,11 @@ export default function Home(): JSX.Element {
           </Fragment>
         ))}
       </section>
-      {hasNextPage && <div ref={ref}>もっとみる</div>}
+      {hasNextPage && (
+        <div ref={ref} className={HomePageStyle.more}>
+          もっとみる
+        </div>
+      )}
     </Layout>
   );
 }

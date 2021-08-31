@@ -14,5 +14,17 @@ export const [themeClass, vars] = createTheme({
       100: '#f5f5f5',
     },
     white: '#fff',
+    pink: {
+      900: '#880e4f',
+      800: '#ad1457',
+      700: '#c2185b',
+      600: '#d81b60',
+      500: '#e91e63',
+      400: '#ec407a',
+      300: '#f06292',
+      200: '#f48fb1',
+      100: '#f8bbd0',
+      50: '#fce4ec',
+    },
   },
 });

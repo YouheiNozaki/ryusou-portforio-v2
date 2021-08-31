@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import cat from '../../../../public/img/cat.jpg';
+import cat from '../../../../public/img/cat.png';
 import { headerStyle } from './header.css';
 
 export const Header = () => {

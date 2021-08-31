@@ -52,11 +52,11 @@ export default function Home(): JSX.Element {
                     </Fragment>
                   ))}
 
-                  <BiCalendarAlt />
+                  <BiCalendarAlt className={BlogsPageStyle.cardDayIcon} />
                   <p className={BlogsPageStyle.cardDay}>
                     {dayjs(content.createdAt).format('YYYY/MM/DD')}
                   </p>
-                  <BiCalendarCheck />
+                  <BiCalendarCheck className={BlogsPageStyle.cardDayIcon} />
                   <p className={BlogsPageStyle.cardDay}>
                     {dayjs(content.updatedAt).format('YYYY/MM/DD')}
                   </p>
@@ -66,7 +66,11 @@ export default function Home(): JSX.Element {
           </Fragment>
         ))}
       </section>
-      {hasNextPage && <div ref={ref}>もっとみる</div>}
+      {hasNextPage && (
+        <div ref={ref} className={BlogsPageStyle.more}>
+          もっとみる
+        </div>
+      )}
     </Layout>
   );
 }
