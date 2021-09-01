@@ -3,6 +3,8 @@ import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
 import dayjs from 'dayjs';
+import { BiCalendarAlt } from 'react-icons/bi';
+import ReactLoading from 'react-loading';
 import { useGetArticles } from '../hooks/useGetArticles';
 import { fetchArticles } from '../lib/fetchArticles';
 
@@ -50,9 +52,12 @@ export default function Home(): JSX.Element {
                 ))}
                 <div className={HomePageStyle.cardDescription}>
                   <h3 className={HomePageStyle.cardTitle}>{content.title}</h3>
-                  <p className={HomePageStyle.cardAt}>
-                    {dayjs(content.publishArticleAt).format('YYYY/MM/DD')}
-                  </p>
+                  <div className={HomePageStyle.cardInfo}>
+                    <BiCalendarAlt className={HomePageStyle.cardDayIcon} />
+                    <p className={HomePageStyle.cardAt}>
+                      {dayjs(content.publishArticleAt).format('YYYY/MM/DD')}
+                    </p>
+                  </div>
                 </div>
               </a>
             </article>
@@ -61,7 +66,7 @@ export default function Home(): JSX.Element {
       </section>
       {hasNextPage && (
         <div ref={ref} className={HomePageStyle.more}>
-          もっとみる
+          <ReactLoading type="spin" width={40} height={40} color="#e91e63" />
         </div>
       )}
     </Layout>

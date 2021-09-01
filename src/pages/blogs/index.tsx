@@ -3,6 +3,7 @@ import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
 import dayjs from 'dayjs';
+import ReactLoading from 'react-loading';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 import { Layout } from 'components/common/Layout';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
@@ -68,7 +69,7 @@ export default function Home(): JSX.Element {
       </section>
       {hasNextPage && (
         <div ref={ref} className={BlogsPageStyle.more}>
-          もっとみる
+          <ReactLoading type="spin" width={40} height={40} color="#e91e63" />
         </div>
       )}
     </Layout>

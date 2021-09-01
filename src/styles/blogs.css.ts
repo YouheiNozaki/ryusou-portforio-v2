@@ -41,6 +41,7 @@ export const BlogsPageStyle = {
     color: vars.color.pink[300],
   }),
   more: style({
-    visibility: 'hidden',
+    margin: '20px auto',
+    width: '10%',
   }),
 };
