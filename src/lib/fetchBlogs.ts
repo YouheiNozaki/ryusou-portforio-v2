@@ -1,5 +1,5 @@
 import { createClient } from 'microcms-js-sdk';
-import type { Blogs } from '../types/blogs';
+import type { Blogs, Blog } from '../types/blogs';
 
 // Initialize Client SDK.
 export const clientBlogs = createClient({
@@ -13,4 +13,12 @@ export const fetchBlogs = async () => {
   });
 
   return blogs;
+};
+
+export const fetchBlog = async (id: string) => {
+  const blog = await clientBlogs.get<Blog>({
+    endpoint: `posts/${id}`,
+  });
+
+  return blog;
 };
