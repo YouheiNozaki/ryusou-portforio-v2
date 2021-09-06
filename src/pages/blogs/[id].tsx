@@ -37,6 +37,9 @@ const BlogDetail: React.FC<Props> = ({ blog }) => {
   return (
     <Layout>
       <div>{blog.title}</div>
+      <div>{blog.image}</div>
+      <div>{blog.createdAt}</div>
+      <div>{blog.updatedAt}</div>
     </Layout>
   );
 };
