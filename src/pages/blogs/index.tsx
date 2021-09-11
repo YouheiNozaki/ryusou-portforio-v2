@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo } from 'react';
+import Link from 'next/link';
 import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
@@ -36,34 +37,40 @@ export default function Home(): JSX.Element {
       <section>
         {blogs.map((content) => (
           <Fragment key={content.id}>
-            <article className={BlogsPageStyle.card}>
-              <div className={BlogsPageStyle.cardImage}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`${content.image.url}?h=124&w=328`}
-                  alt={content.title}
-                />
-              </div>
-              <div className={BlogsPageStyle.cardDescription}>
-                <h3 className={BlogsPageStyle.cardTitle}>{content.title}</h3>
-                <div className={BlogsPageStyle.cardTags}>
-                  {content.tags.map((tag) => (
-                    <Fragment key={tag.slug}>
-                      <p className={BlogsPageStyle.cardTag}>{tag.slug}</p>
-                    </Fragment>
-                  ))}
+            <Link href={`blogs/${content.id}`} passHref>
+              <a href={`blogs/${content.id}`}>
+                <article className={BlogsPageStyle.card}>
+                  <div className={BlogsPageStyle.cardImage}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={`${content.image.url}?h=124&w=328`}
+                      alt={content.title}
+                    />
+                  </div>
+                  <div className={BlogsPageStyle.cardDescription}>
+                    <h3 className={BlogsPageStyle.cardTitle}>
+                      {content.title}
+                    </h3>
+                    <div className={BlogsPageStyle.cardTags}>
+                      {content.tags.map((tag) => (
+                        <Fragment key={tag.slug}>
+                          <p className={BlogsPageStyle.cardTag}>{tag.slug}</p>
+                        </Fragment>
+                      ))}
 
-                  <BiCalendarAlt className={BlogsPageStyle.cardDayIcon} />
-                  <p className={BlogsPageStyle.cardDay}>
-                    {dayjs(content.createdAt).format('YYYY/MM/DD')}
-                  </p>
-                  <BiCalendarCheck className={BlogsPageStyle.cardDayIcon} />
-                  <p className={BlogsPageStyle.cardDay}>
-                    {dayjs(content.updatedAt).format('YYYY/MM/DD')}
-                  </p>
-                </div>
-              </div>
-            </article>
+                      <BiCalendarAlt className={BlogsPageStyle.cardDayIcon} />
+                      <p className={BlogsPageStyle.cardDay}>
+                        {dayjs(content.createdAt).format('YYYY/MM/DD')}
+                      </p>
+                      <BiCalendarCheck className={BlogsPageStyle.cardDayIcon} />
+                      <p className={BlogsPageStyle.cardDay}>
+                        {dayjs(content.updatedAt).format('YYYY/MM/DD')}
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </a>
+            </Link>
           </Fragment>
         ))}
       </section>

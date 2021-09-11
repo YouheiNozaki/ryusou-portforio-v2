@@ -1,4 +1,5 @@
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import { useRouter } from 'next/dist/client/router';
 import { Layout } from 'components/common/Layout';
 import { Blog } from 'types/blogs';
 import { fetchBlogs, fetchBlog } from '../../lib/fetchBlogs';
@@ -34,10 +35,17 @@ export const getStaticProps: GetStaticProps = async (
 };
 
 const BlogDetail: React.FC<Props> = ({ blog }) => {
+  console.log(blog);
+  const router = useRouter();
+
+  if (router.isFallback) {
+    return <div>Loading</div>;
+  }
+
   return (
     <Layout>
       <div>{blog.title}</div>
-      <div>{blog.image}</div>
+      <div>{blog.image.url}</div>
       <div>{blog.createdAt}</div>
       <div>{blog.updatedAt}</div>
     </Layout>
