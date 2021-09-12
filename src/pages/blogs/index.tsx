@@ -37,8 +37,11 @@ export default function Home(): JSX.Element {
       <section>
         {blogs.map((content) => (
           <Fragment key={content.id}>
-            <Link href={`blogs/${content.id}`} passHref>
-              <a href={`blogs/${content.id}`}>
+            <Link href={`/blogs/${content.id}`} passHref>
+              <a
+                href={`/blogs/${content.id}`}
+                className={BlogsPageStyle.cardLink}
+              >
                 <article className={BlogsPageStyle.card}>
                   <div className={BlogsPageStyle.cardImage}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -35,7 +35,6 @@ export const getStaticProps: GetStaticProps = async (
 };
 
 const BlogDetail: React.FC<Props> = ({ blog }) => {
-  console.log(blog);
   const router = useRouter();
 
   if (router.isFallback) {
@@ -44,8 +43,9 @@ const BlogDetail: React.FC<Props> = ({ blog }) => {
 
   return (
     <Layout>
-      <div>{blog.title}</div>
-      <div>{blog.image.url}</div>
+      <h1>{blog.title}</h1>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={blog.image.url} alt="" />
       <div>{blog.createdAt}</div>
       <div>{blog.updatedAt}</div>
     </Layout>

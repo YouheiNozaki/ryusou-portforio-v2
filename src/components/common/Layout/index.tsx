@@ -1,4 +1,3 @@
-import { themeClass } from 'styles/theme.css';
 import { LayoutStyle } from './layout.css';
 import { Header } from '../Header';
 
@@ -8,7 +7,7 @@ type Props = {
 
 export const Layout: React.VFC<Props> = ({ children }) => {
   return (
-    <div className={themeClass}>
+    <div>
       <Header />
       <main className={LayoutStyle.wrapper}>{children}</main>
     </div>

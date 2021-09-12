@@ -1,12 +1,15 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from './theme.css';
+import { color } from './theme';
 
 export const BlogsPageStyle = {
   card: style({
     padding: '40px',
     display: 'flex',
     alignItems: 'center',
-    borderBottom: `solid 1px ${vars.color.pink[200]}`,
+    borderBottom: `solid 1px ${color.pink[200]}`,
+  }),
+  cardLink: style({
+    textDecoration: 'none',
   }),
   cardImage: style({
     lineHeight: '1.7px',
@@ -19,6 +22,7 @@ export const BlogsPageStyle = {
     flexDirection: 'column',
   }),
   cardTitle: style({
+    color: color.gray[900],
     fontSize: '20px',
   }),
   cardTags: style({
@@ -29,16 +33,17 @@ export const BlogsPageStyle = {
   cardTag: style({
     marginRight: '8px',
     padding: '4px 6px',
-    color: vars.color.white,
-    backgroundColor: vars.color.pink[300],
+    color: color.white,
+    backgroundColor: color.pink[300],
     borderRadius: '4px',
   }),
   cardDay: style({
+    color: color.gray[900],
     marginRight: '12px',
     padding: '4px',
   }),
   cardDayIcon: style({
-    color: vars.color.pink[300],
+    color: color.pink[300],
   }),
   more: style({
     margin: '20px auto',

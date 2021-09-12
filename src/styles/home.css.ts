@@ -1,19 +1,19 @@
 import { style } from '@vanilla-extract/css';
-import { vars } from './theme.css';
+import { color } from './theme';
 
 export const HomePageStyle = {
   card: style({
-    borderBottom: `solid 1px ${vars.color.pink[200]}`,
+    borderBottom: `solid 1px ${color.pink[200]}`,
   }),
   cardLink: style({
     padding: '20px',
     display: 'flex',
     alignItems: 'center',
     textDecoration: 'none',
-    color: vars.color.gray[900],
+    color: color.gray[900],
     ':hover': {
       opacity: 0.5,
-      backgroundColor: vars.color.pink[50],
+      backgroundColor: color.pink[50],
     },
   }),
   cardImage: style({
@@ -35,7 +35,7 @@ export const HomePageStyle = {
     fontSize: '12px',
   }),
   cardDayIcon: style({
-    color: vars.color.pink[300],
+    color: color.pink[300],
   }),
   more: style({
     margin: '20px auto',
