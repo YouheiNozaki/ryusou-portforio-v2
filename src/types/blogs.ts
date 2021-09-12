@@ -1,3 +1,11 @@
+export type Author = {
+  id: string;
+  name: string;
+  image: {
+    url: string;
+  };
+};
+
 export type Blog = {
   id: string;
   createdAt: string;
@@ -13,6 +21,7 @@ export type Blog = {
     url: string;
   };
   content: string;
+  author: Author[];
 };
 
 export type Blogs = {

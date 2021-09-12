@@ -2,14 +2,16 @@ import { style } from '@vanilla-extract/css';
 import { color } from './theme';
 
 export const BlogsPageStyle = {
-  card: style({
-    padding: '40px',
+  cardLink: style({
+    borderBottom: `solid 1px ${color.pink[200]}`,
+    padding: '20px',
     display: 'flex',
     alignItems: 'center',
-    borderBottom: `solid 1px ${color.pink[200]}`,
-  }),
-  cardLink: style({
     textDecoration: 'none',
+    ':hover': {
+      opacity: 0.5,
+      backgroundColor: color.pink[50],
+    },
   }),
   cardImage: style({
     lineHeight: '1.7px',

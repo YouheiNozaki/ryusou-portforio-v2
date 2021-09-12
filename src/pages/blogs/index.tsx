@@ -38,24 +38,26 @@ export default function Home(): JSX.Element {
       <section>
         {blogs.map((content) => (
           <Fragment key={content.id}>
-            <Link href={`/blogs/${content.id}`} passHref>
-              <a
-                href={`/blogs/${content.id}`}
-                className={BlogsPageStyle.cardLink}
-              >
-                <article className={BlogsPageStyle.card}>
+            <article>
+              <Link href={`/blogs/${content.id}`} passHref>
+                <a
+                  href={`/blogs/${content.id}`}
+                  className={BlogsPageStyle.cardLink}
+                >
                   <div className={BlogsPageStyle.cardImage}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    {/* <img
-                      src={`${content.image.url}?/~text?txtsize=24&w=504&h=960&txt-align=center,middle&txtfont=Hiragino%20Sans%20W6&txt=${content.title}`}
-                      alt={content.title}
-                    /> */}
-                    <OgImage
-                      baseImageUrl={content.image.url}
-                      title={content?.title}
-                      width={600}
-                      height={315}
-                    />
+                    {content.author.map((author) => {
+                      return (
+                        <Fragment key={author.id}>
+                          <OgImage
+                            baseImageUrl={content.image.url}
+                            title={content?.title}
+                            width={600}
+                            height={315}
+                            author={author}
+                          />
+                        </Fragment>
+                      );
+                    })}
                   </div>
                   <div className={BlogsPageStyle.cardDescription}>
                     <h3 className={BlogsPageStyle.cardTitle}>
@@ -79,9 +81,9 @@ export default function Home(): JSX.Element {
                       </p>
                     </div>
                   </div>
-                </article>
-              </a>
-            </Link>
+                </a>
+              </Link>
+            </article>
           </Fragment>
         ))}
       </section>

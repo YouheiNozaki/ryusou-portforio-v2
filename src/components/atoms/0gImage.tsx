@@ -1,8 +1,9 @@
 import base64url from 'base64url';
 
 type Author = {
+  id: string;
   name: string;
-  img: {
+  image: {
     url: string;
   };
 };
@@ -28,7 +29,7 @@ export const OgImage: React.VFC<Props> = ({
     title,
   )}`;
   const mark = `https://assets.imgix.net/~text?txtsize=16&txt-align=center,middle&txtfont=Hiragino%20Sans%20W6&txt64=${base64url(
-    author ? author.name : 'ryusou',
+    author.name,
   )}`;
 
   return (
