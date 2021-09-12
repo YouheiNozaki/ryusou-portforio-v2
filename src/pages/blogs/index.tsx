@@ -7,6 +7,7 @@ import dayjs from 'dayjs';
 import ReactLoading from 'react-loading';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 import { Layout } from 'components/common/Layout';
+import { OgImage } from 'components/atoms/0gImage';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';
 import { BlogsPageStyle } from '../../styles/blogs.css';
@@ -45,9 +46,15 @@ export default function Home(): JSX.Element {
                 <article className={BlogsPageStyle.card}>
                   <div className={BlogsPageStyle.cardImage}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={`${content.image.url}?h=124&w=328`}
+                    {/* <img
+                      src={`${content.image.url}?/~text?txtsize=24&w=504&h=960&txt-align=center,middle&txtfont=Hiragino%20Sans%20W6&txt=${content.title}`}
                       alt={content.title}
+                    /> */}
+                    <OgImage
+                      baseImageUrl={content.image.url}
+                      title={content?.title}
+                      width={600}
+                      height={315}
                     />
                   </div>
                   <div className={BlogsPageStyle.cardDescription}>
@@ -60,7 +67,8 @@ export default function Home(): JSX.Element {
                           <p className={BlogsPageStyle.cardTag}>{tag.slug}</p>
                         </Fragment>
                       ))}
-
+                    </div>
+                    <div className={BlogsPageStyle.cardDays}>
                       <BiCalendarAlt className={BlogsPageStyle.cardDayIcon} />
                       <p className={BlogsPageStyle.cardDay}>
                         {dayjs(content.createdAt).format('YYYY/MM/DD')}

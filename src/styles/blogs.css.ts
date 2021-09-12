@@ -37,6 +37,11 @@ export const BlogsPageStyle = {
     backgroundColor: color.pink[300],
     borderRadius: '4px',
   }),
+  cardDays: style({
+    display: 'flex',
+    alignItems: 'center',
+    fontSize: '16px',
+  }),
   cardDay: style({
     color: color.gray[900],
     marginRight: '12px',
