@@ -18,7 +18,7 @@ export const Header = () => {
           />
         </a>
       </Link>
-      <h1 className={headerStyle.title}>I am Ryusou</h1>
+      <h1 className={headerStyle.title}>Ryusou.dev</h1>
       <Link href="/blogs">
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a href="/blogs" className={headerStyle.link}>

@@ -3,7 +3,7 @@ import { color } from './theme';
 
 export const HomePageStyle = {
   card: style({
-    borderBottom: `solid 1px ${color.pink[200]}`,
+    borderBottom: `solid 1px ${color.cyan[200]}`,
   }),
   cardLink: style({
     padding: '20px',
@@ -13,7 +13,7 @@ export const HomePageStyle = {
     color: color.gray[900],
     ':hover': {
       opacity: 0.5,
-      backgroundColor: color.pink[50],
+      backgroundColor: color.cyan[50],
     },
   }),
   cardImage: style({
@@ -35,7 +35,7 @@ export const HomePageStyle = {
     fontSize: '12px',
   }),
   cardDayIcon: style({
-    color: color.pink[300],
+    color: color.cyan[300],
   }),
   more: style({
     margin: '20px auto',

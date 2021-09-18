@@ -7,7 +7,7 @@ import dayjs from 'dayjs';
 import ReactLoading from 'react-loading';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 import { Layout } from 'components/common/Layout';
-import { OgImage } from 'components/atoms/0gImage';
+import { CustomImage } from 'components/atoms/CustomImage';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';
 import { BlogsPageStyle } from '../../styles/blogs.css';
@@ -48,7 +48,7 @@ export default function Home(): JSX.Element {
                     {content.author.map((author) => {
                       return (
                         <Fragment key={author.id}>
-                          <OgImage
+                          <CustomImage
                             baseImageUrl={content.image.url}
                             title={content?.title}
                             width={600}
@@ -89,7 +89,7 @@ export default function Home(): JSX.Element {
       </section>
       {hasNextPage && (
         <div ref={ref} className={BlogsPageStyle.more}>
-          <ReactLoading type="spin" width={40} height={40} color="#e91e63" />
+          <ReactLoading type="spin" width={40} height={40} color="#009688" />
         </div>
       )}
     </Layout>

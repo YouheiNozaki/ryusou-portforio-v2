@@ -1,8 +1,14 @@
+import { Fragment } from 'react';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/dist/client/router';
+import dayjs from 'dayjs';
+import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
+
 import { Layout } from 'components/common/Layout';
+import { CustomImage } from 'components/atoms/CustomImage';
 import { Blog } from 'types/blogs';
 import { fetchBlogs, fetchBlog } from '../../lib/fetchBlogs';
+import { BlogPageStyle } from '../../styles/blog.css';
 
 type Props = {
   blog: Blog;
@@ -40,14 +46,42 @@ const BlogDetail: React.FC<Props> = ({ blog }) => {
   if (router.isFallback) {
     return <div>Loading</div>;
   }
+  console.log(blog);
 
   return (
     <Layout>
-      <h1>{blog.title}</h1>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={blog.image.url} alt="" />
-      <div>{blog.createdAt}</div>
-      <div>{blog.updatedAt}</div>
+      <h1 className={BlogPageStyle.blogTitle}>{blog.title}</h1>
+      {blog.author.map((author) => (
+        <div className={BlogPageStyle.blogImageWrapper}>
+          <CustomImage
+            baseImageUrl={blog.image.url}
+            title={blog.title}
+            author={author}
+            width={600}
+            height={315}
+            className={BlogPageStyle.blogImage}
+          />
+        </div>
+      ))}
+      <div className={BlogPageStyle.blogDescription}>
+        <div className={BlogPageStyle.blogTags}>
+          {blog.tags.map((tag) => (
+            <Fragment key={tag.slug}>
+              <p className={BlogPageStyle.blogTag}>{tag.slug}</p>
+            </Fragment>
+          ))}
+        </div>
+        <div className={BlogPageStyle.blogDays}>
+          <BiCalendarAlt className={BlogPageStyle.blogDayIcon} />
+          <p className={BlogPageStyle.blogDay}>
+            {dayjs(blog.createdAt).format('YYYY/MM/DD')}
+          </p>
+          <BiCalendarCheck className={BlogPageStyle.blogDayIcon} />
+          <p className={BlogPageStyle.blogDay}>
+            {dayjs(blog.updatedAt).format('YYYY/MM/DD')}
+          </p>
+        </div>
+      </div>
     </Layout>
   );
 };
