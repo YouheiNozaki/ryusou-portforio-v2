@@ -3,8 +3,8 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
-
 import { Layout } from 'components/common/Layout';
+import { parseHtml } from 'lib/parseHtml';
 import { CustomImage } from 'components/atoms/CustomImage';
 import { Blog } from 'types/blogs';
 import { fetchBlogs, fetchBlog } from '../../lib/fetchBlogs';
@@ -46,7 +46,6 @@ const BlogDetail: React.FC<Props> = ({ blog }) => {
   if (router.isFallback) {
     return <div>Loading</div>;
   }
-  console.log(blog);
 
   return (
     <Layout>
@@ -82,6 +81,7 @@ const BlogDetail: React.FC<Props> = ({ blog }) => {
           </p>
         </div>
       </div>
+      <div>{parseHtml(blog.content)}</div>
     </Layout>
   );
 };
