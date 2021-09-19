@@ -43,6 +43,10 @@ export const getStaticProps: GetStaticProps = async (
     $(element).html(result.value);
     $(element).addClass('hljs');
   });
+  $('img').each((_, element) => {
+    $(element).html();
+    $(element).addClass(`${BlogPageStyle.blogContentImg}`);
+  });
 
   return {
     props: {

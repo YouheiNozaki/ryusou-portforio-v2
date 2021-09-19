@@ -8,6 +8,7 @@ export const LayoutStyle = {
   }),
   wrapper: style({
     margin: '40px auto',
+    paddingTop: '90px',
     width: '70%',
     '@media': {
       'screen and (max-width: 1024px)': {

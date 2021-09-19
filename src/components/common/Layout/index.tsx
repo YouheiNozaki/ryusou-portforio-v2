@@ -7,11 +7,11 @@ type Props = {
 
 export const Layout: React.VFC<Props> = ({ children }) => {
   return (
-    <div>
+    <>
       <Header />
       <div className={LayoutStyle.container}>
         <main className={LayoutStyle.wrapper}>{children}</main>
       </div>
-    </div>
+    </>
   );
 };

@@ -3,9 +3,15 @@ import { color } from 'styles/theme';
 
 export const headerStyle = {
   wrapper: style({
-    margin: '16px',
+    padding: '16px',
     display: 'flex',
     alignItems: 'center',
+    position: 'fixed',
+    boxSizing: 'border-box',
+    top: '0',
+    left: '0',
+    backgroundColor: '#fff',
+    width: '100%',
   }),
   image: style({
     padding: '4px',

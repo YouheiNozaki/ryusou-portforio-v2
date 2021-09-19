@@ -43,6 +43,9 @@ export const BlogPageStyle = {
   blogDayIcon: style({
     color: color.cyan[300],
   }),
+  blogContentImg: style({
+    width: '100%',
+  }),
   more: style({
     margin: '20px auto',
     width: '10%',
