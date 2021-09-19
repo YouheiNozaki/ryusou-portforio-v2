@@ -3,6 +3,9 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
+import * as cheerio from 'cheerio';
+import hljs from 'highlight.js';
+import 'highlight.js/styles/night-owl.css';
 import { Layout } from 'components/common/Layout';
 import { parseHtml } from 'lib/parseHtml';
 import { CustomImage } from 'components/atoms/CustomImage';
@@ -12,6 +15,7 @@ import { BlogPageStyle } from '../../styles/blog.css';
 
 type Props = {
   blog: Blog;
+  content: string;
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -32,15 +36,23 @@ export const getStaticProps: GetStaticProps = async (
 ) => {
   const { id } = context.params;
   const blog = await fetchBlog(id);
+  const { content } = blog;
+  const $ = cheerio.load(content);
+  $('pre code').each((_, element) => {
+    const result = hljs.highlightAuto($(element).text());
+    $(element).html(result.value);
+    $(element).addClass('hljs');
+  });
 
   return {
     props: {
       blog,
+      content: $.html(),
     },
   };
 };
 
-const BlogDetail: React.FC<Props> = ({ blog }) => {
+const BlogDetail: React.FC<Props> = ({ blog, content }) => {
   const router = useRouter();
 
   if (router.isFallback) {
@@ -81,7 +93,8 @@ const BlogDetail: React.FC<Props> = ({ blog }) => {
           </p>
         </div>
       </div>
-      <div>{parseHtml(blog.content)}</div>
+      {/* eslint-disable-next-line react/no-danger */}
+      <div>{parseHtml(content)}</div>
     </Layout>
   );
 };
