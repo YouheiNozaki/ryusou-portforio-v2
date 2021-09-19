@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next-remote-watch ./**/*.css.ts",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "npm run lint:es && npm run lint:style",
     "lint:fix": "npm run lint:es:fix",
