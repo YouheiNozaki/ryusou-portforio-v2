@@ -44,7 +44,6 @@
     "react-query": "^3.19.0",
     "rehype-parse": "^7.0.1",
     "rehype-react": "^6.2.0",
-    "rehype-shiki": "^0.0.9",
     "shiki": "^0.9.11",
     "unified": "^9.2.1"
   },
