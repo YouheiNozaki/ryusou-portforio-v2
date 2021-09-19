@@ -5,6 +5,7 @@ export const LayoutStyle = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingBottom: '80px',
   }),
   wrapper: style({
     margin: '40px auto',
