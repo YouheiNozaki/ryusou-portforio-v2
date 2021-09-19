@@ -93,7 +93,6 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
           </p>
         </div>
       </div>
-      {/* eslint-disable-next-line react/no-danger */}
       <div>{parseHtml(content)}</div>
     </Layout>
   );
