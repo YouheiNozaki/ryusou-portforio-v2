@@ -1,5 +1,6 @@
 import { LayoutStyle } from './layout.css';
 import { Header } from '../Header';
+import { Footer } from '../Footer';
 
 type Props = {
   children: React.ReactNode;
@@ -12,6 +13,7 @@ export const Layout: React.VFC<Props> = ({ children }) => {
       <div className={LayoutStyle.container}>
         <main className={LayoutStyle.wrapper}>{children}</main>
       </div>
+      <Footer />
     </>
   );
 };
