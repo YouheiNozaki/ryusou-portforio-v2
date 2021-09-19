@@ -27,7 +27,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         id: blog.id,
       },
     })),
-    fallback: true,
+    fallback: 'blocking',
   };
 };
 
@@ -53,6 +53,7 @@ export const getStaticProps: GetStaticProps = async (
       blog,
       content: $.html(),
     },
+    revalidate: 10,
   };
 };
 
