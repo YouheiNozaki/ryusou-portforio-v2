@@ -12,6 +12,11 @@ export const BlogsPageStyle = {
       opacity: 0.5,
       backgroundColor: color.cyan[50],
     },
+    '@media': {
+      'screen and (max-width: 720px)': {
+        flexDirection: 'column',
+      },
+    },
   }),
   cardImage: style({
     lineHeight: '1.7px',
