@@ -70,7 +70,6 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
             author={author}
             width={600}
             height={315}
-            className={BlogPageStyle.blogImage}
           />
         </div>
       ))}

@@ -6,9 +6,13 @@ export const BlogPageStyle = {
     padding: '8px',
     width: '100%',
   }),
-  blogImage: style({}),
   blogDescription: style({
     display: 'flex',
+    '@media': {
+      'screen and (max-width: 720px)': {
+        flexDirection: 'column',
+      },
+    },
   }),
   blogTitle: style({
     color: color.gray[900],

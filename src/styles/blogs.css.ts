@@ -14,6 +14,7 @@ export const BlogsPageStyle = {
     },
     '@media': {
       'screen and (max-width: 720px)': {
+        paddingTop: '8px',
         flexDirection: 'column',
       },
     },
@@ -21,12 +22,24 @@ export const BlogsPageStyle = {
   cardImage: style({
     lineHeight: '1.7px',
     padding: '8px',
+    '@media': {
+      'screen and (max-width: 720px)': {
+        padding: '4px',
+      },
+    },
   }),
   cardDescription: style({
     margin: '16px',
     paddingLeft: '16px',
     display: 'flex',
     flexDirection: 'column',
+    '@media': {
+      'screen and (max-width: 720px)': {
+        width: '100%',
+        margin: '4px',
+        paddingLeft: '0px',
+      },
+    },
   }),
   cardTitle: style({
     color: color.gray[900],
