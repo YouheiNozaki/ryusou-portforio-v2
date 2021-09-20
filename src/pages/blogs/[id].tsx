@@ -12,6 +12,7 @@ import { CustomImage } from 'components/atoms/CustomImage';
 import { Blog } from 'types/blogs';
 import { HeadTemplate } from '../../components/common/Head';
 import { fetchBlogs, fetchBlog } from '../../lib/fetchBlogs';
+import { createOgImage } from '../../lib/createOgImage';
 import { BlogPageStyle } from '../../styles/blog.css';
 
 type Props = {
@@ -60,6 +61,11 @@ export const getStaticProps: GetStaticProps = async (
 
 const BlogDetail: React.FC<Props> = ({ blog, content }) => {
   const router = useRouter();
+  const { ogImageUrl } = createOgImage(
+    blog.image.url,
+    blog.author.find((author) => author),
+    blog.title,
+  );
 
   if (router.isFallback) {
     return <div>Loading</div>;
@@ -71,7 +77,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         pagetitle={blog.title}
         pagedescription={blog.title}
         pagepath="blogs"
-        postimg={blog.image.url}
+        postimg={ogImageUrl}
       />
       <h1 className={BlogPageStyle.blogTitle}>{blog.title}</h1>
       {blog.author.map((author) => (
