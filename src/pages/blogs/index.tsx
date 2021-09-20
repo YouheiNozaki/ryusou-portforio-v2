@@ -8,6 +8,7 @@ import ReactLoading from 'react-loading';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 import { Layout } from 'components/common/Layout';
 import { CustomImage } from 'components/atoms/CustomImage';
+import { HeadTemplate } from '../../components/common/Head';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';
 import { BlogsPageStyle } from '../../styles/blogs.css';
@@ -35,6 +36,12 @@ export default function Home(): JSX.Element {
 
   return (
     <Layout>
+      <HeadTemplate
+        pagetitle="BLOG"
+        pagedescription="りゅーそうBLOG一覧"
+        pagepath="blogs"
+        keyword="BLOG"
+      />
       <section>
         {blogs.map((content) => (
           <Fragment key={content.id}>
