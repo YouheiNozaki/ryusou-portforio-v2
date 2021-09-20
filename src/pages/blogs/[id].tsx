@@ -70,7 +70,6 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
   if (router.isFallback) {
     return <div>Loading</div>;
   }
-  console.log(ogImageUrl);
 
   return (
     <Layout>
@@ -78,7 +77,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         pagetitle={blog.title}
         pagedescription={blog.title}
         pagepath="blogs"
-        postimg="https://images.microcms-assets.io/assets/c05ef7c10791409a9c2250efa775836c/4f872be84d38481081da67a1907c8fed/ogpbase.png?w=1200&h=1200&txt64=44KK44KF44O844Gd44GG&txt-pad=90&txt-color=00695C&txt-size=24&txt-align=left,top&mark64=aHR0cHM6Ly9pbWFnZXMubWljcm9jbXMtYXNzZXRzLmlvL2Fzc2V0cy9jMDVlZjdjMTA3OTE0MDlhOWMyMjUwZWZhNzc1ODM2Yy80Yzc2Nzk5YmUyMjc0NTAzODhjZjZiYjE2NzNkN2Q0Zi9jYXQuanBnP3c9NDAmaD00MA&mark-x=40&mark-y=80&blend64=aHR0cHM6Ly9hc3NldHMuaW1naXgubmV0L350ZXh0P3R4dHNpemU9NDgmdHh0LWNvbG9yPTAwOTY4OCZ3PTExMjAmdHh0LWFsaWduPW1pZGRsZSZ0eHRmb250PUhpcmFnaW5vJTIwU2FucyUyMFc2JnR4dC10cmFjaz0yJnR4dDY0PVNtRnRjM1JoWTJ2amdhZmpnYW5qZ3BQamdhcm5sSl9sdnBMamdhZmpnb0xqZ3FMamdxX2pncnZqZ3JuamdhZmpnWTNqZ292amdyWGpncVRqZzRqamdwTGt2WnpqZ29yamdaX2pnWVE&blend-mode=normal&blend-align=top,left&blend-x=80&blend-y=180"
+        postimg={ogImageUrl}
       />
       <h1 className={BlogPageStyle.blogTitle}>{blog.title}</h1>
       {blog.author.map((author) => (
@@ -111,7 +110,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
           </p>
         </div>
       </div>
-      <div>{parseHtml(content)}</div>
+      <div>{content && parseHtml(content)}</div>
     </Layout>
   );
 };
