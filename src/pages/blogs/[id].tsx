@@ -10,6 +10,7 @@ import { Layout } from 'components/common/Layout';
 import { parseHtml } from 'lib/parseHtml';
 import { CustomImage } from 'components/atoms/CustomImage';
 import { Blog } from 'types/blogs';
+import { HeadTemplate } from '../../components/common/Head';
 import { fetchBlogs, fetchBlog } from '../../lib/fetchBlogs';
 import { BlogPageStyle } from '../../styles/blog.css';
 
@@ -66,6 +67,12 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
 
   return (
     <Layout>
+      <HeadTemplate
+        pagetitle={blog.title}
+        pagedescription={blog.title}
+        pagepath="blogs"
+        postimg={blog.image.url}
+      />
       <h1 className={BlogPageStyle.blogTitle}>{blog.title}</h1>
       {blog.author.map((author) => (
         <div className={BlogPageStyle.blogImageWrapper}>
