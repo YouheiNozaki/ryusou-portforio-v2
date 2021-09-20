@@ -77,7 +77,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         pagetitle={blog.title}
         pagedescription={blog.title}
         pagepath="blogs"
-        postimg={ogImageUrl}
+        postimg={`${ogImageUrl}`}
       />
       <h1 className={BlogPageStyle.blogTitle}>{blog.title}</h1>
       {blog.author.map((author) => (
