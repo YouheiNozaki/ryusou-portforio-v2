@@ -22,7 +22,7 @@ export const useGetBlogs = () => {
     ['blogs'],
     ({ pageParam = 0 }) => fetchBlogs(pageParam),
     {
-      staleTime: Infinity,
+      staleTime: 0,
       getNextPageParam: (lastPage) => {
         const { contents, totalCount } = lastPage;
 
