@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async (
 
 const BlogDetail: React.FC<Props> = ({ blog, content }) => {
   const router = useRouter();
-  const ogImageUrl = createOgImage(
+  const { ogImageUrl } = createOgImage(
     blog?.image?.url,
     blog?.author?.find((author) => author),
     blog.title,
@@ -77,7 +77,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         pagetitle={blog.title}
         pagedescription={blog.title}
         pagepath="blogs"
-        postimg={`${ogImageUrl}`}
+        postimg={ogImageUrl}
       />
       <h1 className={BlogPageStyle.blogTitle}>{blog.title}</h1>
       {blog.author.map((author) => (
