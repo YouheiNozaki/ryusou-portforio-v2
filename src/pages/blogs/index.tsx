@@ -52,7 +52,7 @@ export default function Home(): JSX.Element {
                   className={BlogsPageStyle.cardLink}
                 >
                   <div className={BlogsPageStyle.cardImage}>
-                    {content.author.map((author) => {
+                    {content?.author?.map((author) => {
                       return (
                         <Fragment key={author.id}>
                           <CustomImage
