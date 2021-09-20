@@ -78,15 +78,15 @@ export const CustomImage: React.VFC<Props> = ({
       />
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={`${baseImageUrl}?w=${width * 0.6}&h=${
-          height * 0.6
+        src={`${baseImageUrl}?w=${width * 0.55}&h=${
+          height * 0.55
         }}&txt64=${base64url(
           author.name,
         )}&txt-pad=40&txt-color=00695C&txt-size=12&txt-align=left,top&mark64=${base64url(
           `${author.image.url}?w=24&h=24`,
         )}&mark-x=${16}&mark-y=${32}&blend64=${base64url(
-          `https://assets.imgix.net/~text?txtsize=16&txt-color=009688&w=${
-            width - 240
+          `https://assets.imgix.net/~text?txtsize=12&txt-color=009688&w=${
+            width - 280
           }&txt-align=middle&txtfont=Hiragino%20Sans%20W6&txt-track=2&txt64=${base64url(
             title,
           )}`,

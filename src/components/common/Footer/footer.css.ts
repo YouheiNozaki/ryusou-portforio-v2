@@ -13,6 +13,7 @@ export const footerStyle = {
     margin: '0 auto',
   }),
   icon: style({
+    color: `${color.cyan[600]}`,
     marginRight: '4px',
     padding: '12px',
     ':hover': {

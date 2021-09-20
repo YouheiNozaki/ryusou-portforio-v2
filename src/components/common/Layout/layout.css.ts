@@ -18,7 +18,7 @@ export const LayoutStyle = {
       },
       'screen and (max-width: 720px)': {
         margin: '0 auto',
-        width: '90%',
+        width: '100%',
       },
     },
   }),

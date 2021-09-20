@@ -10,7 +10,6 @@ export const Header = () => {
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
         <a href="/" className={headerStyle.image}>
           <Image
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
             src={cat}
             width={48}
             height={48}
