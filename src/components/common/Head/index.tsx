@@ -31,7 +31,7 @@ export const HeadTemplate: React.FC<HeadType> = ({
     : `${process.env.NEXT_PUBLIC_URL}`;
   const imgurl = pageimg
     ? `${process.env.NEXT_PUBLIC_URL}${pageimg}`
-    : postimg || `${process.env.NEXT_PUBLIC_URL}/banner.png`;
+    : postimg || `${process.env.NEXT_PUBLIC_URL}/img/banner.png`;
   const imgw = pageimgw || '1200px';
   const imgh = pageimgh || '630px';
   const fbAppId = `${process.env.FB_APP_ID}`;
