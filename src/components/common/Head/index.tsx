@@ -46,7 +46,7 @@ export const HeadTemplate: React.FC<HeadType> = ({
       <meta property="og:site_name" content={title} />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta name="keywords" content={keyword} />
+      <meta name="keywords" content={keyword || title} />
       <meta property="og:url" content={url} />
       <meta property="og:type" content="website" />
       <meta property="og:locale" content="ja_JP" />

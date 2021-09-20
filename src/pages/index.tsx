@@ -9,6 +9,7 @@ import { useGetArticles } from '../hooks/useGetArticles';
 import { fetchArticles } from '../lib/fetchArticles';
 
 import { Layout } from '../components/common/Layout';
+import { HeadTemplate } from '../components/common/Head';
 import { HomePageStyle } from '../styles/home.css';
 
 export default function Home(): JSX.Element {
@@ -34,6 +35,7 @@ export default function Home(): JSX.Element {
 
   return (
     <Layout>
+      <HeadTemplate />
       <section>
         {articles.map((content) => (
           <Fragment key={content.id}>
