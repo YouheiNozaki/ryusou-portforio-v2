@@ -61,9 +61,9 @@ export const getStaticProps: GetStaticProps = async (
 
 const BlogDetail: React.FC<Props> = ({ blog, content }) => {
   const router = useRouter();
-  const { ogImageUrl } = createOgImage(
-    blog.image.url,
-    blog.author.find((author) => author),
+  const ogImageUrl = createOgImage(
+    blog?.image?.url,
+    blog?.author?.find((author) => author),
     blog.title,
   );
 

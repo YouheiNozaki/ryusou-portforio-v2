@@ -25,6 +25,10 @@ export const CustomImage: React.VFC<Props> = ({
   height = 630,
   className,
 }) => {
+  console.log(baseImageUrl);
+  console.log(author);
+  console.log(title);
+
   return (
     <picture className={className}>
       <source

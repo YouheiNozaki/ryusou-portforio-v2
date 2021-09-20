@@ -13,7 +13,10 @@ export const createOgImage = (
   author: Author,
   title: string,
 ) => {
-  const ogImageUrl = `${baseImageUrl}?w=${1200}&h=${1200}}&txt64=${base64url(
+  // console.log(baseImageUrl);
+  // console.log(author);
+  // console.log(title);
+  return `${baseImageUrl}?w=${1200}&h=${1200}}&txt64=${base64url(
     author.name,
   )}&txt-pad=90&txt-color=00695C&txt-size=24&txt-align=left,top&mark64=${base64url(
     `${author.image.url}?w=40&h=40`,
@@ -22,6 +25,4 @@ export const createOgImage = (
       title,
     )}`,
   )}&blend-mode=normal&blend-align=top,left&blend-x=80&blend-y=180`;
-
-  return { ogImageUrl };
 };
