@@ -22,7 +22,7 @@ export const useGetArticles = () => {
     ['articles'],
     ({ pageParam = 0 }) => fetchArticles(pageParam),
     {
-      staleTime: 0,
+      staleTime: Infinity,
       getNextPageParam: (lastPage) => {
         const { contents, totalCount } = lastPage;
 

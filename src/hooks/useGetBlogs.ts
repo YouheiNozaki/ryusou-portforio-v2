@@ -5,6 +5,7 @@ import type { Blogs } from '../types/blogs';
 
 export const useGetBlogs = () => {
   const [blogCount, setBlogCount] = useState<number>(0);
+
   const fetchBlogs = async (pageParam: number) => {
     setBlogCount((prevBlogCount) => prevBlogCount + pageParam);
 
@@ -22,7 +23,7 @@ export const useGetBlogs = () => {
     ['blogs'],
     ({ pageParam = 0 }) => fetchBlogs(pageParam),
     {
-      staleTime: 0,
+      staleTime: Infinity,
       getNextPageParam: (lastPage) => {
         const { contents, totalCount } = lastPage;
 
