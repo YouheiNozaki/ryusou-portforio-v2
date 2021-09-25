@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import { useInfiniteQuery } from 'react-query';
 import { clientBlogs } from '../lib/fetchBlogs';
+import { useGetBlogCount } from './useGetBlogCount';
 import type { Blogs } from '../types/blogs';
 
 export const useGetBlogs = () => {
-  const [blogCount, setBlogCount] = useState<number>(0);
+  const { blogCount, setBlogCount } = useGetBlogCount();
 
   const fetchBlogs = async (pageParam: number) => {
     setBlogCount((prevBlogCount) => prevBlogCount + pageParam);

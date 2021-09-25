@@ -1,10 +1,10 @@
-import { useState } from 'react';
 import { useInfiniteQuery } from 'react-query';
 import { clientArticle } from '../lib/fetchArticles';
+import { useGetArticleCount } from './useGetArticleCount';
 import type { Articles } from '../types/article';
 
 export const useGetArticles = () => {
-  const [articleCount, setArticleCount] = useState<number>(0);
+  const { articleCount, setArticleCount } = useGetArticleCount();
   const fetchArticles = async (pageParam: number) => {
     setArticleCount((prevArticleCount) => prevArticleCount + pageParam);
 
