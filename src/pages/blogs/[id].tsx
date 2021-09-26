@@ -49,6 +49,10 @@ export const getStaticProps: GetStaticProps = async (
     $(element).html();
     $(element).addClass(`${BlogPageStyle.blogContentImg}`);
   });
+  $('a').each((_, element) => {
+    $(element).html();
+    $(element).addClass(`${BlogPageStyle.blogContentLink}`);
+  });
 
   return {
     props: {

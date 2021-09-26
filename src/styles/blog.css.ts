@@ -51,6 +51,9 @@ export const BlogPageStyle = {
   blogContentImg: style({
     width: '100%',
   }),
+  blogContentLink: style({
+    wordWrap: 'break-word',
+  }),
   more: style({
     margin: '20px auto',
     width: '10%',
