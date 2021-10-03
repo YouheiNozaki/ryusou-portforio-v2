@@ -46,6 +46,7 @@ module.exports = {
       },
     ],
     'no-void': 'off',
+    'no-nested-ternary': 'off',
     'padding-line-between-statements': [
       'error',
       {

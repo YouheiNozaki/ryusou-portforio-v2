@@ -115,7 +115,21 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         </div>
       </div>
       <div>{content && parseHtml(content)}</div>
-      <div>{parseHtml(blog.amazon)}</div>
+      <div>
+        {blog.repeater.map((repeater) =>
+          repeater.fieldId === 'content' ? (
+            <div>{parseHtml(repeater.content)}</div>
+          ) : repeater.fieldId === 'amazonlink' ? (
+            <>
+              <a href={repeater.url}>
+                <p>{repeater.name}</p>
+                <p>Amazonで購入する</p>
+                <div>{parseHtml(repeater.image)}</div>
+              </a>
+            </>
+          ) : null,
+        )}
+      </div>
     </Layout>
   );
 };

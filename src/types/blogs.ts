@@ -6,6 +6,21 @@ export type Author = {
   };
 };
 
+export type AmazonLink = {
+  name: string;
+  image: string;
+  url: string;
+};
+
+export type ContentRepeater = {
+  fieldId: 'content' | 'amazonlink';
+  content: string;
+  // アマゾンリンク
+  name: string;
+  image: string;
+  url: string;
+};
+
 export type Blog = {
   id: string;
   createdAt: string;
@@ -21,7 +36,7 @@ export type Blog = {
     url: string;
   };
   content: string;
-  amazon: string;
+  repeater: ContentRepeater[];
   author: Author[];
 };
 
