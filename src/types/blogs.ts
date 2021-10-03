@@ -21,6 +21,7 @@ export type Blog = {
     url: string;
   };
   content: string;
+  amazon: string;
   author: Author[];
 };
 

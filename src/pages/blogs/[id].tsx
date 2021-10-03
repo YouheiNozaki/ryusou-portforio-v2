@@ -115,6 +115,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         </div>
       </div>
       <div>{content && parseHtml(content)}</div>
+      <div>{parseHtml(blog.amazon)}</div>
     </Layout>
   );
 };
