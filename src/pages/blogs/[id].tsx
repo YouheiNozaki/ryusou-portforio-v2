@@ -116,7 +116,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
       </div>
       <div>{content && parseHtml(content)}</div>
       <div>
-        {blog.repeater.map((repeater) =>
+        {blog?.repeater?.map((repeater) =>
           repeater.fieldId === 'content' ? (
             <div>{parseHtml(repeater.content)}</div>
           ) : repeater.fieldId === 'amazonlink' ? (
