@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Fragment, useEffect, useMemo } from 'react';
 import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
@@ -40,28 +41,30 @@ export default function Home(): JSX.Element {
         {articles.map((content) => (
           <Fragment key={content.id}>
             <article className={HomePageStyle.card}>
-              <a href={content.url} className={HomePageStyle.cardLink}>
-                {content.category.map((category) => (
-                  <Fragment key={category.id}>
-                    <div className={HomePageStyle.cardImage}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={`${category.caregoryImage.url}?h=40&w=40`}
-                        alt={category.id}
-                      />
+              <Link href={content.url} passHref>
+                <a href={content.url} className={HomePageStyle.cardLink}>
+                  {content.category.map((category) => (
+                    <Fragment key={category.id}>
+                      <div className={HomePageStyle.cardImage}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={`${category.caregoryImage.url}?h=40&w=40`}
+                          alt={category.id}
+                        />
+                      </div>
+                    </Fragment>
+                  ))}
+                  <div className={HomePageStyle.cardDescription}>
+                    <h3 className={HomePageStyle.cardTitle}>{content.title}</h3>
+                    <div className={HomePageStyle.cardInfo}>
+                      <BiCalendarAlt className={HomePageStyle.cardDayIcon} />
+                      <p className={HomePageStyle.cardAt}>
+                        {dayjs(content.publishArticleAt).format('YYYY/MM/DD')}
+                      </p>
                     </div>
-                  </Fragment>
-                ))}
-                <div className={HomePageStyle.cardDescription}>
-                  <h3 className={HomePageStyle.cardTitle}>{content.title}</h3>
-                  <div className={HomePageStyle.cardInfo}>
-                    <BiCalendarAlt className={HomePageStyle.cardDayIcon} />
-                    <p className={HomePageStyle.cardAt}>
-                      {dayjs(content.publishArticleAt).format('YYYY/MM/DD')}
-                    </p>
                   </div>
-                </div>
-              </a>
+                </a>
+              </Link>
             </article>
           </Fragment>
         ))}

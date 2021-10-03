@@ -22,7 +22,4 @@ export const LayoutStyle = {
       },
     },
   }),
-  aside: style({
-    width: '30%',
-  }),
 };

@@ -12,6 +12,7 @@ export const headerStyle = {
     left: '0',
     backgroundColor: '#fff',
     width: '100%',
+    zIndex: 10,
   }),
   image: style({
     padding: '4px',
