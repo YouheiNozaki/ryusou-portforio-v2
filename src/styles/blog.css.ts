@@ -54,6 +54,39 @@ export const BlogPageStyle = {
   blogContentLink: style({
     wordWrap: 'break-word',
   }),
+  amazonLink: style({
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    textDecoration: 'none',
+    margin: '16px',
+    padding: '8px',
+    border: `solid 1px ${color.cyan[400]}`,
+    boxSizing: 'border-box',
+    borderRadius: '4px',
+    ':hover': {
+      boxSizing: 'border-box',
+      backgroundColor: color.cyan[50],
+      opacity: 0.5,
+    },
+  }),
+  amazonLinkDescription: style({
+    padding: '8px',
+    marginRight: '12px',
+  }),
+  amazonLinkText: style({
+    fontSize: '16px',
+    color: color.gray[900],
+    fontWeight: 'bold',
+  }),
+  amazonLinkButton: style({
+    padding: '4px',
+    borderRadius: '4px',
+    color: color.cyan[700],
+  }),
+  amazonLinkImage: style({
+    margin: '0 auto',
+  }),
   more: style({
     margin: '20px auto',
     width: '10%',

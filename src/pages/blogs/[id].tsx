@@ -120,13 +120,21 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
           repeater.fieldId === 'content' ? (
             <div>{parseHtml(repeater.content)}</div>
           ) : repeater.fieldId === 'amazonlink' ? (
-            <>
-              <a href={repeater.url}>
-                <p>{repeater.name}</p>
-                <p>Amazonで購入する</p>
-                <div>{parseHtml(repeater.image)}</div>
-              </a>
-            </>
+            <a
+              target="blank"
+              href={repeater.url}
+              className={BlogPageStyle.amazonLink}
+            >
+              <div className={BlogPageStyle.amazonLinkDescription}>
+                <p className={BlogPageStyle.amazonLinkText}>{repeater.name}</p>
+                <p className={BlogPageStyle.amazonLinkButton}>
+                  Amazonで購入する
+                </p>
+              </div>
+              <div className={BlogPageStyle.amazonLinkImage}>
+                {parseHtml(repeater.image)}
+              </div>
+            </a>
           ) : null,
         )}
       </div>
