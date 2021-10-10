@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import Image from 'next/dist/client/image';
 import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
@@ -132,7 +133,12 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
                 </p>
               </div>
               <div className={BlogPageStyle.amazonLinkImage}>
-                {parseHtml(repeater.image)}
+                <Image
+                  src={repeater.image.url}
+                  width={repeater.image.width / 3}
+                  height={repeater.image.height / 3}
+                  alt={`${repeater.name}の画像`}
+                />
               </div>
             </a>
           ) : null,

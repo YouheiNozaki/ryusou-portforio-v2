@@ -6,18 +6,24 @@ export type Author = {
   };
 };
 
-export type AmazonLink = {
-  name: string;
-  image: string;
-  url: string;
-};
+// export type AmazonLink = {
+//   name: string;
+//   image: {
+//     url: string;
+//   };
+//   url: string;
+// };
 
 export type ContentRepeater = {
   fieldId: 'content' | 'amazonlink';
   content: string;
   // アマゾンリンク
   name: string;
-  image: string;
+  image: {
+    url: string;
+    width: number;
+    height: number;
+  };
   url: string;
 };
 
