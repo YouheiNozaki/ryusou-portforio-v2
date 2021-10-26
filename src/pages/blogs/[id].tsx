@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import Image from 'next/dist/client/image';
 import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
@@ -12,7 +12,7 @@ import { parseHtml } from 'lib/parseHtml';
 import { CustomImage } from 'components/atoms/CustomImage';
 import { Blog } from 'types/blogs';
 import { HeadTemplate } from '../../components/common/Head';
-import { fetchBlogs, fetchBlog } from '../../lib/fetchBlogs';
+import { fetchBlog } from '../../lib/fetchBlogs';
 import { createOgImage } from '../../lib/createOgImage';
 import { BlogPageStyle } from '../../styles/blog.css';
 
@@ -21,21 +21,8 @@ type Props = {
   content: string;
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const blogs = await fetchBlogs();
-
-  return {
-    paths: blogs.contents.map((blog) => ({
-      params: {
-        id: blog.id,
-      },
-    })),
-    fallback: 'blocking',
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (
-  context: GetStaticPropsContext<{ id: string }>,
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext<{ id: string }>,
 ) => {
   const { id } = context.params;
   const blog = await fetchBlog(id);
@@ -60,7 +47,6 @@ export const getStaticProps: GetStaticProps = async (
       blog,
       content: $.html(),
     },
-    revalidate: 10,
   };
 };
 

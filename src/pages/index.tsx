@@ -78,16 +78,16 @@ export default function Home(): JSX.Element {
   );
 }
 
-export async function getStaticProps() {
-  const queryClient = new QueryClient();
-
-  await queryClient.prefetchInfiniteQuery('articles', fetchArticles);
+const queryClient = new QueryClient();
+export async function getServerSideProps() {
+  await queryClient.prefetchInfiniteQuery('articles', fetchArticles, {
+    staleTime: Infinity,
+  });
 
   return {
     props: {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
     },
-    revalidate: 10,
   };
 }
