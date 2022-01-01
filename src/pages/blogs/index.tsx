@@ -7,7 +7,6 @@ import dayjs from 'dayjs';
 import ReactLoading from 'react-loading';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 import { Layout } from 'components/common/Layout';
-import { CustomImage } from 'components/atoms/CustomImage';
 import { HeadTemplate } from '../../components/common/Head';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';
@@ -51,25 +50,8 @@ export default function Home(): JSX.Element {
                   href={`/blogs/${content.id}`}
                   className={BlogsPageStyle.cardLink}
                 >
-                  <div className={BlogsPageStyle.cardImage}>
-                    {content?.author?.map((author) => {
-                      return (
-                        <Fragment key={author.id}>
-                          <CustomImage
-                            baseImageUrl={content.image.url}
-                            title={content?.title}
-                            width={600}
-                            height={315}
-                            author={author}
-                          />
-                        </Fragment>
-                      );
-                    })}
-                  </div>
+                  <h3 className={BlogsPageStyle.cardTitle}>{content.title}</h3>
                   <div className={BlogsPageStyle.cardDescription}>
-                    <h3 className={BlogsPageStyle.cardTitle}>
-                      {content.title}
-                    </h3>
                     <div className={BlogsPageStyle.cardTags}>
                       {content.tags.map((tag) => (
                         <Fragment key={tag.slug}>

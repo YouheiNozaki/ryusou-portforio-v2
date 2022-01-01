@@ -9,7 +9,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/night-owl.css';
 import { Layout } from 'components/common/Layout';
 import { parseHtml } from 'lib/parseHtml';
-import { CustomImage } from 'components/atoms/CustomImage';
+// import { CustomImage } from 'components/atoms/CustomImage';
 import { Blog } from 'types/blogs';
 import { HeadTemplate } from '../../components/common/Head';
 import { fetchBlog } from '../../lib/fetchBlogs';
@@ -71,7 +71,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         postimg={ogImageUrl}
       />
       <h1 className={BlogPageStyle.blogTitle}>{blog.title}</h1>
-      {blog.author.map((author) => (
+      {/* {blog.author.map((author) => (
         <div className={BlogPageStyle.blogImageWrapper}>
           <CustomImage
             baseImageUrl={blog.image.url}
@@ -81,7 +81,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
             height={315}
           />
         </div>
-      ))}
+      ))} */}
       <div className={BlogPageStyle.blogDescription}>
         <div className={BlogPageStyle.blogTags}>
           {blog.tags.map((tag) => (

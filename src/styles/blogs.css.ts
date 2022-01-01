@@ -7,34 +7,12 @@ export const BlogsPageStyle = {
     borderBottom: `solid 1px ${color.cyan[200]}`,
     padding: '20px',
     display: 'flex',
-    alignItems: 'center',
+    flexDirection: 'column',
     textDecoration: 'none',
     '@media': {
       'screen and (max-width: 720px)': {
         paddingTop: '8px',
         flexDirection: 'column',
-      },
-    },
-  }),
-  cardImage: style({
-    lineHeight: '1.7px',
-    padding: '8px',
-    '@media': {
-      'screen and (max-width: 720px)': {
-        padding: '4px',
-      },
-    },
-  }),
-  cardDescription: style({
-    margin: '16px',
-    paddingLeft: '16px',
-    display: 'flex',
-    flexDirection: 'column',
-    '@media': {
-      'screen and (max-width: 720px)': {
-        width: '100%',
-        margin: '0px',
-        paddingLeft: '0px',
       },
     },
   }),
@@ -44,6 +22,15 @@ export const BlogsPageStyle = {
     '@media': {
       'screen and (max-width: 720px)': {
         margin: '2px',
+      },
+    },
+  }),
+  cardDescription: style({
+    display: 'flex',
+    '@media': {
+      'screen and (max-width: 720px)': {
+        width: '100%',
+        flexDirection: 'column',
       },
     },
   }),

@@ -2,15 +2,6 @@ import { style } from '@vanilla-extract/css';
 import { color } from './theme';
 
 export const BlogPageStyle = {
-  blogImageWrapper: style({
-    padding: '8px',
-    width: '100%',
-    '@media': {
-      'screen and (max-width: 720px)': {
-        marginBottom: '20px',
-      },
-    },
-  }),
   blogDescription: style({
     display: 'flex',
     '@media': {
