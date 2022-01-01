@@ -112,7 +112,6 @@ export async function getServerSideProps() {
 
   return {
     props: {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
       dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
     },
   };
