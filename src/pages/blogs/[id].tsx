@@ -9,7 +9,6 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/night-owl.css';
 import { Layout } from 'components/common/Layout';
 import { parseHtml } from 'lib/parseHtml';
-// import { CustomImage } from 'components/atoms/CustomImage';
 import { Blog } from 'types/blogs';
 import { HeadTemplate } from '../../components/common/Head';
 import { fetchBlog } from '../../lib/fetchBlogs';
@@ -41,6 +40,30 @@ export const getServerSideProps: GetServerSideProps = async (
     $(element).html();
     $(element).addClass(`${BlogPageStyle.blogContentLink}`);
   });
+  $('h1').each((_, element) => {
+    $(element).html();
+    $(element).addClass(`${BlogPageStyle.h1}`);
+  });
+  $('h2').each((_, element) => {
+    $(element).html();
+    $(element).addClass(`${BlogPageStyle.h2}`);
+  });
+  $('h3').each((_, element) => {
+    $(element).html();
+    $(element).addClass(`${BlogPageStyle.h3}`);
+  });
+  $('h3').each((_, element) => {
+    $(element).html();
+    $(element).addClass(`${BlogPageStyle.h3}`);
+  });
+  $('p').each((_, element) => {
+    $(element).html();
+    $(element).addClass(`${BlogPageStyle.p}`);
+  });
+  $('strong').each((_, element) => {
+    $(element).html();
+    $(element).addClass(`${BlogPageStyle.strong}`);
+  });
 
   return {
     props: {
@@ -71,17 +94,6 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         postimg={ogImageUrl}
       />
       <h1 className={BlogPageStyle.blogTitle}>{blog.title}</h1>
-      {/* {blog.author.map((author) => (
-        <div className={BlogPageStyle.blogImageWrapper}>
-          <CustomImage
-            baseImageUrl={blog.image.url}
-            title={blog.title}
-            author={author}
-            width={600}
-            height={315}
-          />
-        </div>
-      ))} */}
       <div className={BlogPageStyle.blogDescription}>
         <div className={BlogPageStyle.blogTags}>
           {blog.tags.map((tag) => (
