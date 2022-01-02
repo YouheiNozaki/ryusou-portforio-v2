@@ -1,12 +1,10 @@
 import { Fragment, useEffect, useMemo } from 'react';
-import Link from 'next/link';
 import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
-import dayjs from 'dayjs';
 import ReactLoading from 'react-loading';
-import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 import { Layout } from 'components/common/Layout';
+import { BlogCard } from 'components/common/ui/BlogCard';
 import { HeadTemplate } from '../../components/common/Head';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';
@@ -45,33 +43,7 @@ export default function Home(): JSX.Element {
         {blogs.map((content) => (
           <Fragment key={content.id}>
             <article>
-              <Link href={`/blogs/${content.id}`} passHref>
-                <a
-                  href={`/blogs/${content.id}`}
-                  className={BlogsPageStyle.cardLink}
-                >
-                  <h3 className={BlogsPageStyle.cardTitle}>{content.title}</h3>
-                  <div className={BlogsPageStyle.cardDescription}>
-                    <div className={BlogsPageStyle.cardTags}>
-                      {content.tags.map((tag) => (
-                        <Fragment key={tag.slug}>
-                          <p className={BlogsPageStyle.cardTag}>{tag.slug}</p>
-                        </Fragment>
-                      ))}
-                    </div>
-                    <div className={BlogsPageStyle.cardDays}>
-                      <BiCalendarAlt className={BlogsPageStyle.cardDayIcon} />
-                      <p className={BlogsPageStyle.cardDay}>
-                        {dayjs(content.createdAt).format('YYYY/MM/DD')}
-                      </p>
-                      <BiCalendarCheck className={BlogsPageStyle.cardDayIcon} />
-                      <p className={BlogsPageStyle.cardDay}>
-                        {dayjs(content.updatedAt).format('YYYY/MM/DD')}
-                      </p>
-                    </div>
-                  </div>
-                </a>
-              </Link>
+              <BlogCard content={content} />
             </article>
           </Fragment>
         ))}
