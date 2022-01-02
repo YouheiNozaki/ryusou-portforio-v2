@@ -4,7 +4,7 @@ import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
 import ReactLoading from 'react-loading';
 import { Layout } from 'components/common/Layout';
-import { BlogCard } from 'components/common/ui/BlogCard';
+import { BlogCard } from 'components/ui/BlogCard';
 import { HeadTemplate } from '../../components/common/Head';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';

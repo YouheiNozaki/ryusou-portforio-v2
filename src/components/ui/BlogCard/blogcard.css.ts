@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { color } from '../../../../styles/theme';
+import { color } from '../../../styles/theme';
 
 export const BlogCardStyle = {
   cardLink: style({

@@ -4,7 +4,7 @@ import dayjs from 'dayjs';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 
 import { BlogCardStyle } from './blogcard.css';
-import type { Blog } from '../../../../types/blogs';
+import type { Blog } from '../../../types/blogs';
 
 type Props = {
   content: Blog;
