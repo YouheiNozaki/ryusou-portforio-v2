@@ -4,7 +4,7 @@ import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
 import ReactLoading from 'react-loading';
-import { ArticleCard } from 'components/ui/ArticleCard';
+import { ArticleCard } from 'components/ui/Article';
 import { useGetArticles } from '../hooks/useGetArticles';
 import { fetchArticles } from '../lib/fetchArticles';
 
@@ -36,19 +36,19 @@ export default function Home(): JSX.Element {
   return (
     <Layout>
       <HeadTemplate />
-      <section>
+      <div>
         {articles.map((content) => (
           <Fragment key={content.id}>
             <Link href={content.url} passHref>
               <a href={content.url} className={HomePageStyle.cardLink}>
-                <article className={HomePageStyle.card}>
+                <div className={HomePageStyle.card}>
                   <ArticleCard content={content} />
-                </article>
+                </div>
               </a>
             </Link>
           </Fragment>
         ))}
-      </section>
+      </div>
       {hasNextPage && (
         <div ref={ref} className={HomePageStyle.more}>
           <ReactLoading type="spin" width={40} height={40} color="#009688" />
