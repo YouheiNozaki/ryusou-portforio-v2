@@ -39,13 +39,13 @@ export default function Home(): JSX.Element {
       <section>
         {articles.map((content) => (
           <Fragment key={content.id}>
-            <article className={HomePageStyle.card}>
-              <Link href={content.url} passHref>
-                <a href={content.url} className={HomePageStyle.cardLink}>
+            <Link href={content.url} passHref>
+              <a href={content.url} className={HomePageStyle.cardLink}>
+                <article className={HomePageStyle.card}>
                   <ArticleCard content={content} />
-                </a>
-              </Link>
-            </article>
+                </article>
+              </a>
+            </Link>
           </Fragment>
         ))}
       </section>
