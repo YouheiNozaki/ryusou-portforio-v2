@@ -1,11 +1,14 @@
 import { Fragment, useEffect, useMemo } from 'react';
+import Link from 'next/link';
 import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
 import ReactLoading from 'react-loading';
+
 import { Layout } from 'components/common/Layout';
+import { HeadTemplate } from 'components/common/Head';
+import { Card } from 'components/layout/Card';
 import { BlogCard } from 'components/ui/BlogCard';
-import { HeadTemplate } from '../../components/common/Head';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';
 import { BlogsPageStyle } from '../../styles/blogs.css';
@@ -39,15 +42,22 @@ export default function Home(): JSX.Element {
         pagepath="blogs"
         keyword="BLOG"
       />
-      <section>
+      <div>
         {blogs.map((content) => (
           <Fragment key={content.id}>
-            <article>
-              <BlogCard content={content} />
-            </article>
+            <Link href={`/blogs/${content.id}`} passHref>
+              <a
+                href={`/blogs/${content.id}`}
+                className={BlogsPageStyle.cardLink}
+              >
+                <Card>
+                  <BlogCard content={content} />
+                </Card>
+              </a>
+            </Link>
           </Fragment>
         ))}
-      </section>
+      </div>
       {hasNextPage && (
         <div ref={ref} className={BlogsPageStyle.more}>
           <ReactLoading type="spin" width={40} height={40} color="#009688" />

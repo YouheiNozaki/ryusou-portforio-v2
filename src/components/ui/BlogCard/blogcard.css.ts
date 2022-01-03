@@ -2,28 +2,9 @@ import { style } from '@vanilla-extract/css';
 import { color } from '../../../styles/theme';
 
 export const BlogCardStyle = {
-  cardLink: style({
-    marginBottom: '20px',
-    borderBottom: `solid 1px ${color.cyan[200]}`,
-    padding: '20px',
-    display: 'flex',
-    flexDirection: 'column',
-    textDecoration: 'none',
-    '@media': {
-      'screen and (max-width: 720px)': {
-        paddingTop: '8px',
-        flexDirection: 'column',
-      },
-    },
-  }),
   cardTitle: style({
-    color: color.gray[900],
-    fontSize: '20px',
-    '@media': {
-      'screen and (max-width: 720px)': {
-        margin: '2px',
-      },
-    },
+    fontSize: '16px',
+    width: '100%',
   }),
   cardDescription: style({
     display: 'flex',
@@ -37,7 +18,7 @@ export const BlogCardStyle = {
   cardTags: style({
     display: 'flex',
     alignItems: 'center',
-    fontSize: '16px',
+    fontSize: '12px',
     '@media': {
       'screen and (max-width: 720px)': {
         margin: '4px',
@@ -59,7 +40,6 @@ export const BlogCardStyle = {
   cardDays: style({
     display: 'flex',
     alignItems: 'center',
-    fontSize: '16px',
     '@media': {
       'screen and (max-width: 720px)': {
         margin: '2px',
@@ -67,9 +47,9 @@ export const BlogCardStyle = {
     },
   }),
   cardDay: style({
-    color: color.gray[900],
     marginRight: '12px',
     padding: '4px',
+    fontSize: '12px',
     '@media': {
       'screen and (max-width: 720px)': {
         margin: '2px',

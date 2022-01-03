@@ -3,8 +3,7 @@ import { color } from '../../../styles/theme';
 
 export const ArticleStyle = {
   cardImage: style({
-    lineHeight: '1.7px',
-    padding: '16px',
+    padding: '30px 16px 16px 16px',
   }),
   cardDescription: style({
     paddingLeft: '16px',
