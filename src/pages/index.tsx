@@ -4,12 +4,15 @@ import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
 import ReactLoading from 'react-loading';
-import { ArticleCard } from 'components/ui/Article';
+
 import { useGetArticles } from '../hooks/useGetArticles';
 import { fetchArticles } from '../lib/fetchArticles';
 
 import { Layout } from '../components/common/Layout';
 import { HeadTemplate } from '../components/common/Head';
+import { Card } from '../components/layout/Card';
+import { Article } from '../components/ui/Article';
+
 import { HomePageStyle } from '../styles/home.css';
 
 export default function Home(): JSX.Element {
@@ -41,9 +44,9 @@ export default function Home(): JSX.Element {
           <Fragment key={content.id}>
             <Link href={content.url} passHref>
               <a href={content.url} className={HomePageStyle.cardLink}>
-                <div className={HomePageStyle.card}>
-                  <ArticleCard content={content} />
-                </div>
+                <Card>
+                  <Article content={content} />
+                </Card>
               </a>
             </Link>
           </Fragment>

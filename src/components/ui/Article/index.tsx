@@ -2,14 +2,14 @@ import { Fragment, VFC } from 'react';
 import dayjs from 'dayjs';
 import { BiCalendarAlt } from 'react-icons/bi';
 
-import { Article } from 'types/article';
+import { Article as ArticleType } from 'types/article';
 import { ArticleStyle } from './article.css';
 
 type Props = {
-  content: Article;
+  content: ArticleType;
 };
 
-export const ArticleCard: VFC<Props> = ({ content }) => {
+export const Article: VFC<Props> = ({ content }) => {
   return (
     <>
       {content.category.map((category) => (
