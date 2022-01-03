@@ -2,9 +2,6 @@ import { style } from '@vanilla-extract/css';
 import { color } from '../../../styles/theme';
 
 export const ArticleStyle = {
-  card: style({
-    borderBottom: `solid 1px ${color.cyan[200]}`,
-  }),
   cardImage: style({
     lineHeight: '1.7px',
     padding: '16px',
