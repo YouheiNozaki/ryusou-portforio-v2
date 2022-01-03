@@ -1,4 +1,5 @@
 import { Fragment, useEffect, useMemo } from 'react';
+import Link from 'next/link';
 import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
 import { useInView } from 'react-intersection-observer';
@@ -39,7 +40,11 @@ export default function Home(): JSX.Element {
         {articles.map((content) => (
           <Fragment key={content.id}>
             <article className={HomePageStyle.card}>
-              <ArticleCard content={content} />
+              <Link href={content.url} passHref>
+                <a href={content.url} className={HomePageStyle.cardLink}>
+                  <ArticleCard content={content} />
+                </a>
+              </Link>
             </article>
           </Fragment>
         ))}
