@@ -4,7 +4,6 @@ import { color } from '../../../styles/theme';
 export const BlogCardStyle = {
   cardTitle: style({
     fontSize: '16px',
-    width: '100%',
   }),
   cardDescription: style({
     display: 'flex',

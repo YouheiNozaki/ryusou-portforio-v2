@@ -2,14 +2,14 @@ import { Fragment, VFC } from 'react';
 import dayjs from 'dayjs';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 
-import { BlogCardStyle } from './blogcard.css';
-import type { Blog } from '../../../types/blogs';
+import { BlogCardStyle } from './blog.css';
+import type { Blog as BlogType } from '../../../types/blogs';
 
 type Props = {
-  content: Blog;
+  content: BlogType;
 };
 
-export const BlogCard: VFC<Props> = ({ content }) => {
+export const Blog: VFC<Props> = ({ content }) => {
   return (
     <>
       <h3 className={BlogCardStyle.cardTitle}>{content.title}</h3>

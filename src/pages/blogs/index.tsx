@@ -8,7 +8,7 @@ import ReactLoading from 'react-loading';
 import { Layout } from 'components/common/Layout';
 import { HeadTemplate } from 'components/common/Head';
 import { Card } from 'components/layout/Card';
-import { BlogCard } from 'components/ui/BlogCard';
+import { Blog } from 'components/ui/Blog';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';
 import { BlogsPageStyle } from '../../styles/blogs.css';
@@ -50,8 +50,8 @@ export default function Home(): JSX.Element {
                 href={`/blogs/${content.id}`}
                 className={BlogsPageStyle.cardLink}
               >
-                <Card>
-                  <BlogCard content={content} />
+                <Card direction="column">
+                  <Blog content={content} />
                 </Card>
               </a>
             </Link>
