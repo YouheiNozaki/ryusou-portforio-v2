@@ -4,6 +4,7 @@ import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 
 import { BlogCardStyle } from './blog.css';
 import type { Blog as BlogType } from '../../../types/blogs';
+import { Tag } from '../Tag';
 
 type Props = {
   content: BlogType;
@@ -17,7 +18,7 @@ export const Blog: VFC<Props> = ({ content }) => {
         <div className={BlogCardStyle.cardTags}>
           {content.tags.map((tag) => (
             <Fragment key={tag.slug}>
-              <p className={BlogCardStyle.cardTag}>{tag.slug}</p>
+              <Tag tag={tag} />
             </Fragment>
           ))}
         </div>

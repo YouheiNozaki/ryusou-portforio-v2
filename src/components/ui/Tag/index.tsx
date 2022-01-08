@@ -1,4 +1,4 @@
-import { Fragment, VFC } from 'react';
+import { VFC } from 'react';
 import { TagStyle } from './tag.css';
 
 type Props = {
@@ -8,9 +8,5 @@ type Props = {
 };
 
 export const Tag: VFC<Props> = ({ tag }) => {
-  return (
-    <Fragment key={tag.slug}>
-      <p className={TagStyle.tag}>{tag.slug}</p>
-    </Fragment>
-  );
+  return <p className={TagStyle.tag}>{tag.slug}</p>;
 };
