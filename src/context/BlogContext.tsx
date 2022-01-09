@@ -1,6 +1,5 @@
 import {
   useState,
-  useContext,
   createContext,
   Dispatch,
   SetStateAction,
@@ -11,11 +10,11 @@ type Props = {
   children: ReactNode;
 };
 
-const BlogCountContext = createContext<{ blogCount: number }>({
+export const BlogCountContext = createContext<{ blogCount: number }>({
   blogCount: 0,
 });
 
-const BlogCountUpdateContext = createContext<{
+export const BlogCountUpdateContext = createContext<{
   setBlogCount: Dispatch<SetStateAction<number>>;
 }>({
   setBlogCount: undefined,
@@ -31,11 +30,4 @@ export const BlogCountContextProvider: React.VFC<Props> = ({ children }) => {
       </BlogCountUpdateContext.Provider>
     </BlogCountContext.Provider>
   );
-};
-
-export const useGetBlogCount = () => {
-  const { blogCount } = useContext(BlogCountContext);
-  const { setBlogCount } = useContext(BlogCountUpdateContext);
-
-  return { blogCount, setBlogCount };
 };

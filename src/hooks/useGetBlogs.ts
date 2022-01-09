@@ -1,7 +1,15 @@
+import { useContext } from 'react';
 import { useInfiniteQuery } from 'react-query';
+import { BlogCountContext, BlogCountUpdateContext } from 'context/BlogContext';
 import { clientBlogs } from '../lib/fetchBlogs';
-import { useGetBlogCount } from './useGetBlogCount';
 import type { Blogs } from '../types/blogs';
+
+const useGetBlogCount = () => {
+  const { blogCount } = useContext(BlogCountContext);
+  const { setBlogCount } = useContext(BlogCountUpdateContext);
+
+  return { blogCount, setBlogCount };
+};
 
 export const useGetBlogs = () => {
   const { blogCount, setBlogCount } = useGetBlogCount();
