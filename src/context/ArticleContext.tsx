@@ -1,6 +1,5 @@
 import {
   useState,
-  useContext,
   createContext,
   Dispatch,
   SetStateAction,
@@ -11,11 +10,11 @@ type Props = {
   children: ReactNode;
 };
 
-const ArticleCountContext = createContext<{ articleCount: number }>({
+export const ArticleCountContext = createContext<{ articleCount: number }>({
   articleCount: 0,
 });
 
-const ArticleCountUpdateContext = createContext<{
+export const ArticleCountUpdateContext = createContext<{
   setArticleCount: Dispatch<SetStateAction<number>>;
 }>({
   setArticleCount: undefined,
@@ -31,11 +30,4 @@ export const ArticleCountContextProvider: React.VFC<Props> = ({ children }) => {
       </ArticleCountUpdateContext.Provider>
     </ArticleCountContext.Provider>
   );
-};
-
-export const useGetArticleCount = () => {
-  const { articleCount } = useContext(ArticleCountContext);
-  const { setArticleCount } = useContext(ArticleCountUpdateContext);
-
-  return { articleCount, setArticleCount };
 };

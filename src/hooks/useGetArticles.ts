@@ -1,7 +1,18 @@
+import { useContext } from 'react';
 import { useInfiniteQuery } from 'react-query';
 import { clientArticle } from '../lib/fetchArticles';
-import { useGetArticleCount } from './useGetArticleCount';
+import {
+  ArticleCountContext,
+  ArticleCountUpdateContext,
+} from '../context/ArticleContext';
 import type { Articles } from '../types/article';
+
+const useGetArticleCount = () => {
+  const { articleCount } = useContext(ArticleCountContext);
+  const { setArticleCount } = useContext(ArticleCountUpdateContext);
+
+  return { articleCount, setArticleCount };
+};
 
 export const useGetArticles = () => {
   const { articleCount, setArticleCount } = useGetArticleCount();
