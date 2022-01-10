@@ -24,11 +24,6 @@ export const headerStyle = {
       opacity: 0.5,
     },
   }),
-  title: style({
-    color: color.cyan[500],
-    fontSize: 'large',
-    padding: '0 16px',
-  }),
   link: style({
     textDecoration: 'none',
     color: color.cyan[300],

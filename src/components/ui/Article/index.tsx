@@ -24,7 +24,7 @@ export const Article: VFC<Props> = ({ content }) => {
         </Fragment>
       ))}
       <div className={ArticleStyle.cardDescription}>
-        <h3 className={ArticleStyle.cardTitle}>{content.title}</h3>
+        <h2 className={ArticleStyle.cardTitle}>{content.title}</h2>
         <div className={ArticleStyle.cardInfo}>
           <BiCalendarAlt className={ArticleStyle.cardDayIcon} />
           <p className={ArticleStyle.cardAt}>
