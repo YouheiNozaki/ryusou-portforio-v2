@@ -8,9 +8,6 @@ export const ArticleStyle = {
   cardDescription: style({
     paddingLeft: '16px',
   }),
-  cardTitle: style({
-    fontSize: '16px',
-  }),
   cardInfo: style({
     display: 'flex',
     alignItems: 'center',
