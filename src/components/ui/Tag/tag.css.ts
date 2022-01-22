@@ -6,7 +6,7 @@ export const TagStyle = {
     marginRight: '8px',
     padding: '4px 6px',
     color: color.white,
-    backgroundColor: color.cyan[300],
+    backgroundColor: color.blue[300],
     borderRadius: '4px',
     '@media': {
       'screen and (max-width: 720px)': {

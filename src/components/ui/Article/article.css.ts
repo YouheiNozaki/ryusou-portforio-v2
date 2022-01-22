@@ -17,6 +17,6 @@ export const ArticleStyle = {
     fontSize: '12px',
   }),
   cardDayIcon: style({
-    color: color.cyan[300],
+    color: color.blue[300],
   }),
 };

@@ -3,7 +3,7 @@ import { color } from 'styles/theme';
 
 export const footerStyle = {
   wrapper: style({
-    backgroundColor: `${color.cyan[50]}`,
+    backgroundColor: `${color.gray[900]}`,
     width: '100%',
     position: 'fixed',
     bottom: 0,
@@ -13,7 +13,7 @@ export const footerStyle = {
     margin: '0 auto',
   }),
   icon: style({
-    color: `${color.cyan[600]}`,
+    color: `${color.white}`,
     marginRight: '4px',
     padding: '12px',
     ':hover': {

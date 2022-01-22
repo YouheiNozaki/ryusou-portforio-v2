@@ -23,7 +23,7 @@ export const BlogPageStyle = {
     marginRight: '8px',
     padding: '4px 6px',
     color: color.white,
-    backgroundColor: color.cyan[300],
+    backgroundColor: color.blue[300],
     borderRadius: '4px',
   }),
   blogDays: style({
@@ -37,10 +37,10 @@ export const BlogPageStyle = {
     padding: '4px',
   }),
   blogDayIcon: style({
-    color: color.cyan[300],
+    color: color.blue[300],
   }),
   blogContentImg: style({
-    width: '100%',
+    width: '80%',
   }),
   blogContentLink: style({
     wordWrap: 'break-word',
@@ -52,12 +52,12 @@ export const BlogPageStyle = {
     textDecoration: 'none',
     margin: '16px',
     padding: '8px',
-    border: `solid 1px ${color.cyan[400]}`,
+    border: `solid 1px ${color.gray[400]}`,
     boxSizing: 'border-box',
     borderRadius: '4px',
     ':hover': {
       boxSizing: 'border-box',
-      backgroundColor: color.cyan[50],
+      backgroundColor: color.gray[50],
       opacity: 0.5,
     },
   }),
@@ -73,7 +73,7 @@ export const BlogPageStyle = {
   amazonLinkButton: style({
     padding: '4px',
     borderRadius: '4px',
-    color: color.cyan[700],
+    color: color.gray[700],
   }),
   amazonLinkImage: style({
     margin: '0 auto',
@@ -86,26 +86,25 @@ export const BlogPageStyle = {
     marginTop: '40px',
     padding: '12px',
     color: color.gray[900],
-    backgroundColor: color.cyan[50],
-    borderBottom: `solid 3px ${color.cyan[500]}`,
+    borderBottom: `solid 3px ${color.blue[500]}`,
   }),
   h2: style({
     marginTop: '40px',
     padding: '4px',
     color: color.gray[900],
-    backgroundColor: color.cyan[50],
-    borderBottom: `solid 3px ${color.cyan[500]}`,
+    backgroundColor: color.gray[50],
+    borderBottom: `solid 3px ${color.gray[500]}`,
   }),
   h3: style({
     marginTop: '40px',
     padding: '4px',
     color: color.gray[900],
-    borderBottom: `solid 3px ${color.cyan[500]}`,
+    borderBottom: `solid 3px ${color.gray[500]}`,
   }),
   strong: style({
     letterSpacing: '0.05rem',
     lineHeight: '1.7',
-    borderBottom: `solid 3px ${color.cyan[500]}`,
+    borderBottom: `solid 3px ${color.gray[500]}`,
   }),
   p: style({
     letterSpacing: '0.05rem',

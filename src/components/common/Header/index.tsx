@@ -12,8 +12,8 @@ export const Header = () => {
         <a href="/" className={headerStyle.image}>
           <Image
             src={cat}
-            width={48}
-            height={48}
+            width={40}
+            height={40}
             alt="りゅーそうブログのロゴ"
           />
         </a>

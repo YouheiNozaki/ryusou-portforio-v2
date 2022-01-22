@@ -5,12 +5,12 @@ export const CardStyle = {
   card: style({
     display: 'flex',
     padding: '12px',
-    borderBottom: `solid 1px ${color.cyan[200]}`,
+    borderBottom: `solid 1px ${color.gray[200]}`,
   }),
   cardColumn: style({
     display: 'flex',
     flexDirection: 'column',
     padding: '12px',
-    borderBottom: `solid 1px ${color.cyan[200]}`,
+    borderBottom: `solid 1px ${color.blue[100]}`,
   }),
 };

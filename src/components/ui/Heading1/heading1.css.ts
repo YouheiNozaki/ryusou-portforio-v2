@@ -3,7 +3,7 @@ import { color } from 'styles/theme';
 
 export const heading1Style = {
   title: style({
-    color: color.cyan[500],
+    color: color.white,
     fontSize: '20px',
     padding: '0 16px',
   }),
