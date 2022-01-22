@@ -1,4 +1,5 @@
 import { createClient } from 'microcms-js-sdk';
+import type { Scraps, Scrap } from '../types/scraps';
 
 // Initialize Client SDK.
 export const clientScraps = createClient({
@@ -6,18 +7,18 @@ export const clientScraps = createClient({
   apiKey: process.env.NEXT_PUBLIC__BLOG_API_KEY,
 });
 
-// export const fetchBlogs = async () => {
-//   const scraps = await clientScraps.get<Scraps>({
-//     endpoint: 'scraps',
-//   });
+export const fetchScraps = async () => {
+  const scraps = await clientScraps.getList<Scraps>({
+    endpoint: 'scraps',
+  });
 
-//   return scraps;
-// };
+  return scraps;
+};
 
-// export const fetchBlog = async (id: string) => {
-//   const scrap = await clientScraps.get<Scrap>({
-//     endpoint: `scraps/${id}`,
-//   });
+export const fetchScrap = async (id: string) => {
+  const scrap = await clientScraps.get<Scrap>({
+    endpoint: `scraps/${id}`,
+  });
 
-//   return scrap;
-// };
+  return scrap;
+};
