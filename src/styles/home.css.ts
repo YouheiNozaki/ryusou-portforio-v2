@@ -4,6 +4,11 @@ import { color } from './theme';
 export const HomePageStyle = {
   cardWrapper: style({
     margin: '20px',
+    '@media': {
+      'screen and (max-width: 720px)': {
+        margin: '8px 0',
+      },
+    },
   }),
   cardLink: style({
     textDecoration: 'none',
