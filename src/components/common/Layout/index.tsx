@@ -38,21 +38,21 @@ export const Layout: React.VFC<Props> = ({ children }) => {
                 <h3>技術</h3>
                 <ul className={LayoutStyle.ul}>
                   <li className={LayoutStyle.li}>
-                    <Image src={react} width={60} height={60} alt="React" />
+                    <Image src={react} width={40} height={40} alt="React" />
                   </li>
                   <li className={LayoutStyle.li}>
                     <Image
                       src={typescript}
-                      width={60}
-                      height={60}
+                      width={40}
+                      height={40}
                       alt="TypeScript"
                     />
                   </li>
                   <li className={LayoutStyle.li}>
-                    <Image src={nodejs} width={60} height={60} alt="Node.js" />
+                    <Image src={nodejs} width={40} height={40} alt="Node.js" />
                   </li>
                   <li className={LayoutStyle.li}>
-                    <Image src={aws} width={60} height={60} alt="AWS" />
+                    <Image src={aws} width={40} height={40} alt="AWS" />
                   </li>
                 </ul>
               </div>

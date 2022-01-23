@@ -33,6 +33,12 @@ export const LayoutStyle = {
     paddingTop: '16px',
     flexBasis: '35%',
     margin: '4px',
+    '@media': {
+      'screen and (max-width: 1024px)': {
+        margin: '0',
+        paddingTop: '90px',
+      },
+    },
   }),
   profile: style({
     border: `solid 1px ${color.blue[100]}`,
@@ -51,6 +57,11 @@ export const LayoutStyle = {
     borderRadius: '4px',
     listStyle: 'none',
     marginRight: '12px',
+    '@media': {
+      'screen and (max-width: 1024px)': {
+        marginRight: '2px',
+      },
+    },
   }),
   link: style({
     marginTop: '8px',
