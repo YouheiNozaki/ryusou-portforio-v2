@@ -13,7 +13,7 @@ import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';
 import { BlogsPageStyle } from '../../styles/blogs.css';
 
-export default function Home(): JSX.Element {
+export default function BlogsPage(): JSX.Element {
   const { data, isLoading, hasNextPage, fetchNextPage } = useGetBlogs();
 
   const [ref, inView] = useInView({

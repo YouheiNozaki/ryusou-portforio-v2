@@ -45,6 +45,7 @@ module.exports = {
         exceptAfterSingleLine: true,
       },
     ],
+
     'no-void': 'off',
     'no-nested-ternary': 'off',
     'padding-line-between-statements': [
@@ -93,6 +94,7 @@ module.exports = {
         explicitSpread: 'ignore',
       },
     ],
+    'react/no-array-index-key': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/jsx-props-no-spreading': 'off',
     'react/jsx-props-no-spreading': 'off',

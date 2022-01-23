@@ -16,17 +16,15 @@ type Body = {
 
 type Topic = {
   fieldId: 'topic';
-  body: Body;
+  title: string;
+  body: Body[];
 };
 
 export type Scrap = {
+  id: string;
   title: string;
-  imgage: {
-    url: string;
-    width: string;
-    height: string;
-  };
-  body: Topic[];
+  topic: Topic[];
+  createdAt: string;
 };
 
 export type Scraps = {
