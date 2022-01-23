@@ -75,11 +75,7 @@ export const getServerSideProps: GetServerSideProps = async (
 
 const BlogDetail: React.FC<Props> = ({ blog, content }) => {
   const router = useRouter();
-  const { ogImageUrl } = createOgImage(
-    blog?.image?.url,
-    blog?.author?.find((author) => author),
-    blog.title,
-  );
+  const { ogImageUrl } = createOgImage(blog?.image?.url, blog.title);
 
   if (router.isFallback) {
     return <div>Loading</div>;
