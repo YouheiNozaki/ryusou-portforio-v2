@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { AiOutlineLink } from 'react-icons/ai';
+import { CgProfile } from 'react-icons/cg';
 import { LayoutStyle } from './layout.css';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
@@ -23,7 +25,10 @@ export const Layout: React.VFC<Props> = ({ children }) => {
           <section className={LayoutStyle.section}>
             <article className={LayoutStyle.profile}>
               <div>
-                <h3 className={LayoutStyle.sectionTitle}>プロフィール</h3>
+                <div className={LayoutStyle.sectionTitle}>
+                  <h3 className={LayoutStyle.text}>プロフィール</h3>
+                  <CgProfile className={LayoutStyle.icon} size={20} />
+                </div>
                 <Image
                   src={cat}
                   width={120}
@@ -33,6 +38,7 @@ export const Layout: React.VFC<Props> = ({ children }) => {
                 <p>りゅーそう</p>
                 <p>元高校地歴科教員。現在microCMSでエンジニアをしています。</p>
                 <p>Saitama.jsというLT会を運営中です。</p>
+                <p>発言はすべて個人の意見です。</p>
               </div>
               <div>
                 <h3>技術</h3>
@@ -58,7 +64,10 @@ export const Layout: React.VFC<Props> = ({ children }) => {
               </div>
             </article>
             <article className={LayoutStyle.link}>
-              <h3>リンク</h3>
+              <div className={LayoutStyle.sectionTitle}>
+                <h3 className={LayoutStyle.text}>リンク</h3>
+                <AiOutlineLink className={LayoutStyle.icon} size={20} />
+              </div>
               <ul>
                 <li>
                   <a href="https://twitter.com/ryusou_mtkh">Twitter</a>

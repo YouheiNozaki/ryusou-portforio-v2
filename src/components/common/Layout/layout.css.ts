@@ -46,6 +46,10 @@ export const LayoutStyle = {
     borderRadius: '4px',
   }),
   sectionTitle: style({
+    display: 'flex',
+    alignItems: 'center',
+  }),
+  text: style({
     color: color.gray[900],
   }),
   ul: style({
@@ -68,5 +72,10 @@ export const LayoutStyle = {
     padding: '4px 12px',
     borderRadius: '4px',
     background: color.gray[100],
+  }),
+  icon: style({
+    marginLeft: '4px',
+    lineHeight: '1.7',
+    color: color.blue[400],
   }),
 };
