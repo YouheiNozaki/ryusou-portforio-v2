@@ -9,6 +9,7 @@ export const color = {
     300: '#e0e0e0',
     200: '#eeeeee',
     100: '#f5f5f5',
+    50: '#fafafa',
   },
   white: '#fff',
   blue: {

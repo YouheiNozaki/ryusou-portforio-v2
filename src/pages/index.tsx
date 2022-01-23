@@ -51,12 +51,12 @@ export default function Home(): JSX.Element {
             </Link>
           </div>
         ))}
+        {hasNextPage && (
+          <div ref={ref} className={HomePageStyle.more}>
+            <ReactLoading type="spin" width={40} height={40} color="#42a5f5" />
+          </div>
+        )}
       </div>
-      {hasNextPage && (
-        <div ref={ref} className={HomePageStyle.more}>
-          <ReactLoading type="spin" width={40} height={40} color="#42a5f5" />
-        </div>
-      )}
     </Layout>
   );
 }

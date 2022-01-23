@@ -5,7 +5,7 @@ export const CardStyle = {
   card: style({
     display: 'flex',
     padding: '12px 12px 12px 20px',
-    border: `solid 1px ${color.blue[50]}`,
+    border: `solid 1px ${color.blue[100]}`,
     borderRadius: '8px',
     ':hover': {
       boxShadow: `8px 8px 8px -8px ${color.blue[50]}`,
@@ -15,7 +15,7 @@ export const CardStyle = {
     display: 'flex',
     flexDirection: 'column',
     padding: '12px 12px 12px 20px',
-    border: `solid 1px ${color.blue[50]}`,
+    border: `solid 1px ${color.blue[100]}`,
     borderRadius: '8px',
     ':hover': {
       boxShadow: `8px 8px 8px -8px ${color.blue[50]}`,
