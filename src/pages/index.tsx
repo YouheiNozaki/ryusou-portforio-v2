@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import Link from 'next/link';
 import { QueryClient } from 'react-query';
 import { dehydrate } from 'react-query/hydration';
@@ -41,7 +41,7 @@ export default function Home(): JSX.Element {
       <HeadTemplate />
       <div>
         {articles.map((content) => (
-          <Fragment key={content.id}>
+          <div key={content.id} className={HomePageStyle.cardWrapper}>
             <Link href={content.url} passHref>
               <a href={content.url} className={HomePageStyle.cardLink}>
                 <Card>
@@ -49,7 +49,7 @@ export default function Home(): JSX.Element {
                 </Card>
               </a>
             </Link>
-          </Fragment>
+          </div>
         ))}
       </div>
       {hasNextPage && (

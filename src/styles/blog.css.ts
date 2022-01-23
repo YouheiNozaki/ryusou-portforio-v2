@@ -91,20 +91,18 @@ export const BlogPageStyle = {
   h2: style({
     marginTop: '40px',
     padding: '4px',
-    color: color.gray[900],
-    backgroundColor: color.gray[50],
-    borderBottom: `solid 3px ${color.gray[500]}`,
+    borderBottom: `solid 3px ${color.blue[500]}`,
   }),
   h3: style({
     marginTop: '40px',
     padding: '4px',
-    color: color.gray[900],
-    borderBottom: `solid 3px ${color.gray[500]}`,
+    color: color.blue[900],
+    borderBottom: `solid 3px ${color.blue[500]}`,
   }),
   strong: style({
     letterSpacing: '0.05rem',
     lineHeight: '1.7',
-    borderBottom: `solid 3px ${color.gray[500]}`,
+    borderBottom: `solid 3px ${color.blue[500]}`,
   }),
   p: style({
     letterSpacing: '0.05rem',

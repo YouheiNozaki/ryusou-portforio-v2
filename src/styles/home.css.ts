@@ -2,6 +2,9 @@ import { style } from '@vanilla-extract/css';
 import { color } from './theme';
 
 export const HomePageStyle = {
+  cardWrapper: style({
+    margin: '20px',
+  }),
   cardLink: style({
     textDecoration: 'none',
     color: color.gray[900],
