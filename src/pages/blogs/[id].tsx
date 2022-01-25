@@ -109,7 +109,8 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
           </p>
         </div>
       </div>
-      <div>{content && parseHtml(content)}</div>
+      {/* eslint-disable-next-line react/no-danger */}
+      <div dangerouslySetInnerHTML={{ __html: content }} />
       <div>
         {blog?.repeater?.map((repeater) =>
           repeater.fieldId === 'content' ? (

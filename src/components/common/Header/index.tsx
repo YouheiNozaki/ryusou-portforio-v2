@@ -25,6 +25,12 @@ export const Header = () => {
           <p className={headerStyle.blog}>Blog</p>
         </a>
       </Link>
+      <Link href="/scraps">
+        {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
+        <a href="/scraps" className={headerStyle.link}>
+          <p className={headerStyle.blog}>Scrap</p>
+        </a>
+      </Link>
     </header>
   );
 };

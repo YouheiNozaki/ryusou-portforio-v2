@@ -15,7 +15,7 @@ type Body = {
 };
 
 type Topic = {
-  fieldId: 'topic';
+  fieldId: 'tech' | 'hobby';
   title: string;
   body: Body[];
 };

@@ -7,7 +7,7 @@ import ReactLoading from 'react-loading';
 
 import { Layout } from 'components/common/Layout';
 import { HeadTemplate } from 'components/common/Head';
-import { Card } from 'components/layout/Card';
+import { Card } from 'components/ui/Card';
 import { Blog } from 'components/ui/Blog';
 import { useGetBlogs } from '../../hooks/useGetBlogs';
 import { fetchBlogs } from '../../lib/fetchBlogs';

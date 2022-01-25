@@ -10,7 +10,7 @@ import { fetchArticles } from '../lib/fetchArticles';
 
 import { Layout } from '../components/common/Layout';
 import { HeadTemplate } from '../components/common/Head';
-import { Card } from '../components/layout/Card';
+import { Card } from '../components/ui/Card';
 import { Article } from '../components/ui/Article';
 
 import { HomePageStyle } from '../styles/home.css';
