@@ -26,7 +26,14 @@ export const LayoutStyle = {
     },
   }),
   main: style({
+    margin: '20px',
     width: '100%',
+    '@media': {
+      'screen and (max-width: 1024px)': {
+        margin: '0',
+        paddingTop: '90px',
+      },
+    },
   }),
   section: style({
     width: '100%',
