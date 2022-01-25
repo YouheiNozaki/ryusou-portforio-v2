@@ -1,6 +1,5 @@
 import Image from 'next/image';
-import { AiOutlineLink } from 'react-icons/ai';
-import { CgProfile } from 'react-icons/cg';
+import { FcBrokenLink, FcPortraitMode } from 'react-icons/fc';
 import { LayoutStyle } from './layout.css';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
@@ -26,8 +25,8 @@ export const Layout: React.VFC<Props> = ({ children }) => {
             <article className={LayoutStyle.profile}>
               <div>
                 <div className={LayoutStyle.sectionTitle}>
+                  <FcPortraitMode className={LayoutStyle.icon} size={20} />
                   <h3 className={LayoutStyle.text}>プロフィール</h3>
-                  <CgProfile className={LayoutStyle.icon} size={20} />
                 </div>
                 <Image
                   src={cat}
@@ -65,8 +64,8 @@ export const Layout: React.VFC<Props> = ({ children }) => {
             </article>
             <article className={LayoutStyle.link}>
               <div className={LayoutStyle.sectionTitle}>
+                <FcBrokenLink className={LayoutStyle.icon} size={20} />
                 <h3 className={LayoutStyle.text}>リンク</h3>
-                <AiOutlineLink className={LayoutStyle.icon} size={20} />
               </div>
               <ul>
                 <li>

@@ -81,7 +81,7 @@ export const LayoutStyle = {
     background: color.gray[100],
   }),
   icon: style({
-    marginLeft: '4px',
+    marginRight: '8px',
     lineHeight: '1.7',
     color: color.blue[400],
   }),
