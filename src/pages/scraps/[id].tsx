@@ -2,6 +2,9 @@ import { Fragment } from 'react';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
+import ReactMarkdown from 'react-markdown';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { BiCalendarAlt } from 'react-icons/bi';
 import { FcGraduationCap, FcMusic } from 'react-icons/fc';
 import { Layout } from 'components/common/Layout';
@@ -70,7 +73,42 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
                         </Fragment>
                       ) : body.fieldId === 'markdown' ? (
                         <Fragment key={index}>
-                          <p>{body.markdownText}</p>
+                          <ReactMarkdown
+                            // eslint-disable-next-line react/no-children-prop
+                            children={body.markdownText}
+                            components={{
+                              code({
+                                // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                                node,
+                                inline,
+                                className,
+                                children,
+                                ...props
+                              }) {
+                                const match = /language-(\w+)/.exec(
+                                  className || '',
+                                );
+
+                                return !inline && match ? (
+                                  <SyntaxHighlighter
+                                    // eslint-disable-next-line react/no-children-prop
+                                    children={String(children).replace(
+                                      /\n$/,
+                                      '',
+                                    )}
+                                    style={base16AteliersulphurpoolLight}
+                                    language={match[1]}
+                                    PreTag="div"
+                                    {...props}
+                                  />
+                                ) : (
+                                  <code className={className} {...props}>
+                                    {children}
+                                  </code>
+                                );
+                              },
+                            }}
+                          />
                         </Fragment>
                       ) : body.fieldId === 'richlink' ? (
                         <Fragment key={index}>
@@ -97,7 +135,39 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
                       </Fragment>
                     ) : body.fieldId === 'markdown' ? (
                       <Fragment key={index}>
-                        <p>{body.markdownText}</p>
+                        <ReactMarkdown
+                          // eslint-disable-next-line react/no-children-prop
+                          children={body.markdownText}
+                          components={{
+                            code({
+                              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                              node,
+                              inline,
+                              className,
+                              children,
+                              ...props
+                            }) {
+                              const match = /language-(\w+)/.exec(
+                                className || '',
+                              );
+
+                              return !inline && match ? (
+                                <SyntaxHighlighter
+                                  // eslint-disable-next-line react/no-children-prop
+                                  children={String(children).replace(/\n$/, '')}
+                                  style={base16AteliersulphurpoolLight}
+                                  language={match[1]}
+                                  PreTag="div"
+                                  {...props}
+                                />
+                              ) : (
+                                <code className={className} {...props}>
+                                  {children}
+                                </code>
+                              );
+                            },
+                          }}
+                        />
                       </Fragment>
                     ) : body.fieldId === 'richlink' ? (
                       <Fragment key={index}>
