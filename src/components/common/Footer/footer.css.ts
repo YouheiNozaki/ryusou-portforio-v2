@@ -5,9 +5,7 @@ export const footerStyle = {
   wrapper: style({
     backgroundColor: `${color.gray[100]}`,
     width: '100%',
-    bottom: 0,
     display: 'flex',
-    padding: '8px',
   }),
   icons: style({
     margin: '0 auto',
