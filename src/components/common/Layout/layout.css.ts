@@ -21,7 +21,7 @@ export const LayoutStyle = {
       },
       'screen and (max-width: 720px)': {
         margin: '0 auto',
-        width: '100%',
+        width: '90%',
       },
     },
   }),
@@ -31,7 +31,7 @@ export const LayoutStyle = {
     '@media': {
       'screen and (max-width: 1024px)': {
         margin: '0',
-        paddingTop: '90px',
+        paddingTop: '40px',
       },
     },
   }),
@@ -49,6 +49,7 @@ export const LayoutStyle = {
   }),
   profile: style({
     border: `solid 1px ${color.blue[100]}`,
+    boxSizing: 'border-box',
     padding: '12px',
     borderRadius: '4px',
   }),
@@ -78,6 +79,7 @@ export const LayoutStyle = {
     marginTop: '8px',
     padding: '4px 12px',
     borderRadius: '4px',
+    boxSizing: 'border-box',
     background: color.gray[100],
   }),
   icon: style({
