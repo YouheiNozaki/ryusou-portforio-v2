@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 
 import { BlogCardStyle } from './blog.css';
-import type { Blog as BlogType } from '../../../types/blogs';
+import type { BlogType } from '../../../types/blogs';
 import { Tag } from '../Tag';
 import { Heading2 } from '../Heading2';
 
