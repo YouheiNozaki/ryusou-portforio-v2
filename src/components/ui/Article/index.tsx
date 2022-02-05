@@ -2,7 +2,7 @@ import { Fragment, VFC } from 'react';
 import dayjs from 'dayjs';
 import { BiCalendarAlt } from 'react-icons/bi';
 
-import { Article as ArticleType } from 'types/article';
+import { ArticleType } from 'types/article';
 import { Heading2 } from '../Heading2';
 import { ArticleStyle } from './article.css';
 

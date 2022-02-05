@@ -1,12 +1,6 @@
-import { useEffect, useMemo } from 'react';
 import Link from 'next/link';
-import { QueryClient } from 'react-query';
-import { dehydrate } from 'react-query/hydration';
-import { useInView } from 'react-intersection-observer';
-import ReactLoading from 'react-loading';
-
-import { useGetArticles } from '../hooks/useGetArticles';
-import { fetchArticles } from '../lib/fetchArticles';
+import { ArticleType } from 'types/article';
+import { getArticleList } from '../lib/fetchArticles';
 
 import { Layout } from '../components/common/Layout';
 import { HeadTemplate } from '../components/common/Head';
@@ -15,27 +9,11 @@ import { Article } from '../components/ui/Article';
 
 import { HomePageStyle } from '../styles/home.css';
 
-export default function Home(): JSX.Element {
-  const { data, isLoading, hasNextPage, fetchNextPage } = useGetArticles();
+type Props = {
+  articles: ArticleType[];
+};
 
-  const [ref, inView] = useInView({
-    rootMargin: '-40px',
-  });
-
-  useEffect(() => {
-    if (inView) {
-      // eslint-disable-next-line @typescript-eslint/no-floating-promises
-      fetchNextPage();
-    }
-  }, [inView, fetchNextPage]);
-
-  const articles = useMemo(
-    () => data && data.pages.flatMap(({ contents }) => contents),
-    [data],
-  );
-
-  if (isLoading) return <div>Loading...</div>;
-
+export const Home: React.VFC<Props> = ({ articles }) => {
   return (
     <Layout>
       <HeadTemplate />
@@ -51,26 +29,19 @@ export default function Home(): JSX.Element {
             </Link>
           </div>
         ))}
-        {hasNextPage && (
-          <div ref={ref} className={HomePageStyle.more}>
-            <ReactLoading type="spin" width={40} height={40} color="#42a5f5" />
-          </div>
-        )}
       </div>
     </Layout>
   );
-}
+};
 
-const queryClient = new QueryClient();
-export async function getServerSideProps() {
-  await queryClient.prefetchInfiniteQuery('articles', fetchArticles, {
-    staleTime: Infinity,
-  });
+export const getStaticProps = async () => {
+  const { articles } = await getArticleList();
 
   return {
     props: {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
+      articles: articles.contents,
     },
   };
-}
+};
+
+export default Home;

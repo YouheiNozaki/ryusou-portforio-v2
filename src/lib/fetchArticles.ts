@@ -4,13 +4,16 @@ import type { Articles } from '../types/article';
 // Initialize Client SDK.
 export const clientArticle = createClient({
   serviceDomain: 'ryusou-portfolio',
-  apiKey: process.env.NEXT_PUBLIC__X_API_KEY,
+  apiKey: process.env.X_API_KEY,
 });
 
-export const fetchArticles = async () => {
+export const getArticleList = async () => {
   const articles = await clientArticle.get<Articles>({
     endpoint: 'articles',
+    queries: {
+      limit: 9999,
+    },
   });
 
-  return articles;
+  return { articles };
 };

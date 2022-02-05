@@ -4,7 +4,7 @@ import type { Scraps, Scrap } from '../types/scraps';
 // Initialize Client SDK.
 export const clientScraps = createClient({
   serviceDomain: 'ryusou-portfolio',
-  apiKey: process.env.NEXT_PUBLIC__X_API_KEY,
+  apiKey: process.env.X_API_KEY,
 });
 
 export const fetchScraps = async () => {

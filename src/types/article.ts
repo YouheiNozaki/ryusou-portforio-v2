@@ -1,4 +1,4 @@
-export type Article = {
+export type ArticleType = {
   id: string;
   url: string;
   title: string;
@@ -16,7 +16,7 @@ export type Article = {
 };
 
 export type Articles = {
-  contents: Article[];
+  contents: ArticleType[];
   totalCount: number;
   limit: number;
   offset: number;
