@@ -7,12 +7,12 @@ export const clientBlogs = createClient({
   apiKey: process.env.BLOG_API_KEY,
 });
 
-export const getBlogList = async (offset?: number) => {
+export const getBlogList = async (offset?: number, limit?: number) => {
   const blogs = await clientBlogs.get<Blogs>({
     endpoint: 'posts',
     queries: {
       offset: offset ? (offset - 1) * 10 : 0,
-      limit: 10,
+      limit: limit || 10,
     },
   });
 

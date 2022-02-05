@@ -74,7 +74,7 @@ export const getStaticProps: GetStaticProps = async (
 };
 
 export const getStaticPaths = async () => {
-  const { blogs } = await getBlogList();
+  const { blogs } = await getBlogList(0, 9999);
   const paths = blogs.contents.map((content) => `/blogs/${content.id}`);
 
   return { paths, fallback: false };

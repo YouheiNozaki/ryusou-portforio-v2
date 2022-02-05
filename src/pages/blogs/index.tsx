@@ -43,7 +43,7 @@ const BlogsPage: React.VFC<Props> = ({ blogs, totalCount }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticProps = async () => {
   const { blogs } = await getBlogList();
 
   return {
@@ -52,6 +52,6 @@ export async function getStaticProps() {
       totalCount: blogs.totalCount,
     },
   };
-}
+};
 
 export default BlogsPage;
