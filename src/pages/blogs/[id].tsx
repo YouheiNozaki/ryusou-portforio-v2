@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { GetServerSideProps, GetServerSidePropsContext } from 'next';
+import { GetStaticProps, GetStaticPropsContext } from 'next';
 import Image from 'next/dist/client/image';
 import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
@@ -9,22 +9,22 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/night-owl.css';
 import { Layout } from 'components/common/Layout';
 import { parseHtml } from 'lib/parseHtml';
-import { Blog } from 'types/blogs';
+import { BlogType } from 'types/blogs';
 import { HeadTemplate } from '../../components/common/Head';
-import { fetchBlog } from '../../lib/fetchBlogs';
+import { getBlog, getBlogList } from '../../lib/fetchBlogs';
 import { createOgImage } from '../../lib/createOgImage';
 import { BlogPageStyle } from '../../styles/blog.css';
 
 type Props = {
-  blog: Blog;
+  blog: BlogType;
   content: string;
 };
 
-export const getServerSideProps: GetServerSideProps = async (
-  context: GetServerSidePropsContext<{ id: string }>,
+export const getStaticProps: GetStaticProps = async (
+  context: GetStaticPropsContext<{ id: string }>,
 ) => {
   const { id } = context.params;
-  const blog = await fetchBlog(id);
+  const blog = await getBlog(id);
   const { content } = blog;
   const $ = cheerio.load(content);
   $('pre code').each((_, element) => {
@@ -71,6 +71,13 @@ export const getServerSideProps: GetServerSideProps = async (
       content: $.html(),
     },
   };
+};
+
+export const getStaticPaths = async () => {
+  const { blogs } = await getBlogList();
+  const paths = blogs.contents.map((content) => `/blogs/${content.id}`);
+
+  return { paths, fallback: false };
 };
 
 const BlogDetail: React.FC<Props> = ({ blog, content }) => {

@@ -4,7 +4,6 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { Hydrate } from 'react-query/hydration';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import { ArticleCountContextProvider } from '../context/ArticleContext';
-import { BlogCountContextProvider } from '../context/BlogContext';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const [queryClient] = useState(() => new QueryClient());
@@ -13,10 +12,8 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         <ArticleCountContextProvider>
-          <BlogCountContextProvider>
-            <Component {...pageProps} />
-            <ReactQueryDevtools />
-          </BlogCountContextProvider>
+          <Component {...pageProps} />
+          <ReactQueryDevtools />
         </ArticleCountContextProvider>
       </Hydrate>
     </QueryClientProvider>

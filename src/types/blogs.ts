@@ -6,14 +6,6 @@ export type Author = {
   };
 };
 
-// export type AmazonLink = {
-//   name: string;
-//   image: {
-//     url: string;
-//   };
-//   url: string;
-// };
-
 export type ContentRepeater = {
   fieldId: 'content' | 'amazonlink';
   content: string;
@@ -27,7 +19,7 @@ export type ContentRepeater = {
   url: string;
 };
 
-export type Blog = {
+export type BlogType = {
   id: string;
   createdAt: string;
   updatedAt: string;
@@ -47,7 +39,7 @@ export type Blog = {
 };
 
 export type Blogs = {
-  contents: Blog[];
+  contents: BlogType[];
   totalCount: number;
   limit: number;
   offset: number;

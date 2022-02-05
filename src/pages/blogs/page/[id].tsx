@@ -5,15 +5,16 @@ import { Card } from 'components/ui/Card';
 import { Blog } from 'components/ui/Blog';
 import { Pagination } from 'components/ui/Pagination';
 import type { BlogType } from 'types/blogs';
-import { getBlogList } from '../../lib/fetchBlogs';
-import { BlogsPageStyle } from '../../styles/blogs.css';
+import type { GetStaticProps } from 'next';
+import { getBlogList } from '../../../lib/fetchBlogs';
+import { BlogsPageStyle } from '../../../styles/blogs.css';
 
 type Props = {
   blogs: BlogType[];
   totalCount: number;
 };
 
-const BlogsPage: React.VFC<Props> = ({ blogs, totalCount }) => {
+const BlogsPageId: React.VFC<Props> = ({ blogs, totalCount }) => {
   return (
     <Layout>
       <HeadTemplate
@@ -43,8 +44,22 @@ const BlogsPage: React.VFC<Props> = ({ blogs, totalCount }) => {
   );
 };
 
-export async function getStaticProps() {
+export const getStaticPaths = async () => {
   const { blogs } = await getBlogList();
+
+  const range = (start: number, end: number) =>
+    [...Array(end - start + 1)].map((_, i) => start + i);
+
+  const paths = range(1, Math.ceil(blogs.totalCount / 10)).map(
+    (id) => `/blogs/page/${id}`,
+  );
+
+  return { paths, fallback: false };
+};
+
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { id } = context.params;
+  const { blogs } = await getBlogList(Number(id));
 
   return {
     props: {
@@ -52,6 +67,6 @@ export async function getStaticProps() {
       totalCount: blogs.totalCount,
     },
   };
-}
+};
 
-export default BlogsPage;
+export default BlogsPageId;

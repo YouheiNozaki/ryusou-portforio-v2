@@ -1,5 +1,5 @@
 import { createClient } from 'microcms-js-sdk';
-import type { Blogs, Blog } from '../types/blogs';
+import type { Blogs, BlogType } from '../types/blogs';
 
 // Initialize Client SDK.
 export const clientBlogs = createClient({
@@ -7,16 +7,20 @@ export const clientBlogs = createClient({
   apiKey: process.env.NEXT_PUBLIC__BLOG_API_KEY,
 });
 
-export const fetchBlogs = async () => {
+export const getBlogList = async (offset?: number) => {
   const blogs = await clientBlogs.get<Blogs>({
     endpoint: 'posts',
+    queries: {
+      offset: offset ? (offset - 1) * 10 : 0,
+      limit: 10,
+    },
   });
 
-  return blogs;
+  return { blogs };
 };
 
-export const fetchBlog = async (id: string) => {
-  const blog = await clientBlogs.get<Blog>({
+export const getBlog = async (id: string) => {
+  const blog = await clientBlogs.get<BlogType>({
     endpoint: `posts/${id}`,
   });
 
