@@ -2,14 +2,14 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Heading1 } from '../../ui/Heading1';
 import cat from '../../../../public/cat.png';
-import { headerStyle } from './header.css';
+import style from './header.module.scss';
 
 export const Header = () => {
   return (
-    <header className={headerStyle.wrapper}>
+    <header className={style.wrapper}>
       <Link href="/">
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <a href="/" className={headerStyle.image}>
+        <a href="/" className={style.image}>
           <Image
             src={cat}
             width={40}
@@ -21,14 +21,14 @@ export const Header = () => {
       <Heading1 title="Ryusou.dev" />
       <Link href="/blogs">
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <a href="/blogs" className={headerStyle.link}>
-          <p className={headerStyle.blog}>Blog</p>
+        <a href="/blogs" className={style.link}>
+          <p className={style.blog}>Blog</p>
         </a>
       </Link>
       <Link href="/scraps">
         {/* eslint-disable-next-line @next/next/no-html-link-for-pages */}
-        <a href="/scraps" className={headerStyle.link}>
-          <p className={headerStyle.blog}>Scrap</p>
+        <a href="/scraps" className={style.link}>
+          <p className={style.blog}>Scrap</p>
         </a>
       </Link>
     </header>
