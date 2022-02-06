@@ -12,7 +12,7 @@ type Props = {
   articles: ArticleType[];
 };
 
-export const Home: React.VFC<Props> = ({ articles }) => {
+const Home: React.VFC<Props> = ({ articles }) => {
   return (
     <Layout>
       <HeadTemplate />
