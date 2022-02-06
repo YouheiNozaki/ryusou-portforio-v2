@@ -1,4 +1,4 @@
-@import '../../../styles/variable.scss';
+@use '../../../styles/variable' as mixin;
 
 .container {
   display: flex;
@@ -13,13 +13,13 @@
   padding-top: 90px;
   width: 80%;
 
-  @include mq(lg) {
+  @include mixin.mq(lg) {
     flex-direction: column;
     margin: 20px auto;
     width: 80%;
   }
 
-  @include mq(md) {
+  @include mixin.mq(md) {
     margin: 0 auto;
     width: 90%;
   }
@@ -29,7 +29,7 @@
   margin: 20px;
   width: 100%;
 
-  @include mq(lg) {
+  @include mixin.mq(lg) {
     margin: 0;
     padding-top: 40px;
   }
@@ -41,7 +41,7 @@
   flex-basis: 35%;
   margin: 4px;
 
-  @include mq(lg) {
+  @include mixin.mq(lg) {
     margin: 0;
     padding-top: 90px;
   }
@@ -74,7 +74,7 @@
   list-style: none;
   margin-right: 12px;
 
-  @include mq(lg) {
+  @include mixin.mq(lg) {
     margin-right: 2px;
   }
 }
