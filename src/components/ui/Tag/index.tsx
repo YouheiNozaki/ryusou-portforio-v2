@@ -1,12 +1,12 @@
 import { VFC } from 'react';
-import { TagStyle } from './tag.css';
+import styles from './tag.module.scss';
 
-type Props = {
+export type Props = {
   tag: {
     slug: string;
   };
 };
 
 export const Tag: VFC<Props> = ({ tag }) => {
-  return <p className={TagStyle.tag}>{tag.slug}</p>;
+  return <p className={styles.tag}>{tag.slug}</p>;
 };
