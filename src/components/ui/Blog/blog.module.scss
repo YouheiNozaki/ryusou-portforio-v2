@@ -1,0 +1,43 @@
+@use '../../../styles/variable.scss' as mixin;
+
+.cardDescription {
+  display: flex;
+
+  @include mixin.mq(md) {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.cardTags {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+
+  @include mixin.mq(md) {
+    margin: 4px;
+  }
+}
+
+.cardDays {
+  display: flex;
+  align-items: center;
+
+  @include mixin.mq(md) {
+    margin: 4px;
+  }
+}
+
+.cardDay {
+  margin-right: 12px;
+  padding: 4px;
+  font-size: 12px;
+
+  @include mixin.mq(md) {
+    margin: 2px;
+  }
+}
+
+.cardDayIcon {
+  color: var(--c-primary-300);
+}

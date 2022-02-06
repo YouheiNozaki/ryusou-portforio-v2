@@ -1,11 +1,3 @@
-export type Author = {
-  id: string;
-  name: string;
-  image: {
-    url: string;
-  };
-};
-
 export type ContentRepeater = {
   fieldId: 'content' | 'amazonlink';
   content: string;
@@ -19,23 +11,22 @@ export type ContentRepeater = {
   url: string;
 };
 
+export type Tag = {
+  slug: string;
+};
+
 export type BlogType = {
   id: string;
   createdAt: string;
   updatedAt: string;
   title: string;
-  tags: [
-    {
-      slug: string;
-    },
-  ];
+  tags: Tag[];
   day: string;
   image: {
     url: string;
   };
   content: string;
   repeater: ContentRepeater[];
-  author: Author[];
 };
 
 export type Blogs = {
