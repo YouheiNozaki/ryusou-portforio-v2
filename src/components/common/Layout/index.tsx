@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FcBrokenLink, FcPortraitMode } from 'react-icons/fc';
-import { LayoutStyle } from './layout.css';
+import styles from './layout.module.scss';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
 
@@ -18,15 +18,15 @@ export const Layout: React.VFC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
-      <div className={LayoutStyle.container}>
-        <div className={LayoutStyle.wrapper}>
-          <main className={LayoutStyle.main}>{children}</main>
-          <section className={LayoutStyle.section}>
-            <article className={LayoutStyle.profile}>
+      <div className={styles.container}>
+        <div className={styles.wrapper}>
+          <main className={styles.main}>{children}</main>
+          <section className={styles.section}>
+            <article className={styles.profile}>
               <div>
-                <div className={LayoutStyle.sectionTitle}>
-                  <FcPortraitMode className={LayoutStyle.icon} size={20} />
-                  <h3 className={LayoutStyle.text}>プロフィール</h3>
+                <div className={styles.sectionTitle}>
+                  <FcPortraitMode className={styles.icon} size={20} />
+                  <h3 className={styles.text}>プロフィール</h3>
                 </div>
                 <Image
                   src={cat}
@@ -41,11 +41,11 @@ export const Layout: React.VFC<Props> = ({ children }) => {
               </div>
               <div>
                 <h3>技術</h3>
-                <ul className={LayoutStyle.ul}>
-                  <li className={LayoutStyle.li}>
+                <ul className={styles.ul}>
+                  <li className={styles.li}>
                     <Image src={react} width={40} height={40} alt="React" />
                   </li>
-                  <li className={LayoutStyle.li}>
+                  <li className={styles.li}>
                     <Image
                       src={typescript}
                       width={40}
@@ -53,19 +53,19 @@ export const Layout: React.VFC<Props> = ({ children }) => {
                       alt="TypeScript"
                     />
                   </li>
-                  <li className={LayoutStyle.li}>
+                  <li className={styles.li}>
                     <Image src={nodejs} width={40} height={40} alt="Node.js" />
                   </li>
-                  <li className={LayoutStyle.li}>
+                  <li className={styles.li}>
                     <Image src={aws} width={40} height={40} alt="AWS" />
                   </li>
                 </ul>
               </div>
             </article>
-            <article className={LayoutStyle.link}>
-              <div className={LayoutStyle.sectionTitle}>
-                <FcBrokenLink className={LayoutStyle.icon} size={20} />
-                <h3 className={LayoutStyle.text}>リンク</h3>
+            <article className={styles.link}>
+              <div className={styles.sectionTitle}>
+                <FcBrokenLink className={styles.icon} size={20} />
+                <h3 className={styles.text}>リンク</h3>
               </div>
               <ul>
                 <li>
