@@ -1,0 +1,15 @@
+.wrapper {
+  background-color: var(--c-gray-100);
+  width: 100%;
+  display: flex;
+}
+
+.icons {
+  margin: 0 auto;
+}
+
+.icon {
+  color: var(--c-primary-400);
+  margin-right: 4px;
+  padding: 12px;
+}
