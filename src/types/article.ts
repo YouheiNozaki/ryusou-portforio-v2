@@ -1,18 +1,20 @@
+type Id = 'zenn' | 'note' | 'qiita' | 'speakerdeck' | string;
+
+type Category = {
+  id: Id;
+  caregoryImage: {
+    url: string;
+    width: number;
+    height: number;
+  };
+};
+
 export type ArticleType = {
   id: string;
   url: string;
   title: string;
   publishArticleAt: string;
-  category: [
-    {
-      id: 'zenn' | 'note' | 'qiita' | 'speakerdeck';
-      caregoryImage: {
-        url: string;
-        width: number;
-        height: number;
-      };
-    },
-  ];
+  category: Category[];
 };
 
 export type Articles = {

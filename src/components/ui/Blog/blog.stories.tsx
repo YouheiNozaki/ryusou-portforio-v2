@@ -1,5 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Blog } from '.';
+import { Card } from '../../spacer/Card';
 
 export default {
   title: 'components/ui/Blog',
@@ -26,4 +27,10 @@ const content = {
 
 export const Default: ComponentStory<typeof Blog> = () => (
   <Blog content={content} />
+);
+
+export const WrapCard: ComponentStory<typeof Blog> = () => (
+  <Card direction="column">
+    <Blog content={content} />
+  </Card>
 );

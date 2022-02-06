@@ -1,0 +1,21 @@
+.cardImage {
+  padding: 30px 16px 16px 16px;
+}
+
+.cardDescription {
+  padding-left: 16px;
+}
+
+.cardInfo {
+  display: flex;
+  align-items: center;
+}
+
+.cardAt {
+  padding-left: 8px;
+  font-size: 12px;
+}
+
+.cardDayIcon {
+  color: var(--c-primary-300);
+}

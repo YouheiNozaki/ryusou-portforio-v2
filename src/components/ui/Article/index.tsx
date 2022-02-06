@@ -4,7 +4,7 @@ import { BiCalendarAlt } from 'react-icons/bi';
 
 import { ArticleType } from 'types/article';
 import { Heading2 } from '../Heading2';
-import { ArticleStyle } from './article.css';
+import styles from './article.module.scss';
 
 type Props = {
   content: ArticleType;
@@ -15,7 +15,7 @@ export const Article: VFC<Props> = ({ content }) => {
     <>
       {content.category.map((category) => (
         <Fragment key={category.id}>
-          <div className={ArticleStyle.cardImage}>
+          <div className={styles.cardImage}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={`${category.caregoryImage.url}?h=40&w=40`}
@@ -24,11 +24,11 @@ export const Article: VFC<Props> = ({ content }) => {
           </div>
         </Fragment>
       ))}
-      <div className={ArticleStyle.cardDescription}>
+      <div className={styles.cardDescription}>
         <Heading2 title={content.title} />
-        <div className={ArticleStyle.cardInfo}>
-          <BiCalendarAlt className={ArticleStyle.cardDayIcon} />
-          <p className={ArticleStyle.cardAt}>
+        <div className={styles.cardInfo}>
+          <BiCalendarAlt className={styles.cardDayIcon} />
+          <p className={styles.cardAt}>
             {dayjs(content.publishArticleAt).format('YYYY/MM/DD')}
           </p>
         </div>
