@@ -1,13 +1,12 @@
 import Link from 'next/link';
 import { ArticleType } from 'types/article';
 import { getArticleList } from '../lib/fetchArticles';
-
 import { Layout } from '../components/common/Layout';
 import { HeadTemplate } from '../components/common/Head';
 import { Card } from '../components/spacer/Card';
 import { Article } from '../components/ui/Article';
 
-import { HomePageStyle } from '../styles/home.css';
+import styles from '../styles/home.module.scss';
 
 type Props = {
   articles: ArticleType[];
@@ -19,9 +18,9 @@ export const Home: React.VFC<Props> = ({ articles }) => {
       <HeadTemplate />
       <div>
         {articles.map((content) => (
-          <div key={content.id} className={HomePageStyle.cardWrapper}>
+          <div key={content.id} className={styles.cardWrapper}>
             <Link href={content.url} passHref>
-              <a href={content.url} className={HomePageStyle.cardLink}>
+              <a href={content.url} className={styles.cardLink}>
                 <Card>
                   <Article content={content} />
                 </Card>
