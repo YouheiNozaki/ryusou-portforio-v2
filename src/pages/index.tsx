@@ -4,7 +4,7 @@ import { getArticleList } from '../lib/fetchArticles';
 
 import { Layout } from '../components/common/Layout';
 import { HeadTemplate } from '../components/common/Head';
-import { Card } from '../components/ui/Card';
+import { Card } from '../components/spacer/Card';
 import { Article } from '../components/ui/Article';
 
 import { HomePageStyle } from '../styles/home.css';

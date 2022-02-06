@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 
 import { Layout } from 'components/common/Layout';
 import { HeadTemplate } from 'components/common/Head';
-import { Card } from 'components/ui/Card';
+import { Card } from 'components/spacer/Card';
 
 import type { Scraps } from 'types/scraps';
 import { clientScraps } from '../../lib/fetchScraps';
