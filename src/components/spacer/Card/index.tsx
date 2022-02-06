@@ -1,5 +1,5 @@
 import { ReactNode, VFC } from 'react';
-import { CardStyle } from './card.css';
+import styles from './card.module.scss';
 
 type Props = {
   children: ReactNode;
@@ -8,9 +8,7 @@ type Props = {
 
 export const Card: VFC<Props> = ({ children, direction }) => {
   return (
-    <div
-      className={direction === 'column' ? CardStyle.cardColumn : CardStyle.card}
-    >
+    <div className={direction === 'column' ? styles.cardcolumn : styles.card}>
       {children}
     </div>
   );
