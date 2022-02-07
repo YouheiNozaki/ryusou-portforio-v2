@@ -1,6 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 // eslint-disable-next-line import/no-named-as-default
-import Home from '../pages';
+import Home from '../pages/index';
 
 export default {
   title: 'pages/Home',
