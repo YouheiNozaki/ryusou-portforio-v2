@@ -1,6 +1,6 @@
 import type { ComponentStory, ComponentMeta } from '@storybook/react';
 // eslint-disable-next-line import/no-named-as-default
-import BlogsPage from '../pages/blogs/index';
+import BlogsPage from '../pages/blogs';
 
 export default {
   title: 'pages/BlogsPage',
