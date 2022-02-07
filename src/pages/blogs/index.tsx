@@ -35,7 +35,7 @@ const BlogsPage: React.VFC<Props> = ({ blogs, totalCount }) => {
           </div>
         ))}
       </div>
-      {totalCount > 10 && <Pagination totalCount={totalCount} />}
+      <Pagination totalCount={totalCount} />
     </Layout>
   );
 };

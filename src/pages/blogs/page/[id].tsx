@@ -1,11 +1,11 @@
 import Link from 'next/link';
-import { Layout } from 'components/common/Layout';
-import { HeadTemplate } from 'components/common/Head';
-import { Card } from 'components/spacer/Card';
-import { Blog } from 'components/ui/Blog';
-import { Pagination } from 'components/ui/Pagination';
 import type { BlogType } from 'types/blogs';
 import type { GetStaticProps } from 'next';
+import { Layout } from '../../../components/common/Layout';
+import { HeadTemplate } from '../../../components/common/Head';
+import { Card } from '../../../components/spacer/Card';
+import { Blog } from '../../../components/ui/Blog';
+import { Pagination } from '../../../components/ui/Pagination';
 import { getBlogList } from '../../../lib/fetchBlogs';
 import styles from '../../../styles/blogs.module.scss';
 
