@@ -9,3 +9,7 @@ export default {
 export const Normal: ComponentStory<typeof Heading2> = () => (
   <Heading2 title="ブログ記事" />
 );
+
+export const Error: ComponentStory<typeof Heading2> = () => (
+  <Heading2 title="このページは移動しました。ブログ記事は、一覧ページから見ることができます" />
+);
