@@ -7,7 +7,7 @@ import { Pagination } from 'components/ui/Pagination';
 import type { BlogType } from 'types/blogs';
 import type { GetStaticProps } from 'next';
 import { getBlogList } from '../../../lib/fetchBlogs';
-import { BlogsPageStyle } from '../../../styles/blogs.css';
+import styles from '../../../styles/blogs.module.scss';
 
 type Props = {
   blogs: BlogType[];
@@ -25,12 +25,9 @@ const BlogsPageId: React.VFC<Props> = ({ blogs, totalCount }) => {
       />
       <div>
         {blogs.map((content) => (
-          <div key={content.id} className={BlogsPageStyle.cardWrapper}>
+          <div key={content.id} className={styles.cardWrapper}>
             <Link href={`/blogs/${content.id}`} passHref>
-              <a
-                href={`/blogs/${content.id}`}
-                className={BlogsPageStyle.cardLink}
-              >
+              <a href={`/blogs/${content.id}`} className={styles.cardLink}>
                 <Card direction="column">
                   <Blog content={content} />
                 </Card>

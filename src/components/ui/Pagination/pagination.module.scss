@@ -1,0 +1,15 @@
+.main {
+  display: flex;
+}
+
+.li {
+  margin-left: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  list-style: none;
+}
+
+.a {
+  color: var(--c-gray-900);
+  text-decoration: none;
+}

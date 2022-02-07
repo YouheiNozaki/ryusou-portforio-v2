@@ -1,12 +1,12 @@
 import Link from 'next/link';
-import { Layout } from 'components/common/Layout';
-import { HeadTemplate } from 'components/common/Head';
-import { Card } from 'components/spacer/Card';
-import { Blog } from 'components/ui/Blog';
-import { Pagination } from 'components/ui/Pagination';
 import type { BlogType } from 'types/blogs';
+import { Layout } from '../../components/common/Layout';
+import { HeadTemplate } from '../../components/common/Head';
+import { Card } from '../../components/spacer/Card';
+import { Blog } from '../../components/ui/Blog';
+import { Pagination } from '../../components/ui/Pagination';
 import { getBlogList } from '../../lib/fetchBlogs';
-import { BlogsPageStyle } from '../../styles/blogs.css';
+import styles from '../../styles/blogs.module.scss';
 
 type Props = {
   blogs: BlogType[];
@@ -24,12 +24,9 @@ const BlogsPage: React.VFC<Props> = ({ blogs, totalCount }) => {
       />
       <div>
         {blogs.map((content) => (
-          <div key={content.id} className={BlogsPageStyle.cardWrapper}>
+          <div key={content.id} className={styles.cardWrapper}>
             <Link href={`/blogs/${content.id}`} passHref>
-              <a
-                href={`/blogs/${content.id}`}
-                className={BlogsPageStyle.cardLink}
-              >
+              <a href={`/blogs/${content.id}`} className={styles.cardLink}>
                 <Card direction="column">
                   <Blog content={content} />
                 </Card>
@@ -38,7 +35,7 @@ const BlogsPage: React.VFC<Props> = ({ blogs, totalCount }) => {
           </div>
         ))}
       </div>
-      <Pagination totalCount={totalCount} />
+      {totalCount > 10 && <Pagination totalCount={totalCount} />}
     </Layout>
   );
 };

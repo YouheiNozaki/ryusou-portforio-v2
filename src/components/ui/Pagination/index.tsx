@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { PaginationStyle } from './pagination.css';
+import styles from './pagination.module.scss';
 
 type Props = {
   totalCount: number;
@@ -12,11 +12,11 @@ export const Pagination: React.VFC<Props> = ({ totalCount }) => {
     [...Array(end - start + 1)].map((_, i) => start + i);
 
   return (
-    <ul className={PaginationStyle.main}>
+    <ul className={styles.main}>
       {range(1, Math.ceil(totalCount / PER_PAGE)).map((number, index) => (
-        <li key={index} className={PaginationStyle.li}>
+        <li key={index} className={styles.li}>
           <Link href={`/blogs/page/${number}`}>
-            <a href={`/blogs/page/${number}`} className={PaginationStyle.a}>
+            <a href={`/blogs/page/${number}`} className={styles.a}>
               {number}
             </a>
           </Link>

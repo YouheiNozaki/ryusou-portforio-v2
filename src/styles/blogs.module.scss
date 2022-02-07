@@ -1,0 +1,13 @@
+@use '../styles/variable' as mixin;
+
+.cardWrapper {
+  margin: 20px;
+
+  @include mixin.mq(md) {
+    margin: 8px 0;
+  }
+}
+.cardLink {
+  text-decoration: none;
+  color: var(--c-gray-900);
+}

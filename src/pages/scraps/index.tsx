@@ -7,7 +7,7 @@ import { Card } from 'components/spacer/Card';
 
 import type { Scraps } from 'types/scraps';
 import { clientScraps } from '../../lib/fetchScraps';
-import { BlogsPageStyle } from '../../styles/blogs.css';
+import styles from '../../styles/blogs.module.scss';
 
 type Props = {
   scraps: Scraps;
@@ -24,12 +24,9 @@ const ScrapsPage: React.VFC<Props> = ({ scraps }) => {
       />
       <div>
         {scraps.contents.map((content) => (
-          <div key={content.id} className={BlogsPageStyle.cardWrapper}>
+          <div key={content.id} className={styles.cardWrapper}>
             <Link href={`/scraps/${content.id}`} passHref>
-              <a
-                href={`/scraps/${content.id}`}
-                className={BlogsPageStyle.cardLink}
-              >
+              <a href={`/scraps/${content.id}`} className={styles.cardLink}>
                 <Card direction="column">
                   <h3>{content.title}</h3>
                   <p>{dayjs(content.createdAt).format('YYYY/MM/DD')}</p>
