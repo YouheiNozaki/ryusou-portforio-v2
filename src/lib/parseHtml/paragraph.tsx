@@ -1,9 +1,9 @@
-import { paragraphStyle } from './paragraph.css';
+import styles from './paragraph.module.scss';
 
 type Props = {
   children: React.ReactNode;
 };
 
 export const Paragraph: React.VFC<Props> = ({ children }) => {
-  return <strong className={paragraphStyle.main}>{children}</strong>;
+  return <strong className={styles.main}>{children}</strong>;
 };

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
 import { Fragment } from 'react';
 import { GetStaticProps, GetStaticPropsContext } from 'next';
 import Image from 'next/dist/client/image';
@@ -7,13 +8,13 @@ import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 import * as cheerio from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/night-owl.css';
-import { Layout } from 'components/common/Layout';
 import { parseHtml } from 'lib/parseHtml';
 import { BlogType } from 'types/blogs';
+import { Layout } from '../../components/common/Layout';
 import { HeadTemplate } from '../../components/common/Head';
 import { getBlog, getBlogList } from '../../lib/fetchBlogs';
 import { createOgImage } from '../../lib/createOgImage';
-import { BlogPageStyle } from '../../styles/blog.css';
+import styles from '../../styles/blogdetail.module.scss';
 
 type Props = {
   blog: BlogType;
@@ -34,35 +35,32 @@ export const getStaticProps: GetStaticProps = async (
   });
   $('img').each((_, element) => {
     $(element).html();
-    $(element).addClass(`${BlogPageStyle.blogContentImg}`);
+    $(element).addClass(`${styles.blogContentImg}`);
   });
   $('a').each((_, element) => {
     $(element).html();
-    $(element).addClass(`${BlogPageStyle.blogContentLink}`);
+    $(element).addClass(`${styles.blogContentLink}`);
   });
   $('h1').each((_, element) => {
     $(element).html();
-    $(element).addClass(`${BlogPageStyle.h1}`);
+    $(element).addClass(`${styles.heading1}`);
   });
   $('h2').each((_, element) => {
     $(element).html();
-    $(element).addClass(`${BlogPageStyle.h2}`);
+    $(element).addClass(`${styles.heading2}`);
   });
   $('h3').each((_, element) => {
     $(element).html();
-    $(element).addClass(`${BlogPageStyle.h3}`);
+    $(element).addClass(`${styles.heading3}`);
   });
-  $('h3').each((_, element) => {
-    $(element).html();
-    $(element).addClass(`${BlogPageStyle.h3}`);
-  });
+
   $('p').each((_, element) => {
     $(element).html();
-    $(element).addClass(`${BlogPageStyle.p}`);
+    $(element).addClass(`${styles.paragraph}`);
   });
   $('strong').each((_, element) => {
     $(element).html();
-    $(element).addClass(`${BlogPageStyle.strong}`);
+    $(element).addClass(`${styles.strongtext}`);
   });
 
   return {
@@ -96,22 +94,22 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         pagepath="blogs"
         postimg={ogImageUrl}
       />
-      <h1 className={BlogPageStyle.blogTitle}>{blog.title}</h1>
-      <div className={BlogPageStyle.blogDescription}>
-        <div className={BlogPageStyle.blogTags}>
+      <h1 className={styles.blogTitle}>{blog.title}</h1>
+      <div className={styles.blogDescription}>
+        <div className={styles.blogTags}>
           {blog.tags.map((tag) => (
             <Fragment key={tag.slug}>
-              <p className={BlogPageStyle.blogTag}>{tag.slug}</p>
+              <p className={styles.blogTag}>{tag.slug}</p>
             </Fragment>
           ))}
         </div>
-        <div className={BlogPageStyle.blogDays}>
-          <BiCalendarAlt className={BlogPageStyle.blogDayIcon} />
-          <p className={BlogPageStyle.blogDay}>
+        <div className={styles.blogDays}>
+          <BiCalendarAlt className={styles.blogDayIcon} />
+          <p className={styles.blogDay}>
             {dayjs(blog.createdAt).format('YYYY/MM/DD')}
           </p>
-          <BiCalendarCheck className={BlogPageStyle.blogDayIcon} />
-          <p className={BlogPageStyle.blogDay}>
+          <BiCalendarCheck className={styles.blogDayIcon} />
+          <p className={styles.blogDay}>
             {dayjs(blog.updatedAt).format('YYYY/MM/DD')}
           </p>
         </div>
@@ -123,18 +121,12 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
           repeater.fieldId === 'content' ? (
             <div>{parseHtml(repeater.content)}</div>
           ) : repeater.fieldId === 'amazonlink' ? (
-            <a
-              target="blank"
-              href={repeater.url}
-              className={BlogPageStyle.amazonLink}
-            >
-              <div className={BlogPageStyle.amazonLinkDescription}>
-                <p className={BlogPageStyle.amazonLinkText}>{repeater.name}</p>
-                <p className={BlogPageStyle.amazonLinkButton}>
-                  Amazonで購入する
-                </p>
+            <a target="blank" href={repeater.url} className={styles.amazonLink}>
+              <div className={styles.amazonLinkDescription}>
+                <p className={styles.amazonLinkText}>{repeater.name}</p>
+                <p className={styles.amazonLinkButton}>Amazonで購入する</p>
               </div>
-              <div className={BlogPageStyle.amazonLinkImage}>
+              <div className={styles.amazonLinkImage}>
                 <Image
                   src={repeater.image.url}
                   width={repeater.image.width / 3}
