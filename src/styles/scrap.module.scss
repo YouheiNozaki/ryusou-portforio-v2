@@ -35,10 +35,10 @@
 
 .tech {
   position: relative;
-  background-color: var(--c-primary-50);
   border-radius: 4px;
   box-sizing: border-box;
   padding: 16px;
+  background-color: var(--c-white);
 }
 
 .techLabel {
@@ -48,11 +48,9 @@
   top: 0px;
   left: 0px;
   padding: 4px 8px;
-  border: solid 1px var(--c-primary-50);
   border-radius: 4px 0 0 0;
   color: var(--c-primary-400);
   font-weight: bold;
-  background-color: var(--c-white);
 }
 
 .techText {
@@ -66,9 +64,8 @@
 
 .hobby {
   position: relative;
-  background-color: var(--c-gray-50);
-  border: solid 1px var(--c-gray-100);
-  border-radius: 4px;
+  background-color: var(--c-white);
+  border-radius: 8px;
   box-sizing: border-box;
   padding: 16px;
 }
@@ -80,7 +77,6 @@
   top: 0px;
   left: 0px;
   padding: 4px 8px;
-  border: solid 1px var(--c-gray-50);
   border-radius: 4px 0 0 0;
   color: var(--c-gray-400);
   font-weight: bold;
@@ -93,5 +89,5 @@
 
 .hobbyDetail {
   padding: 8px 12px;
-  background-color: var(--c-gray-50);
+  background-color: var(--c-white);
 }

@@ -58,8 +58,9 @@
 .profile {
   border: solid 1px var(--c-primary-100);
   box-sizing: border-box;
-  padding: 12px;
+  padding: 4px 12px;
   border-radius: 4px;
+  background-color: var(--c-white);
 }
 
 .sectionTitle {
@@ -88,11 +89,13 @@
 }
 
 .link {
+  padding: 12px;
   margin-top: 8px;
   padding: 4px 12px;
   border-radius: 4px;
   box-sizing: border-box;
-  background: var(--c-gray-100);
+  border: solid 1px var(--c-primary-100);
+  background: var(--c-white);
 }
 
 .icon {
