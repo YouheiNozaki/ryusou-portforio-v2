@@ -39,7 +39,7 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
   }
 
   return (
-    <Layout>
+    <Layout toggleColor>
       <HeadTemplate
         pagetitle={scrap.title}
         pagedescription={scrap.title}

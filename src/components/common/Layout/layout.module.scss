@@ -7,6 +7,14 @@
   padding-bottom: 80px;
 }
 
+.containerBackground {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 80px;
+  background-color: var(--c-primary-50);
+}
+
 .wrapper {
   margin: 40px auto;
   display: flex;

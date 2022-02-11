@@ -11,3 +11,9 @@ export const Normal: ComponentStory<typeof Layout> = () => (
     <p>メインコンテンツ</p>
   </Layout>
 );
+
+export const ToggleColor: ComponentStory<typeof Layout> = () => (
+  <Layout toggleColor>
+    <p>メインコンテンツ</p>
+  </Layout>
+);
