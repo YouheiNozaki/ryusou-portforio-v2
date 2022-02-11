@@ -1,0 +1,97 @@
+@use './variable' as mixin;
+
+.scrapDescription {
+  display: flex;
+
+  @include mixin.mq(md) {
+    flex-direction: column;
+  }
+}
+
+.scrapTitle {
+  color: var(--c-gray-900);
+  font-size: 28px;
+}
+
+.scrapDays {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+.scrapDay {
+  color: var(--c-gray-900);
+  margin-right: 12px;
+  padding: 4px;
+}
+
+.scrapDayIcon {
+  color: var(--color-blue-300);
+}
+
+.block {
+  margin: 48px 0;
+}
+
+.tech {
+  position: relative;
+  background-color: var(--color-blue-50);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.techLabel {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 4px 8px;
+  border: solid 1px var(--color-blue-50);
+  border-radius: 4px 0 0 0;
+  color: var(--color-blue-400);
+  font-weight: bold;
+  background-color: var(--color-white);
+}
+
+.techText {
+  margin: 0 0 0 8px;
+}
+
+.techDetail {
+  padding: 8px 12px;
+  background-color: var(--color-white);
+}
+
+.hobby {
+  position: relative;
+  background-color: var(--color-gray-50);
+  border: solid 1px var(--color-gray-100);
+  border-radius: 4px;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.hobbyLabel {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding: 4px 8px;
+  border: solid 1px var(--color-gray-50);
+  border-radius: 4px 0 0 0;
+  color: var(--color-gray-400);
+  font-weight: bold;
+  background-color: var(--color-white);
+}
+
+.hobbyText {
+  margin: 0 0 0 8px;
+}
+
+.hobbyDetail {
+  padding: 8px 12px;
+  background-color: var(--color-gray-50);
+}

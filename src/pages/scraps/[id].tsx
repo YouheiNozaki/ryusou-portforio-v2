@@ -12,7 +12,7 @@ import { parseHtml } from 'lib/parseHtml';
 import type { Scrap } from 'types/scraps';
 import { HeadTemplate } from '../../components/common/Head';
 import { clientScraps } from '../../lib/fetchScraps';
-import { ScrapPageStyle } from '../../styles/scrap.css';
+import styles from '../../styles/scrap.module.scss';
 
 type Props = {
   scrap: Scrap;
@@ -45,25 +45,25 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
         pagedescription={scrap.title}
         pagepath="scraps"
       />
-      <h1 className={ScrapPageStyle.scrapTitle}>{scrap.title}</h1>
-      <div className={ScrapPageStyle.scrapDescription}>
-        <div className={ScrapPageStyle.scrapDays}>
-          <BiCalendarAlt className={ScrapPageStyle.scrapDayIcon} />
-          <p className={ScrapPageStyle.scrapDay}>
+      <h1 className={styles.scrapTitle}>{scrap.title}</h1>
+      <div className={styles.scrapDescription}>
+        <div className={styles.scrapDays}>
+          <BiCalendarAlt className={styles.scrapDayIcon} />
+          <p className={styles.scrapDay}>
             {dayjs(scrap.createdAt).format('YYYY/MM/DD')}
           </p>
         </div>
       </div>
       <div>
         {scrap?.topic?.map((topic, id) => (
-          <div key={id} className={ScrapPageStyle.block}>
+          <div key={id} className={styles.block}>
             {topic.fieldId === 'tech' && (
-              <div className={ScrapPageStyle.tech}>
-                <span className={ScrapPageStyle.techLabel}>
+              <div className={styles.tech}>
+                <span className={styles.techLabel}>
                   <FcGraduationCap size={20} />
-                  <p className={ScrapPageStyle.techText}>Tech</p>
+                  <p className={styles.techText}>Tech</p>
                 </span>
-                <div className={ScrapPageStyle.techDetail}>
+                <div className={styles.techDetail}>
                   <h3>{topic.title}</h3>
                   <div>
                     {topic.body.map((body, index) => {
@@ -121,12 +121,12 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
               </div>
             )}
             {topic.fieldId === 'hobby' && (
-              <div className={ScrapPageStyle.hobby}>
-                <span className={ScrapPageStyle.hobbyLabel}>
+              <div className={styles.hobby}>
+                <span className={styles.hobbyLabel}>
                   <FcMusic size={20} />
-                  <p className={ScrapPageStyle.hobbyText}>Hobby</p>
+                  <p className={styles.hobbyText}>Hobby</p>
                 </span>
-                <div className={ScrapPageStyle.hobbyDetail}>
+                <div className={styles.hobbyDetail}>
                   <h3>{topic.title}</h3>
                   {topic.body.map((body, index) => {
                     return body.fieldId === 'richeditor' ? (
