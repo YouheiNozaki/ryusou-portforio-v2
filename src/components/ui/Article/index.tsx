@@ -3,7 +3,7 @@ import dayjs from 'dayjs';
 import { BiCalendarAlt } from 'react-icons/bi';
 
 import { ArticleType } from 'types/article';
-import { Heading2 } from '../Heading2';
+import { Heading3 } from '../Heading3';
 import styles from './article.module.scss';
 
 type Props = {
@@ -25,7 +25,7 @@ export const Article: VFC<Props> = ({ content }) => {
         </Fragment>
       ))}
       <div className={styles.cardDescription}>
-        <Heading2 title={content.title} />
+        <Heading3 title={content.title} />
         <div className={styles.cardInfo}>
           <BiCalendarAlt className={styles.cardDayIcon} />
           <p className={styles.cardAt}>

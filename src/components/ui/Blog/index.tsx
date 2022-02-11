@@ -5,7 +5,7 @@ import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 import styles from './blog.module.scss';
 import type { BlogType } from '../../../types/blogs';
 import { Tag } from '../Tag';
-import { Heading2 } from '../Heading2';
+import { Heading3 } from '../Heading3';
 
 type Props = {
   content: BlogType;
@@ -14,7 +14,7 @@ type Props = {
 export const Blog: VFC<Props> = ({ content }) => {
   return (
     <>
-      <Heading2 title={content.title} />
+      <Heading3 title={content.title} />
       <div className={styles.cardDescription}>
         <div className={styles.cardTags}>
           {content.tags.map((tag) => (
