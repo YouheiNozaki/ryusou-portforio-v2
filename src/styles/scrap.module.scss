@@ -2,26 +2,24 @@
 
 .scrapDescription {
   display: flex;
+  align-items: center;
 
   @include mixin.mq(md) {
     flex-direction: column;
   }
 }
 
-.scrapTitle {
-  color: var(--c-gray-900);
-  font-size: 28px;
-}
-
 .scrapDays {
   display: flex;
   align-items: center;
-  font-size: 16px;
+  > * {
+    margin-right: 4px;
+  }
 }
 
 .scrapDay {
+  font-size: 16px;
   color: var(--c-gray-900);
-  margin-right: 12px;
   padding: 4px;
 }
 

@@ -46,8 +46,8 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
         pagedescription={scrap.title}
         pagepath="scraps"
       />
-      <Heading2 title={scrap.title} />
       <div className={styles.scrapDescription}>
+        <Heading2 title={scrap.title} />
         <div className={styles.scrapDays}>
           <BiCalendarAlt className={styles.scrapDayIcon} />
           <p className={styles.scrapDay}>
