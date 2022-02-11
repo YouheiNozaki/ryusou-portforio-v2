@@ -12,6 +12,7 @@ import { parseHtml } from 'lib/parseHtml';
 import { BlogType } from 'types/blogs';
 import { Layout } from '../../components/common/Layout';
 import { HeadTemplate } from '../../components/common/Head';
+import { Heading2 } from '../../components/ui/Heading2';
 import { getBlog, getBlogList } from '../../lib/fetchBlogs';
 import { createOgImage } from '../../lib/createOgImage';
 import styles from '../../styles/blogdetail.module.scss';
@@ -94,7 +95,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         pagepath="blogs"
         postimg={ogImageUrl}
       />
-      <h1 className={styles.blogTitle}>{blog.title}</h1>
+      <Heading2 title={blog.title} />
       <div className={styles.blogDescription}>
         <div className={styles.blogTags}>
           {blog.tags.map((tag) => (

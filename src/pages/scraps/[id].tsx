@@ -11,6 +11,7 @@ import { Layout } from 'components/common/Layout';
 import { parseHtml } from 'lib/parseHtml';
 import type { Scrap } from 'types/scraps';
 import { HeadTemplate } from '../../components/common/Head';
+import { Heading2 } from '../../components/ui/Heading2';
 import { clientScraps } from '../../lib/fetchScraps';
 import styles from '../../styles/scrap.module.scss';
 
@@ -45,7 +46,7 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
         pagedescription={scrap.title}
         pagepath="scraps"
       />
-      <h1 className={styles.scrapTitle}>{scrap.title}</h1>
+      <Heading2 title={scrap.title} />
       <div className={styles.scrapDescription}>
         <div className={styles.scrapDays}>
           <BiCalendarAlt className={styles.scrapDayIcon} />
