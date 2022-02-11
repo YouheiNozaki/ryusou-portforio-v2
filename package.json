@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next-remote-watch ./**/*.css.ts",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "npm run lint:es && npm run lint:style",
@@ -27,8 +27,6 @@
     ]
   },
   "dependencies": {
-    "@vanilla-extract/css": "^1.6.8",
-    "@vanilla-extract/next-plugin": "^1.0.1",
     "base64url": "^3.0.1",
     "cheerio": "^1.0.0-rc.10",
     "dayjs": "^1.10.6",
@@ -65,8 +63,6 @@
     "@types/stylelint": "^13.13.1",
     "@typescript-eslint/eslint-plugin": "^4.28.4",
     "@typescript-eslint/parser": "^4.28.4",
-    "@vanilla-extract/babel-plugin": "^1.1.4",
-    "babel-loader": "^8.2.3",
     "eslint": "^7.31.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.0.1",
@@ -78,14 +74,12 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "husky": "^7.0.0",
     "lint-staged": "^11.1.0",
-    "next-remote-watch": "^1.0.0",
     "prettier": "^2.3.2",
     "storybook-addon-next": "^1.4.1",
     "stylelint": "^13.13.1",
     "stylelint-config-recess-order": "^2.4.0",
     "stylelint-config-standard": "^22.0.0",
     "stylelint-order": "^4.1.0",
-    "typescript": "4.3.5",
-    "webpack": "^5.46.0"
+    "typescript": "4.3.5"
   }
 }

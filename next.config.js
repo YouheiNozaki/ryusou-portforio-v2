@@ -1,6 +1,4 @@
 const path = require('path');
-const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
-const withVanillaExtract = createVanillaExtractPlugin();
 
 const nextConfig = {
   sassOptions: {
@@ -12,4 +10,4 @@ const nextConfig = {
   webpack5: true,
 };
 
-module.exports = withVanillaExtract(nextConfig);
+module.exports = nextConfig;
