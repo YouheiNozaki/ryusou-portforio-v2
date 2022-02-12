@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import { FcBrokenLink, FcPortraitMode } from 'react-icons/fc';
-import { Heading3 } from 'components/ui/Heading3';
-import { Heading2 } from 'components/ui/Heading2';
+import { Heading3 } from '../../ui/Heading3';
+import { Heading2 } from '../../ui/Heading2';
 import styles from './sidebar.module.scss';
 
 import cat from '../../../../public/cat.png';
