@@ -6,4 +6,6 @@ export default {
   component: Footer,
 } as ComponentMeta<typeof Footer>;
 
-export const Normal: ComponentStory<typeof Footer> = () => <Footer />;
+const Template: ComponentStory<typeof Footer> = () => <Footer />;
+
+export const Default = Template.bind({});
