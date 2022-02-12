@@ -12,16 +12,13 @@ import aws from '../../../../public/aws.png';
 
 type Props = {
   children: React.ReactNode;
-  toggleColor?: boolean;
 };
 
-export const Layout: React.VFC<Props> = ({ children, toggleColor }) => {
+export const Layout: React.VFC<Props> = ({ children }) => {
   return (
     <div>
       <Header />
-      <div
-        className={toggleColor ? styles.containerBackground : styles.container}
-      >
+      <div className={styles.container}>
         <div className={styles.wrapper}>
           <main className={styles.main}>{children}</main>
           <section className={styles.section}>

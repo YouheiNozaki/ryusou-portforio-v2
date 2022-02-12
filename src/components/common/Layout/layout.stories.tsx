@@ -6,14 +6,10 @@ export default {
   component: Layout,
 } as ComponentMeta<typeof Layout>;
 
-export const Normal: ComponentStory<typeof Layout> = () => (
-  <Layout>
-    <p>メインコンテンツ</p>
-  </Layout>
-);
+const Template: ComponentStory<typeof Layout> = (args) => <Layout {...args} />;
 
-export const ToggleColor: ComponentStory<typeof Layout> = () => (
-  <Layout toggleColor>
-    <p>メインコンテンツ</p>
-  </Layout>
-);
+export const Default = Template.bind({});
+
+Default.args = {
+  children: 'メインコンテンツ',
+};
