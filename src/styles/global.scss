@@ -1,15 +1,5 @@
 :root {
   // color
-  --c-primary-900: #263238;
-  --c-primary-800: #37474f;
-  --c-primary-700: #455a64;
-  --c-primary-600: #546e7a;
-  --c-primary-500: #607d8b;
-  --c-primary-400: #78909c;
-  --c-primary-300: #90a4ae;
-  --c-primary-200: #b0bec5;
-  --c-primary-100: #cfd8dc;
-  --c-primary-50: #eceff1;
   --c-white: #fff;
   --c-gray-900: #212121;
   --c-gray-800: #424242;
@@ -21,6 +11,7 @@
   --c-gray-200: #eeeeee;
   --c-gray-100: #f5f5f5;
   --c-gray-50: #fafafa;
+  --c-link: #1da1f2;
   // font-size
   --font-size-base: 1rem;
   --font-size-biggish: 1.75rem;
@@ -58,6 +49,9 @@ dl,
 dd {
   margin: 0;
   color: var(--c-gray-300);
+}
+a {
+  color: var(--c-link);
 }
 ul[role='list'],
 ol[role='list'] {

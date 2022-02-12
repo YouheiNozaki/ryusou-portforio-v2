@@ -1,0 +1,72 @@
+@use '../../../styles/variable' as mixin;
+
+.section {
+  width: 100%;
+  padding-top: 16px;
+  flex-basis: 35%;
+  margin: 4px;
+
+  @include mixin.mq(lg) {
+    margin: 0;
+    padding-top: 90px;
+  }
+}
+
+.profile {
+  border: solid 1px var(--c-gray-100);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.detail {
+  :first-child {
+    margin-top: 8px;
+  }
+  > * {
+    padding: 8px;
+  }
+}
+
+.image {
+  margin: 12px;
+}
+
+.ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+  > * {
+    margin-right: 12px;
+  }
+}
+
+.li {
+  border-radius: 4px;
+  background-color: var(--c-gray-200);
+  list-style: none;
+  padding: 8px;
+
+  @include mixin.mq(lg) {
+    margin-right: 2px;
+  }
+}
+
+.link {
+  padding: 12px;
+  margin-top: 8px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: solid 1px var(--c-gray-100);
+}
+
+.icon {
+  margin-right: 8px;
+  line-height: 1.7;
+  color: var(--c-gray-400);
+}
