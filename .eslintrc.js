@@ -106,6 +106,7 @@ module.exports = {
         additionalHooks: '(useMyCustomHook|useMyOtherCustomHook)',
       },
     ],
+    '@next/next/no-html-link-for-pages': 'off',
   },
   overrides: [
     {

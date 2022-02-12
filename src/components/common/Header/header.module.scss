@@ -26,10 +26,10 @@
   font-size: 16px;
   color: var(--c-gray-200);
   border-radius: 8px;
+}
 
-  &:hover {
-    font-weight: bold;
-    color: var(--c-gray-900);
-    background-color: var(--c-gray-50);
-  }
+.isActive {
+  font-weight: bold;
+  color: var(--c-gray-900);
+  background-color: var(--c-gray-50);
 }
