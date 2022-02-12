@@ -6,6 +6,12 @@ export default {
   component: Heading1,
 } as ComponentMeta<typeof Heading1>;
 
-export const Normal: ComponentStory<typeof Heading1> = () => (
-  <Heading1 title="Ryusou.dev" />
+const Template: ComponentStory<typeof Heading1> = (args) => (
+  <Heading1 {...args} />
 );
+
+export const Default = Template.bind({});
+
+Default.args = {
+  title: 'Ryusou.dev',
+};

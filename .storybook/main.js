@@ -4,6 +4,7 @@ module.exports = {
     'storybook-addon-next',
     '@storybook/addon-links',
     '@storybook/addon-essentials',
+    '@storybook/addon-controls',
   ],
   framework: '@storybook/react',
   core: {
