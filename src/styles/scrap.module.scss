@@ -2,7 +2,6 @@
 
 .scrapDescription {
   display: flex;
-  align-items: center;
 
   @include mixin.mq(md) {
     flex-direction: column;
