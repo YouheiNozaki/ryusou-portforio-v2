@@ -4,6 +4,10 @@
   box-sizing: border-box;
   border-radius: 8px;
 
+  :not(:first-child) {
+    width: calc(100% - 40px);
+  }
+
   &:hover {
     border: solid 1px var(--c-gray-100);
   }
