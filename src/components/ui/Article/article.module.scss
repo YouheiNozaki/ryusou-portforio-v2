@@ -1,9 +1,12 @@
 .cardImage {
-  padding: 30px 16px 16px 16px;
+  padding: 12px 4px 4px 4px;
 }
 
 .cardDescription {
   padding-left: 16px;
+  > * {
+    padding: 4px;
+  }
 }
 
 .cardInfo {
@@ -17,5 +20,5 @@
 }
 
 .cardDayIcon {
-  color: var(--c-primary-300);
+  color: var(--c-gray-200);
 }

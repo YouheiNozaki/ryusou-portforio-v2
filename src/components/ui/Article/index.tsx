@@ -16,9 +16,8 @@ export const Article: VFC<Props> = ({ content }) => {
       {content.category.map((category) => (
         <Fragment key={category.id}>
           <div className={styles.cardImage}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src={`${category.caregoryImage.url}?h=40&w=40`}
+              src={`${category.caregoryImage.url}?h=32&w=32`}
               alt={category.id}
             />
           </div>
