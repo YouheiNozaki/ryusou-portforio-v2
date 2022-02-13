@@ -21,7 +21,7 @@ const Home: React.VFC<Props> = ({ articles }) => {
           <div key={content.id} className={styles.cardWrapper}>
             <Link href={content.url} passHref>
               <a href={content.url} className={styles.cardLink}>
-                <Card>
+                <Card direction="raw">
                   <Article content={content} />
                 </Card>
               </a>

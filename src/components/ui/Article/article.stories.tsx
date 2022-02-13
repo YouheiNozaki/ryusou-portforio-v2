@@ -30,7 +30,7 @@ export const Default: ComponentStory<typeof Article> = () => (
 );
 
 export const WrapCard: ComponentStory<typeof Article> = () => (
-  <Card>
+  <Card direction="raw">
     <Article content={content} />
   </Card>
 );

@@ -6,17 +6,21 @@ export default {
   component: Card,
 } as ComponentMeta<typeof Card>;
 
-export const Default: ComponentStory<typeof Card> = () => (
-  <Card>
-    <p>テキスト</p>
-    <p>テキスト</p>
-    <p>テキスト</p>
-  </Card>
-);
-export const Column: ComponentStory<typeof Card> = () => (
-  <Card direction="column">
-    <p>テキスト</p>
-    <p>テキスト</p>
-    <p>テキスト</p>
-  </Card>
-);
+const Template: ComponentStory<typeof Card> = (args) => <Card {...args} />;
+
+export const Default = Template.bind({});
+
+const Data = () => {
+  return (
+    <>
+      <p>テスト1</p>
+      <p>テスト2</p>
+      <p>テスト3</p>
+    </>
+  );
+};
+
+Default.args = {
+  direction: 'column',
+  children: <Data />,
+};
