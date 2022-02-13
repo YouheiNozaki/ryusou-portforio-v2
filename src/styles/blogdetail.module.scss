@@ -49,7 +49,7 @@
 
 .blogContentLink {
   word-wrap: break-word;
-  background-color: var(--c-gray-900);
+  background-color: var(--c-gray-900) !important;
 }
 
 .amazonLink {
@@ -85,31 +85,33 @@
 .heading1 {
   margin: 40px 0px 20px;
   padding: 12px;
-  color: var(--c-gray-200);
-  border-bottom: solid 3px var(--c-gray-200);
+  color: var(--c-gray-400);
+  border-bottom: solid 1px var(--c-gray-400);
 }
 
 .heading2 {
   margin: 40px 0px 20px;
   padding: 4px;
-  color: var(--c-gray-200);
-  border-bottom: solid 3px var(--c-gray-200);
+  color: var(--c-gray-400);
+  border-bottom: solid 1px var(--c-gray-400);
 }
 
 .heading3 {
   margin: 40px 0px 20px;
   padding: 4px;
-  color: var(--c-gray-200);
-  border-bottom: solid 3px var(--c-gray-200);
+  color: var(--c-gray-400);
+  border-bottom: solid 1px var(--c-gray-400);
 }
 
 .strongtext {
   letter-spacing: 0.05rem;
   line-height: '1.7';
-  border-bottom: solid 3px var(--c-gray-200);
+  color: var(--c-gray-300);
+  border-bottom: solid 1px var(--c-gray-400);
 }
 
 .paragraph {
   letter-spacing: 0.05rem;
   line-height: 1.7;
+  color: var(--c-gray-400);
 }
