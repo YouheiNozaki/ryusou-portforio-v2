@@ -8,7 +8,6 @@ import { BiCalendarAlt, BiCalendarCheck } from 'react-icons/bi';
 import * as cheerio from 'cheerio';
 import hljs from 'highlight.js';
 import 'highlight.js/styles/night-owl.css';
-import { parseHtml } from 'lib/parseHtml';
 import { BlogType } from 'types/blogs';
 import { Tag } from 'components/ui/Tag';
 import { Layout } from '../../components/common/Layout';
@@ -120,7 +119,10 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
       <div>
         {blog?.repeater?.map((repeater) =>
           repeater.fieldId === 'content' ? (
-            <div>{parseHtml(repeater.content)}</div>
+            <div className={styles.repeatContent}>
+              {/* eslint-disable-next-line react/no-danger */}
+              <div dangerouslySetInnerHTML={{ __html: repeater.content }} />
+            </div>
           ) : repeater.fieldId === 'amazonlink' ? (
             <a href={repeater.url} className={styles.amazonLink}>
               <p className={styles.amazonLinkText}>{repeater.name}</p>
