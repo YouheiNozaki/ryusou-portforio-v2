@@ -1,14 +1,9 @@
 @use '../../../styles/variable.scss' as mixin;
 
 .tag {
-  margin-right: 8px;
   display: inline-block;
   padding: 4px 6px;
-  color: var(--c-white);
-  background-color: var(--c-primary-300);
+  color: var(--c-gray-900);
+  background-color: var(--c-gray-200);
   border-radius: 4px;
-
-  @include mixin.mq(md) {
-    margin: 2px;
-  }
 }
