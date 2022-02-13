@@ -19,7 +19,7 @@ export const Blog: VFC<Props> = ({ content }) => {
         <div className={styles.cardTags}>
           {content.tags.map((tag) => (
             <Fragment key={tag.slug}>
-              <Tag tag={tag} />
+              <Tag tag={tag.slug} />
             </Fragment>
           ))}
         </div>

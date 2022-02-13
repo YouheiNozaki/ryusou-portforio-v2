@@ -6,12 +6,10 @@ export default {
   component: Tag,
 } as ComponentMeta<typeof Tag>;
 
-const tagJa = {
-  slug: 'コラム',
-};
-const tagEn = {
-  slug: 'Jamstack',
-};
+const Template: ComponentStory<typeof Tag> = (args) => <Tag {...args} />;
 
-export const Ja: ComponentStory<typeof Tag> = () => <Tag tag={tagJa} />;
-export const En: ComponentStory<typeof Tag> = () => <Tag tag={tagEn} />;
+export const Default = Template.bind({});
+
+Default.args = {
+  tag: 'Jamstack',
+};
