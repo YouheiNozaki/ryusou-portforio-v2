@@ -2,6 +2,9 @@
 
 .cardDescription {
   display: flex;
+  > * {
+    padding: 8px;
+  }
 
   @include mixin.mq(md) {
     width: 100%;
@@ -22,6 +25,9 @@
 .cardDays {
   display: flex;
   align-items: center;
+  > p {
+    margin-right: 12px;
+  }
 
   @include mixin.mq(md) {
     margin: 4px;
@@ -29,7 +35,6 @@
 }
 
 .cardDay {
-  margin-right: 12px;
   padding: 4px;
   font-size: 12px;
 
@@ -39,5 +44,5 @@
 }
 
 .cardDayIcon {
-  color: var(--c-primary-300);
+  color: var(--c-gray-200);
 }
