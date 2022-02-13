@@ -7,7 +7,20 @@
     margin: 8px 0;
   }
 }
+
 .cardLink {
   text-decoration: none;
   color: var(--c-gray-900);
+}
+
+.cardInfo {
+  display: flex;
+  align-items: center;
+  > * {
+    margin-right: 4px;
+  }
+}
+
+.cardDayIcon {
+  color: var(--c-gray-200);
 }

@@ -2,10 +2,7 @@
 
 .scrapDescription {
   display: flex;
-
-  @include mixin.mq(md) {
-    flex-direction: column;
-  }
+  flex-direction: column;
 }
 
 .scrapDays {
@@ -18,56 +15,24 @@
 
 .scrapDay {
   font-size: 16px;
-  color: var(--c-gray-900);
+  color: var(--c-gray-200);
   padding: 4px;
 }
 
 .scrapDayIcon {
-  color: var(--c-primary-300);
+  color: var(--c-gray-200);
 }
 
-.block {
+.scrapWrapper {
   margin: 48px 0;
-}
-
-.tech {
+  max-width: none;
   position: relative;
   border-radius: 4px;
-  box-sizing: border-box;
-  padding: 16px;
-  background-color: var(--c-white);
-}
-
-.techLabel {
-  display: flex;
-  align-items: center;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  padding: 4px 8px;
-  border-radius: 4px 0 0 0;
-  color: var(--c-primary-400);
-  font-weight: bold;
-}
-
-.techText {
-  margin: 0 0 0 8px;
-}
-
-.techDetail {
-  padding: 8px 12px;
-  background-color: var(--c-white);
-}
-
-.hobby {
-  position: relative;
-  background-color: var(--c-white);
-  border-radius: 8px;
-  box-sizing: border-box;
+  border: solid 1px var(--c-gray-200);
   padding: 16px;
 }
 
-.hobbyLabel {
+.label {
   display: flex;
   align-items: center;
   position: absolute;
@@ -77,14 +42,12 @@
   border-radius: 4px 0 0 0;
   color: var(--c-gray-400);
   font-weight: bold;
-  background-color: var(--c-white);
 }
 
-.hobbyText {
+.text {
   margin: 0 0 0 8px;
 }
 
-.hobbyDetail {
+.detail {
   padding: 8px 12px;
-  background-color: var(--c-white);
 }

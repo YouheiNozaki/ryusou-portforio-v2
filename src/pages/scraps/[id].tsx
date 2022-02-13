@@ -57,14 +57,14 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
       </div>
       <div>
         {scrap?.topic?.map((topic, id) => (
-          <div key={id} className={styles.block}>
+          <Fragment key={id}>
             {topic.fieldId === 'tech' && (
-              <div className={styles.tech}>
-                <span className={styles.techLabel}>
+              <div className={styles.scrapWrapper}>
+                <span className={styles.label}>
                   <FcGraduationCap size={20} />
-                  <p className={styles.techText}>Tech</p>
+                  <p className={styles.text}>Tech</p>
                 </span>
-                <div className={styles.techDetail}>
+                <div className={styles.detail}>
                   <h3>{topic.title}</h3>
                   <div>
                     {topic.body.map((body, index) => {
@@ -122,12 +122,12 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
               </div>
             )}
             {topic.fieldId === 'hobby' && (
-              <div className={styles.hobby}>
-                <span className={styles.hobbyLabel}>
+              <div className={styles.scrapWrapper}>
+                <span className={styles.label}>
                   <FcMusic size={20} />
-                  <p className={styles.hobbyText}>Hobby</p>
+                  <p className={styles.text}>Hobby</p>
                 </span>
-                <div className={styles.hobbyDetail}>
+                <div className={styles.detail}>
                   <h3>{topic.title}</h3>
                   {topic.body.map((body, index) => {
                     return body.fieldId === 'richeditor' ? (
@@ -179,7 +179,7 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
                 </div>
               </div>
             )}
-          </div>
+          </Fragment>
         ))}
       </div>
     </Layout>

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import dayjs from 'dayjs';
+import { BiCalendarAlt } from 'react-icons/bi';
 
 import { Layout } from 'components/common/Layout';
 import { HeadTemplate } from 'components/common/Head';
@@ -29,7 +30,10 @@ const ScrapsPage: React.VFC<Props> = ({ scraps }) => {
               <a href={`/scraps/${content.id}`} className={styles.cardLink}>
                 <Card direction="column">
                   <h3>{content.title}</h3>
-                  <p>{dayjs(content.createdAt).format('YYYY/MM/DD')}</p>
+                  <div className={styles.cardInfo}>
+                    <BiCalendarAlt className={styles.cardDayIcon} />
+                    <p>{dayjs(content.createdAt).format('YYYY/MM/DD')}</p>
+                  </div>
                 </Card>
               </a>
             </Link>
