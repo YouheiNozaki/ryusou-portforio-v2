@@ -12,7 +12,9 @@
   --c-gray-100: #f5f5f5;
   --c-gray-50: #fafafa;
   --c-link: #1da1f2;
+  --c-accent: #e57373;
   // font-size
+  --font-size-small: 0.75rem;
   --font-size-base: 1rem;
   --font-size-biggish: 1.75rem;
   --font-size-big: 2.25rem;
@@ -28,7 +30,6 @@ nav,
 main,
 footer {
   max-width: none;
-  background-color: var(--c-gray-900);
 }
 
 *,

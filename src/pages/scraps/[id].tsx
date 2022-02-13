@@ -2,11 +2,12 @@ import { Fragment } from 'react';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
+import clsx from 'clsx';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { BiCalendarAlt } from 'react-icons/bi';
-import { FcGraduationCap, FcMusic } from 'react-icons/fc';
+import { FcDocument, FcMusic } from 'react-icons/fc';
 import { Layout } from 'components/common/Layout';
 import { parseHtml } from 'lib/parseHtml';
 import type { Scrap } from 'types/scraps';
@@ -59,10 +60,10 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
         {scrap?.topic?.map((topic, id) => (
           <Fragment key={id}>
             {topic.fieldId === 'tech' && (
-              <div className={styles.scrapWrapper}>
-                <span className={styles.label}>
-                  <FcGraduationCap size={20} />
-                  <p className={styles.text}>Tech</p>
+              <div className={clsx(styles.scrapWrapper, styles.techWrapper)}>
+                <span className={clsx(styles.label, styles.techLabel)}>
+                  <FcDocument size={16} />
+                  <p className={clsx(styles.text, styles.techText)}>tech</p>
                 </span>
                 <div className={styles.detail}>
                   <h3>{topic.title}</h3>
@@ -122,10 +123,10 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
               </div>
             )}
             {topic.fieldId === 'hobby' && (
-              <div className={styles.scrapWrapper}>
-                <span className={styles.label}>
+              <div className={clsx(styles.scrapWrapper, styles.hobbyWrapper)}>
+                <span className={clsx(styles.label, styles.hobbyLabel)}>
                   <FcMusic size={20} />
-                  <p className={styles.text}>Hobby</p>
+                  <p className={clsx(styles.text, styles.hobbyText)}>Hobby</p>
                 </span>
                 <div className={styles.detail}>
                   <h3>{topic.title}</h3>

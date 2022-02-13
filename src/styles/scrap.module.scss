@@ -24,12 +24,19 @@
 }
 
 .scrapWrapper {
-  margin: 48px 0;
+  margin: 48px;
   max-width: none;
   position: relative;
   border-radius: 4px;
-  border: solid 1px var(--c-gray-200);
   padding: 16px;
+}
+
+.techWrapper {
+  border: solid 1px var(--c-link);
+}
+
+.hobbyWrapper {
+  border: solid 1px var(--c-accent);
 }
 
 .label {
@@ -37,15 +44,36 @@
   align-items: center;
   position: absolute;
   top: 0px;
-  left: 0px;
+  right: 0px;
+  margin: 8px;
   padding: 4px 8px;
-  border-radius: 4px 0 0 0;
+  border-radius: 12px;
   color: var(--c-gray-400);
   font-weight: bold;
+
+  :not(:first-child) {
+    margin-left: 4px;
+  }
+}
+
+.techLabel {
+  border: solid 1px var(--c-link);
+}
+
+.hobbyLabel {
+  border: solid 1px var(--c-accent);
 }
 
 .text {
-  margin: 0 0 0 8px;
+  font-size: var(--font-size-small);
+}
+
+.techText {
+  color: var(--c-link);
+}
+
+.hobbyText {
+  color: var(--c-accent);
 }
 
 .detail {
