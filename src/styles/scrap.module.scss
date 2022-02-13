@@ -79,3 +79,39 @@
 .detail {
   padding: 8px 12px;
 }
+
+.letterBody {
+  h1 {
+    margin: 12px 0px 8px;
+    padding: 12px;
+    color: var(--c-gray-400);
+  }
+
+  h2 {
+    margin: 12px 0px 8px;
+    padding: 4px;
+    color: var(--c-gray-400);
+  }
+
+  .h3 {
+    margin: 12px 0px 8px;
+    padding: 4px;
+    color: var(--c-gray-400);
+  }
+
+  p {
+    letter-spacing: 0.05rem;
+    line-height: 1.7;
+    color: var(--c-gray-400);
+  }
+
+  strong {
+    border-bottom: solid 1px var(--c-gray-50);
+  }
+
+  iframe {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+}

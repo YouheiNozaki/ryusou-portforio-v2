@@ -3,16 +3,13 @@ import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { useRouter } from 'next/dist/client/router';
 import dayjs from 'dayjs';
 import clsx from 'clsx';
-import ReactMarkdown from 'react-markdown';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { base16AteliersulphurpoolLight } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import { BiCalendarAlt } from 'react-icons/bi';
 import { FcDocument, FcMusic } from 'react-icons/fc';
 import { Layout } from 'components/common/Layout';
-import { parseHtml } from 'lib/parseHtml';
 import type { Scrap } from 'types/scraps';
 import { HeadTemplate } from '../../components/common/Head';
 import { Heading2 } from '../../components/ui/Heading2';
+import { MarkdownField } from '../../components/ui/MarkdownField';
 import { clientScraps } from '../../lib/fetchScraps';
 import styles from '../../styles/scrap.module.scss';
 
@@ -70,48 +67,16 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
                   <div>
                     {topic.body.map((body, index) => {
                       return body.fieldId === 'richeditor' ? (
-                        <Fragment key={index}>
-                          <p>{parseHtml(body.richText)}</p>
-                        </Fragment>
-                      ) : body.fieldId === 'markdown' ? (
-                        <Fragment key={index}>
-                          <ReactMarkdown
-                            // eslint-disable-next-line react/no-children-prop
-                            children={body.markdownText}
-                            components={{
-                              code({
-                                // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                                node,
-                                inline,
-                                className,
-                                children,
-                                ...props
-                              }) {
-                                const match = /language-(\w+)/.exec(
-                                  className || '',
-                                );
-
-                                return !inline && match ? (
-                                  <SyntaxHighlighter
-                                    // eslint-disable-next-line react/no-children-prop
-                                    children={String(children).replace(
-                                      /\n$/,
-                                      '',
-                                    )}
-                                    style={base16AteliersulphurpoolLight}
-                                    language={match[1]}
-                                    PreTag="div"
-                                    {...props}
-                                  />
-                                ) : (
-                                  <code className={className} {...props}>
-                                    {children}
-                                  </code>
-                                );
-                              },
-                            }}
+                        <div key={index} className={styles.letterBody}>
+                          <div
+                            // eslint-disable-next-line react/no-danger
+                            dangerouslySetInnerHTML={{ __html: body.richText }}
                           />
-                        </Fragment>
+                        </div>
+                      ) : body.fieldId === 'markdown' ? (
+                        <div key={index} className={styles.letterBody}>
+                          <MarkdownField text={body.markdownText} />
+                        </div>
                       ) : body.fieldId === 'richlink' ? (
                         <Fragment key={index}>
                           <a href={body.url}>{body.title}</a>
@@ -132,45 +97,16 @@ const ScrapDetail: React.FC<Props> = ({ scrap }) => {
                   <h3>{topic.title}</h3>
                   {topic.body.map((body, index) => {
                     return body.fieldId === 'richeditor' ? (
-                      <Fragment key={index}>
-                        <p>{parseHtml(body.richText)}</p>
-                      </Fragment>
-                    ) : body.fieldId === 'markdown' ? (
-                      <Fragment key={index}>
-                        <ReactMarkdown
-                          // eslint-disable-next-line react/no-children-prop
-                          children={body.markdownText}
-                          components={{
-                            code({
-                              // eslint-disable-next-line @typescript-eslint/no-unused-vars
-                              node,
-                              inline,
-                              className,
-                              children,
-                              ...props
-                            }) {
-                              const match = /language-(\w+)/.exec(
-                                className || '',
-                              );
-
-                              return !inline && match ? (
-                                <SyntaxHighlighter
-                                  // eslint-disable-next-line react/no-children-prop
-                                  children={String(children).replace(/\n$/, '')}
-                                  style={base16AteliersulphurpoolLight}
-                                  language={match[1]}
-                                  PreTag="div"
-                                  {...props}
-                                />
-                              ) : (
-                                <code className={className} {...props}>
-                                  {children}
-                                </code>
-                              );
-                            },
-                          }}
+                      <div key={index} className={styles.letterBody}>
+                        <div
+                          // eslint-disable-next-line react/no-danger
+                          dangerouslySetInnerHTML={{ __html: body.richText }}
                         />
-                      </Fragment>
+                      </div>
+                    ) : body.fieldId === 'markdown' ? (
+                      <div key={index} className={styles.letterBody}>
+                        <MarkdownField text={body.markdownText} />
+                      </div>
                     ) : body.fieldId === 'richlink' ? (
                       <Fragment key={index}>
                         <a href={body.url}>{body.title}</a>
