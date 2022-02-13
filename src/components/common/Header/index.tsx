@@ -15,13 +15,14 @@ export const Header = () => {
     <header className={styles.wrapper}>
       <Link href="/" passHref>
         <CustomLink href="/">
-          <Image
-            src={cat}
-            width={40}
-            height={40}
-            alt="りゅーそうブログのロゴ"
-            className={styles.image}
-          />
+          <div className={styles.image}>
+            <Image
+              src={cat}
+              width={40}
+              height={40}
+              alt="りゅーそうブログのロゴ"
+            />
+          </div>
         </CustomLink>
       </Link>
       <Heading1 title="Ryusou.dev" />
