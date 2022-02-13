@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import type { BlogType } from 'types/blogs';
 import type { GetStaticProps } from 'next';
 import { Layout } from '../../../components/common/Layout';
@@ -15,6 +16,9 @@ type Props = {
 };
 
 const BlogsPageId: React.VFC<Props> = ({ blogs, totalCount }) => {
+  const router = useRouter();
+  const pathId = router.query.id;
+
   return (
     <Layout>
       <HeadTemplate
@@ -36,7 +40,7 @@ const BlogsPageId: React.VFC<Props> = ({ blogs, totalCount }) => {
           </div>
         ))}
       </div>
-      <Pagination totalCount={totalCount} />
+      <Pagination totalCount={totalCount} pathId={Number(pathId[0])} />
     </Layout>
   );
 };

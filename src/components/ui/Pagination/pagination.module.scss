@@ -10,6 +10,13 @@
 }
 
 .a {
-  color: var(--c-gray-900);
+  color: var(--c-gray-200);
   text-decoration: none;
+  padding: 8px;
+}
+
+.isActive {
+  border-radius: 4px;
+  color: var(--c-gray-900);
+  background-color: var(--c-gray-50);
 }

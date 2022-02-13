@@ -6,14 +6,13 @@ export default {
   component: Pagination,
 } as ComponentMeta<typeof Pagination>;
 
-export const Normal: ComponentStory<typeof Pagination> = () => (
-  <Pagination totalCount={4} />
+const Template: ComponentStory<typeof Pagination> = (args) => (
+  <Pagination {...args} />
 );
 
-export const Two: ComponentStory<typeof Pagination> = () => (
-  <Pagination totalCount={12} />
-);
+export const Default = Template.bind({});
 
-export const Three: ComponentStory<typeof Pagination> = () => (
-  <Pagination totalCount={21} />
-);
+Default.args = {
+  totalCount: 30,
+  pathId: 2,
+};
