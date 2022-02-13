@@ -2,6 +2,7 @@
 
 .blogDescription {
   display: flex;
+  padding: 20px 0px;
 
   @include mixin.mq(md) {
     flex-direction: column;
@@ -17,30 +18,29 @@
   display: flex;
   align-items: center;
   font-size: 16px;
-}
+  margin: 8px;
 
-.blogTag {
-  margin-right: 8px;
-  padding: 4px 6px;
-  color: var(--c-white);
-  background-color: var(--c-primary-300);
-  border-radius: 4px;
+  > * {
+    margin-right: 8px;
+  }
 }
 
 .blogDays {
   display: flex;
   align-items: center;
   font-size: 16px;
+  > * {
+    margin-right: 8px;
+  }
 }
 
 .blogDay {
-  color: var(--c-gray-900);
-  margin-right: 12px;
+  color: var(--c-gray-200);
   padding: 4px;
 }
 
 .blogDayIcon {
-  color: var(--c-primary-300);
+  color: var(--c-gray-200);
 }
 
 .blogContentImg {
@@ -49,6 +49,7 @@
 
 .blogContentLink {
   word-wrap: break-word;
+  background-color: var(--c-gray-900);
 }
 
 .amazonLink {
@@ -58,32 +59,23 @@
   text-decoration: none;
   margin: 16px;
   padding: 8px;
-  border: solid 1px var(--c-gray-400);
-  box-sizing: border-box;
+  border: solid 1px var(--c-gray-200);
   border-radius: 4px;
 
-  &:hover {
-    box-sizing: border-box;
-    background-color: var(--c-gray-50);
-    opacity: 0.5;
+  :first-child {
+    margin-left: 12px;
   }
-}
 
-.amazonLinkDescription {
-  padding: 8px;
-  margin-right: 12px;
+  &:hover {
+    border: solid 2px var(--c-gray-200);
+  }
 }
 
 .amazonLinkText {
   font-size: 16px;
-  color: var(--c-gray-900);
+  color: var(--c-gray-200);
   font-weight: bold;
-}
-
-.amazonLinkButton {
-  padding: 4px;
-  border-radius: 4px;
-  color: var(--c-gray-700);
+  max-width: 50%;
 }
 
 .amazonLinkImage {
@@ -91,29 +83,30 @@
 }
 
 .heading1 {
-  margin-top: 40px;
+  margin: 40px 0px 20px;
   padding: 12px;
-  color: var(--c-gray-900);
-  border-bottom: solid 3px var(--c-primary-500);
+  color: var(--c-gray-200);
+  border-bottom: solid 3px var(--c-gray-200);
 }
 
 .heading2 {
-  margin-top: 40px;
+  margin: 40px 0px 20px;
   padding: 4px;
-  border-bottom: solid 3px var(--c-primary-500);
+  color: var(--c-gray-200);
+  border-bottom: solid 3px var(--c-gray-200);
 }
 
 .heading3 {
-  margin-top: 40px;
+  margin: 40px 0px 20px;
   padding: 4px;
-  color: var(--c-primary-900);
-  border-bottom: solid 3px var(--c-primary-500);
+  color: var(--c-gray-200);
+  border-bottom: solid 3px var(--c-gray-200);
 }
 
 .strongtext {
   letter-spacing: 0.05rem;
   line-height: '1.7';
-  border-bottom: solid 3px var(--c-primary-500);
+  border-bottom: solid 3px var(--c-gray-200);
 }
 
 .paragraph {

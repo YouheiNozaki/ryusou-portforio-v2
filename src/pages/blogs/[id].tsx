@@ -10,6 +10,7 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/night-owl.css';
 import { parseHtml } from 'lib/parseHtml';
 import { BlogType } from 'types/blogs';
+import { Tag } from 'components/ui/Tag';
 import { Layout } from '../../components/common/Layout';
 import { HeadTemplate } from '../../components/common/Head';
 import { Heading2 } from '../../components/ui/Heading2';
@@ -54,7 +55,6 @@ export const getStaticProps: GetStaticProps = async (
     $(element).html();
     $(element).addClass(`${styles.heading3}`);
   });
-
   $('p').each((_, element) => {
     $(element).html();
     $(element).addClass(`${styles.paragraph}`);
@@ -100,7 +100,7 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
         <div className={styles.blogTags}>
           {blog.tags.map((tag) => (
             <Fragment key={tag.slug}>
-              <p className={styles.blogTag}>{tag.slug}</p>
+              <Tag tag={tag.slug} />
             </Fragment>
           ))}
         </div>
@@ -122,11 +122,8 @@ const BlogDetail: React.FC<Props> = ({ blog, content }) => {
           repeater.fieldId === 'content' ? (
             <div>{parseHtml(repeater.content)}</div>
           ) : repeater.fieldId === 'amazonlink' ? (
-            <a target="blank" href={repeater.url} className={styles.amazonLink}>
-              <div className={styles.amazonLinkDescription}>
-                <p className={styles.amazonLinkText}>{repeater.name}</p>
-                <p className={styles.amazonLinkButton}>Amazonで購入する</p>
-              </div>
+            <a href={repeater.url} className={styles.amazonLink}>
+              <p className={styles.amazonLinkText}>{repeater.name}</p>
               <div className={styles.amazonLinkImage}>
                 <Image
                   src={repeater.image.url}
