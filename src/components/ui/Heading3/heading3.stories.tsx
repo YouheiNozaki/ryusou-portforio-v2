@@ -6,10 +6,12 @@ export default {
   component: Heading3,
 } as ComponentMeta<typeof Heading3>;
 
-export const Normal: ComponentStory<typeof Heading3> = () => (
-  <Heading3 title="ブログ記事" />
+const Template: ComponentStory<typeof Heading3> = (args) => (
+  <Heading3 {...args} />
 );
 
-export const Error: ComponentStory<typeof Heading3> = () => (
-  <Heading3 title="このページは移動しました。ブログ記事は、一覧ページから見ることができます" />
-);
+export const Default = Template.bind({});
+
+Default.args = {
+  title: 'エラーページです',
+};

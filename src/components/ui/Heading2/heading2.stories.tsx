@@ -6,10 +6,12 @@ export default {
   component: Heading2,
 } as ComponentMeta<typeof Heading2>;
 
-export const Normal: ComponentStory<typeof Heading2> = () => (
-  <Heading2 title="テスト" />
+const Template: ComponentStory<typeof Heading2> = (args) => (
+  <Heading2 {...args} />
 );
 
-export const BlogTitle: ComponentStory<typeof Heading2> = () => (
-  <Heading2 title="Jamstackでサイトを作る" />
-);
+export const Default = Template.bind({});
+
+Default.args = {
+  title: 'ブログ記事です',
+};
