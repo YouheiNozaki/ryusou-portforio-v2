@@ -9,8 +9,8 @@ const Custom404: React.VFC = () => {
       <Heading3 title="このページは移動しました。ブログ記事は、一覧ページから見ることができます" />
       <Image
         src={error}
-        width={400}
-        height={400}
+        width={680}
+        height={680}
         alt="404：このページは移動しました"
       />
     </Layout>
