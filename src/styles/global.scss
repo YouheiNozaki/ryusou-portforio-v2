@@ -54,6 +54,7 @@ dd {
 a {
   color: var(--c-link);
   background-color: var(--c-gray-900);
+  word-break: break-all;
 }
 ul[role='list'],
 ol[role='list'] {

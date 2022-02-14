@@ -78,6 +78,12 @@
 
 .detail {
   padding: 8px 12px;
+  h3 {
+    margin: 16px 0px 24px;
+  }
+  :last-child {
+    margin-bottom: 16px;
+  }
 }
 
 .letterBody {
