@@ -10,6 +10,9 @@ export const clientScraps = createClient({
 export const fetchScraps = async () => {
   const scraps = await clientScraps.get<Scraps>({
     endpoint: 'scraps',
+    queries: {
+      limit: 9999,
+    },
   });
 
   return scraps;
