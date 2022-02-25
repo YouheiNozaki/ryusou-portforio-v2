@@ -47,6 +47,9 @@ const ScrapsPage: React.VFC<Props> = ({ scraps }) => {
 export async function getServerSideProps() {
   const data = await clientScraps.get<Scraps>({
     endpoint: 'scraps',
+    queries: {
+      limit: 9999,
+    },
   });
 
   return {
